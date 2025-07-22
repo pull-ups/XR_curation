@@ -1,5 +1,5 @@
 {
-  "image_path": "/Users/sngwon/python/xr/images/Las Meninas.jpg",
+  "image_path": "../artwork_images/시녀들.jpg",
   "image_width": 600,
   "image_height": 691,
   "total_boxes": 11,

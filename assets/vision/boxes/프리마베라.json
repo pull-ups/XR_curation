@@ -1,5 +1,5 @@
 {
-  "image_path": "/Users/sngwon/python/xr/images/Primavera.jpg",
+  "image_path": "../artwork_images/프리마베라.jpg",
   "image_width": 770,
   "image_height": 504,
   "total_boxes": 8,

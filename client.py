@@ -2,7 +2,8 @@ import requests
 import json
 
 # API 서버의 기본 URL
-BASE_URL = "http://127.0.0.1:8000"
+# BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "http://192.168.1.10:8000"
 
 def print_response(title, response):
     """응답을 예쁘게 출력하는 함수"""
