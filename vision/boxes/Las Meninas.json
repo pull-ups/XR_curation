@@ -1,0 +1,85 @@
+{
+  "image_path": "/Users/sngwon/python/xr/images/Las Meninas.jpg",
+  "image_width": 600,
+  "image_height": 691,
+  "total_boxes": 11,
+  "bounding_boxes": [
+    {
+      "id": 1,
+      "x": 230,
+      "y": 438,
+      "width": 134,
+      "height": 199
+    },
+    {
+      "id": 2,
+      "x": 366,
+      "y": 576,
+      "width": 191,
+      "height": 111
+    },
+    {
+      "id": 3,
+      "x": 94,
+      "y": 343,
+      "width": 80,
+      "height": 187
+    },
+    {
+      "id": 4,
+      "x": 221,
+      "y": 355,
+      "width": 62,
+      "height": 91
+    },
+    {
+      "id": 5,
+      "x": 0,
+      "y": 97,
+      "width": 100,
+      "height": 578
+    },
+    {
+      "id": 6,
+      "x": 267,
+      "y": 229,
+      "width": 141,
+      "height": 114
+    },
+    {
+      "id": 7,
+      "x": 85,
+      "y": 227,
+      "width": 154,
+      "height": 111
+    },
+    {
+      "id": 8,
+      "x": 103,
+      "y": 439,
+      "width": 126,
+      "height": 207
+    },
+    {
+      "id": 9,
+      "x": 333,
+      "y": 382,
+      "width": 103,
+      "height": 189
+    },
+    {
+      "id": 10,
+      "x": 441,
+      "y": 424,
+      "width": 113,
+      "height": 145
+    },
+    {
+      "id": 11,
+      "x": 544,
+      "y": 459,
+      "width": 54,
+      "height": 179
+    }
+  ]
+}
