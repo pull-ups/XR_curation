@@ -227,10 +227,10 @@ if __name__ == '__main__':
 
     # 1. CuratorNPC 인스턴스 생성
     # 파일 경로는 실제 환경에 맞게 수정해주세요.
-    section_data_file = '/Users/sngwon/python/xr/contents/assets/section_level_data.json'
-    prompts_directory = '/Users/sngwon/python/xr/contents/prompts'
-    documents_directory = '/Users/sngwon/python/xr/contents/assets/document'
-    common_and_different_path= '/Users/sngwon/python/xr/contents/assets/transformed_pair.json'
+    section_data_file = './asset/llm/section_level_data.json'
+    prompts_directory = './prompts'
+    documents_directory = './assets/llm/document'
+    common_and_different_path= './assets/llm/transformed_pair.json'
     curator = CuratorNPC(
         section_data_path=section_data_file, 
         common_and_different_path=common_and_different_path,

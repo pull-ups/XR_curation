@@ -38,10 +38,10 @@ app = FastAPI(
 # quration_npc.py의 main 함수에 있던 경로를 사용합니다.
 # 실제 환경에 맞게 경로를 수정해야 할 수 있습니다.
 try:
-    section_data_file = './assets/section_level_data.json'
-    prompts_directory = './assets/prompts'
-    documents_directory = './assets/document'
-    common_and_different_path= './assets/transformed_pair.json'
+    section_data_file = './assets/llm/section_level_data.json'
+    prompts_directory = './prompts'
+    documents_directory = './assets/llm/document'
+    common_and_different_path= './assets/llm/transformed_pair.json'
 
     curator = CuratorNPC(
         section_data_path=section_data_file, 
@@ -57,6 +57,13 @@ except Exception as e:
     curator = None
 
 # --- API 엔드포인트 정의 ---
+
+@app.get("/ping", summary="서버 상태 확인")
+def ping():
+    """
+    서버가 정상적으로 작동하는지 확인하는 간단한 핑 테스트입니다.
+    """
+    return {"message": "pong", "status": "healthy"}
 
 @app.post("/section-narration", summary="섹션 안내 나레이션 생성")
 def get_section_narration(request: SectionNarrationRequest):

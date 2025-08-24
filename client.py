@@ -2,8 +2,8 @@ import requests
 import json
 
 # API 서버의 기본 URL
-# BASE_URL = "http://127.0.0.1:8000"
-BASE_URL = "http://192.168.1.10:8000"
+BASE_URL = "http://0.0.0.0:8000"
+# BASE_URL = "http://192.168.1.10:8000"
 
 def print_response(title, response):
     """응답을 예쁘게 출력하는 함수"""
@@ -25,16 +25,16 @@ def print_response(title, response):
 def test_api():
     """모든 API 엔드포인트를 테스트합니다."""
 
-    # 1. 섹션 안내 나레이션 테스트 (GET /section-narration)
+    # 1. 섹션 안내 나레이션 테스트 (POST /section-narration)
     # 시나리오 1: 첫 입장
-    params1 = {"current_section": 1}
-    response1 = requests.get(f"{BASE_URL}/section-narration", params=params1)
+    data1 = {"current_section": 1}
+    response1 = requests.post(f"{BASE_URL}/section-narration", json=data1)
     print_response("1. 초기 섹션 안내", response1)
 
-    # 시나리오 2: 작품 감상 후 다른 섹션으로 이동
-    params2 = {"current_section": 2, "previous_work": "프리마베라"}
-    response2 = requests.get(f"{BASE_URL}/section-narration", params=params2)
-    print_response("2. 작품 감상 후 섹션 이동 안내", response2)
+    # 시나리오 2: 이전 작품 감상 후 섹션 이동
+    data2 = {"current_section": 2, "viewed_artworks": ["프리마베라"]}
+    response2 = requests.post(f"{BASE_URL}/section-narration", json=data2)
+    print_response("2. 이전 작품 감상 후 섹션 안내", response2)
 
 
     # 2. 작품 흥미 유발 나레이션 테스트 (POST /artwork-attraction)
