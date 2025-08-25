@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 from typing import List, Optional
 
 # 기존 CuratorNPC 클래스를 가져옵니다.
-# quration_npc.py가 동일한 디렉터리 또는 파이썬 경로에 있어야 합니다.
-from quration_npc import CuratorNPC
+# curation_npc.py가 동일한 디렉터리 또는 파이썬 경로에 있어야 합니다.
+from curation_npc import CuratorNPC
 
 # --- Pydantic 모델 정의 ---
 # 요청 본문의 데이터 구조를 정의합니다.
@@ -35,7 +35,7 @@ app = FastAPI(
 )
 
 # --- CuratorNPC 인스턴스 생성 ---
-# quration_npc.py의 main 함수에 있던 경로를 사용합니다.
+# curation_npc.py의 main 함수에 있던 경로를 사용합니다.
 # 실제 환경에 맞게 경로를 수정해야 할 수 있습니다.
 try:
     section_data_file = './assets/llm/section_level_data.json'
