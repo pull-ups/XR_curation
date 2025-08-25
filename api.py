@@ -76,7 +76,7 @@ def get_section_narration(request: SectionNarrationRequest):
         raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
     
     previous_work = request.viewed_artworks[-1] if request.viewed_artworks else None
-    return {"narration": curator.get_section_narration(request.current_section, previous_work)}
+    return {"response": curator.get_section_narration(request.current_section, previous_work)}
 
 @app.post("/artwork-attraction", summary="작품 흥미 유발 나레이션 생성")
 def get_artwork_attraction_narration(request: ArtworkAttractionRequest):
@@ -85,7 +85,7 @@ def get_artwork_attraction_narration(request: ArtworkAttractionRequest):
     """
     if not curator:
         raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
-    return {"narration": curator.get_artwork_attraction_narration(request.current_section, request.viewed_artworks)}
+    return {"response": curator.get_artwork_attraction_narration(request.current_section, request.viewed_artworks)}
 
 @app.post("/artwork-narration", summary="작품 설명 나레이션 생성")
 def get_artwork_narration(request: ArtworkNarrationRequest):
@@ -94,7 +94,7 @@ def get_artwork_narration(request: ArtworkNarrationRequest):
     """
     if not curator:
         raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
-    return {"narration": curator.get_artwork_narration(request.art_name, request.memory, request.viewed_artworks)}
+    return {"response": curator.get_artwork_narration(request.art_name, request.memory, request.viewed_artworks)}
 
 @app.post("/rag-question", summary="RAG 기반 질의응답")
 def answer_question_with_rag(request: RagQuestionRequest):
@@ -107,7 +107,7 @@ def answer_question_with_rag(request: RagQuestionRequest):
         raise HTTPException(status_code=503, detail="RAG 시스템을 사용할 수 없습니다.")
     
     answer = curator.answer_question_with_rag(request.question, request.art_name)
-    return {"answer": answer}
+    return {"response": answer}
 
 # --- API 서버 실행 ---
 # 이 파일을 직접 실행할 때 uvicorn 서버를 구동합니다.

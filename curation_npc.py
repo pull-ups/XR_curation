@@ -195,13 +195,19 @@ class CuratorNPC:
         :return: 작품 설명 문자열
         """
         if viewed_artworks:
-            if memory=="":
-                return self._get_artwork_narration_with_history(art_name, viewed_artworks[-1])
+            # 현재 art_name을 제외한 마지막 감상 작품 찾기
+            previous_works = [art for art in viewed_artworks if art != art_name]
+            previous_work = previous_works[-1] if previous_works else None
+
+            if memory == "":
+                if previous_work:
+                    return self._get_artwork_narration_with_history(art_name, previous_work)
+                else:
+                    return self._get_artwork_narration_initial(art_name, memory)
             else:
                 return self._get_artwork_narration_additional(art_name, memory)
-        
         else:
-            if memory=="":
+            if memory == "":
                 return self._get_artwork_narration_initial(art_name, memory)
             else:
                 return self._get_artwork_narration_additional(art_name, memory)
