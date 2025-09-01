@@ -2,18 +2,23 @@ import requests
 import json
 
 # API 서버의 기본 URL
-BASE_URL = "http://0.0.0.0:8000"
-# BASE_URL = "http://192.168.1.10:8000"
+# BASE_URL = "http://0.0.0.0:8000"
+BASE_URL = "http://127.0.0.1:14723"
 
-def print_response(title, response):
-    """응답을 예쁘게 출력하는 함수"""
+def print_request_response(title, url, data, response):
+    """요청과 응답을 예쁘게 출력하는 함수"""
     print(f"--- {title} ---")
+    print(f"요청 URL: {url}")
+    print("요청 내용:")
+    print(json.dumps(data, indent=2, ensure_ascii=False))
+    print()
+    
     if response.status_code == 200:
-        print("요청 성공!")
+        print("✅ 요청 성공!")
         print("응답 내용:")
         print(json.dumps(response.json(), indent=2, ensure_ascii=False))
     else:
-        print(f"오류 발생! (상태 코드: {response.status_code})")
+        print(f"❌ 오류 발생! (상태 코드: {response.status_code})")
         try:
             print("오류 내용:")
             print(json.dumps(response.json(), indent=2, ensure_ascii=False))
@@ -28,13 +33,15 @@ def test_api():
     # 1. 섹션 안내 나레이션 테스트 (POST /section-narration)
     # 시나리오 1: 첫 입장
     data1 = {"current_section": 1}
-    response1 = requests.post(f"{BASE_URL}/section-narration", json=data1)
-    print_response("1. 초기 섹션 안내", response1)
+    url1 = f"{BASE_URL}/section-narration"
+    response1 = requests.post(url1, json=data1)
+    print_request_response("1. 초기 섹션 안내", url1, data1, response1)
 
     # 시나리오 2: 이전 작품 감상 후 섹션 이동
     data2 = {"current_section": 2, "viewed_artworks": ["프리마베라"]}
-    response2 = requests.post(f"{BASE_URL}/section-narration", json=data2)
-    print_response("2. 이전 작품 감상 후 섹션 안내", response2)
+    url2 = f"{BASE_URL}/section-narration"
+    response2 = requests.post(url2, json=data2)
+    print_request_response("2. 이전 작품 감상 후 섹션 안내", url2, data2, response2)
 
 
     # 2. 작품 흥미 유발 나레이션 테스트 (POST /artwork-attraction)
@@ -42,8 +49,9 @@ def test_api():
         "current_section": 1,
         "viewed_artworks": ["프리마베라"]
     }
-    response3 = requests.post(f"{BASE_URL}/artwork-attraction", json=payload3)
-    print_response("3. 작품 흥미 유발", response3)
+    url3 = f"{BASE_URL}/artwork-attraction"
+    response3 = requests.post(url3, json=payload3)
+    print_request_response("3. 작품 흥미 유발", url3, payload3, response3)
 
 
     # 3. 작품 설명 나레이션 테스트 (POST /artwork-narration)
@@ -53,8 +61,9 @@ def test_api():
         "memory": "",
         "viewed_artworks": []
     }
-    response4_1 = requests.post(f"{BASE_URL}/artwork-narration", json=payload4_1)
-    print_response("4-1. 작품 설명 (첫 작품, 첫 설명)", response4_1)
+    url4_1 = f"{BASE_URL}/artwork-narration"
+    response4_1 = requests.post(url4_1, json=payload4_1)
+    print_request_response("4-1. 작품 설명 (첫 작품, 첫 설명)", url4_1, payload4_1, response4_1)
 
     # 시나리오 2: 다른 작품 감상 후, 첫 설명
     payload4_2 = {
@@ -62,8 +71,9 @@ def test_api():
         "memory": "",
         "viewed_artworks": ["프리마베라"]
     }
-    response4_2 = requests.post(f"{BASE_URL}/artwork-narration", json=payload4_2)
-    print_response("4-2. 작품 설명 (이전 감상 이력 있음)", response4_2)
+    url4_2 = f"{BASE_URL}/artwork-narration"
+    response4_2 = requests.post(url4_2, json=payload4_2)
+    print_request_response("4-2. 작품 설명 (이전 감상 이력 있음)", url4_2, payload4_2, response4_2)
 
 
     # 4. RAG 기반 질의응답 테스트 (POST /rag-question)
@@ -71,16 +81,22 @@ def test_api():
         "question": "그림에서 가운데 있는 소녀는 누구야?",
         "art_name": "시녀들"
     }
-    response5 = requests.post(f"{BASE_URL}/rag-question", json=payload5)
-    print_response("5. RAG 질의응답", response5)
+    url5 = f"{BASE_URL}/rag-question"
+    response5 = requests.post(url5, json=payload5)
+    print_request_response("5. RAG 질의응답", url5, payload5, response5)
 
 
 if __name__ == "__main__":
     # API 서버가 실행 중인지 확인
+    print("API 서버가 실행 중인지 확인...")
     try:
-        requests.get(BASE_URL)
+        requests.get(f"{BASE_URL}/ping")
     except requests.ConnectionError:
         print("오류: API 서버가 실행 중이 아닙니다.")
-        print("다른 터미널에서 'python -m contents.api' 명령으로 서버를 먼저 실행해주세요.")
+        print("다른 터미널에서 'python -m api' 명령으로 서버를 먼저 실행해주세요.")
     else:
         test_api()
+        
+"""
+python -m client
+"""

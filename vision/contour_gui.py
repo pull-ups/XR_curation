@@ -7,6 +7,14 @@ from tkinter import ttk
 from PIL import Image, ImageTk, ImageDraw
 import math
 from openai import OpenAI
+from dataclasses import dataclass
+import tyro
+
+@dataclass
+class Config:
+    artwork_name: str
+
+
 client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY")
 )
@@ -19,14 +27,14 @@ def get_response(prompt):
     return response.output_text
 
 class TkinterSegmentationViewer:
-    def __init__(self, root):
+    def __init__(self, root, artwork_name: str):
         self.root = root
         self.root.title("Las Meninas - Interactive Segmentation Viewer")
         self.root.geometry("1600x1000")
         
         # JSON 파일에서 마스크 정보 로드
         self.load_mask_info()
-        
+        self.artwork_name = artwork_name
         
         # 색상 팔레트
         self.colors = [
@@ -204,7 +212,7 @@ class TkinterSegmentationViewer:
         """배경 이미지를 로드하고 캔버스에 표시합니다."""
         try:
             # 이미지 로드
-            self.background_img = Image.open("/Users/sngwon/python/xr_npc/images/Las Meninas.jpg")
+            self.background_img = Image.open(f"./artwork_images/{self.artwork_name}.jpg")
             
             # 이미지 크기 조정 (너무 크면 축소)
             max_width, max_height = 1000, 700
@@ -237,7 +245,7 @@ class TkinterSegmentationViewer:
         print("마스크 데이터를 로드중...")
         
         # 이미지 크기 비율 계산 (원본 대비 현재 표시 크기)
-        original_img = Image.open("/Users/sngwon/python/xr_npc/images/Las Meninas.jpg")
+        original_img = Image.open(f"./artwork_images/{self.artwork_name}.jpg")
         original_width, original_height = original_img.size
         
         scale_x = self.img_width / original_width
@@ -247,7 +255,7 @@ class TkinterSegmentationViewer:
             idx = f"{i:04d}"
             try:
                 # 마스크 배열 로드
-                segmentation_array = np.load(f"/Users/sngwon/python/xr_npc/vision/masks/Las Meninas/array/Las Meninas_sam_mask_{idx}.npy")
+                segmentation_array = np.load(f"./masks/{self.artwork_name}/array/{self.artwork_name}_sam_mask_{idx}.npy")
                 
                 # 컨투어 찾기
                 contours = measure.find_contours(segmentation_array, 0.5)
@@ -574,9 +582,9 @@ class TkinterSegmentationViewer:
         self.status_var.set("검색이 초기화되었습니다")
         self.search_entry.focus()
 
-def main():
+def main(artwork_name: str):
     root = tk.Tk()
-    app = TkinterSegmentationViewer(root)
+    app = TkinterSegmentationViewer(root, artwork_name=artwork_name)
     
     print("=== Tkinter Interactive Segmentation Viewer with Descriptions ===")
     print("사용법:")
@@ -590,4 +598,9 @@ def main():
     root.mainloop()
 
 if __name__ == "__main__":
-    main()
+    args = tyro.cli(Config)
+    main(artwork_name=args.artwork_name)
+    
+"""
+python -m contour_gui --artwork_name "Las Meninas"
+"""

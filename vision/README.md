@@ -8,9 +8,16 @@
 1. **`get_box.py`**: "설명할 거리가 있는" 객체들에 대한 bounding box를 직접 annotation합니다.
 
 2. **`box_to_seg.py`**: SAM input으로 bounding box를 전달하여 객체들에 대한 segmentation mask를 얻습니다.
+   ```bash
+   python -m box_to_seg --artwork_name 시녀들
+   ```
 
 3. **`contour_visualize.py`**: segmentation mask를 segmentation 테두리(contour)로 변환합니다. 
    - segmentation mask는 이미지 width × height 만큼의 사이즈를 가져 용량이 크지만, contour만 저장하면 용량을 절약할 수 있습니다.
+
+   ```bash
+   python -m contour_visualize --artwork_name 시녀들
+   ```
 
 4. **Mask Annotation**: `mask_annotation` 폴더에 `[작품명].json`을 생성하여 mask_names와 mask_annotation 정보를 저장합니다.
    - mask_names는 직접 지정하는 것이 편함.

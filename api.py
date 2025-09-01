@@ -105,12 +105,17 @@ def answer_question_with_rag(request: RagQuestionRequest):
         raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
     if not curator.rag_chains:
         raise HTTPException(status_code=503, detail="RAG 시스템을 사용할 수 없습니다.")
-    
+    ㅁ
     answer = curator.answer_question_with_rag(request.question, request.art_name)
     return {"response": answer}
 
 # --- API 서버 실행 ---
 # 이 파일을 직접 실행할 때 uvicorn 서버를 구동합니다.
 if __name__ == "__main__":
+    print("API 서버 실행 중...")
     # host="0.0.0.0"으로 설정하면 외부에서도 접속 가능합니다.
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=14723)
+
+"""
+python -m api
+"""
