@@ -7,6 +7,10 @@
 
 1. **`get_box.py`**: "설명할 거리가 있는" 객체들에 대한 bounding box를 직접 annotation합니다.
 
+   ```bash
+   #  수작업
+   ```
+
 2. **`box_to_seg.py`**: SAM input으로 bounding box를 전달하여 객체들에 대한 segmentation mask를 얻습니다.
    ```bash
    python -m box_to_seg --artwork_name 시녀들
@@ -23,4 +27,12 @@
    - mask_names는 직접 지정하는 것이 편함.
    - mask_names 지정 후 각 mask에 대한 설명 생성은 챗지피티한테 생성해달라고 하면 됨.
 
+   ```bash
+   #  수작업
+   ```
+
 5. **`contour_gui.py`**: 시뮬레이션을 통해 결과를 확인할 수 있습니다. 
+
+   ```bash
+   python -m contour_gui --artwork_name 시녀들
+   ```
