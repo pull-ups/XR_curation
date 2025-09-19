@@ -105,7 +105,6 @@ def answer_question_with_rag(request: RagQuestionRequest):
         raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
     if not curator.rag_chains:
         raise HTTPException(status_code=503, detail="RAG 시스템을 사용할 수 없습니다.")
-    ㅁ
     answer = curator.answer_question_with_rag(request.question, request.art_name)
     return {"response": answer}
 
