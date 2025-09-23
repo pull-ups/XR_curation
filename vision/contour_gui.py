@@ -9,6 +9,7 @@ import math
 from openai import OpenAI
 from dataclasses import dataclass
 import tyro
+import colorsys
 
 @dataclass
 class Config:
@@ -29,18 +30,20 @@ def get_response(prompt):
 class TkinterSegmentationViewer:
     def __init__(self, root, artwork_name: str):
         self.root = root
-        self.root.title("Las Meninas - Interactive Segmentation Viewer")
+        self.root.title(f"{artwork_name} - Interactive Segmentation Viewer")
         self.root.geometry("1600x1000")
+        
+        self.artwork_name = artwork_name
         
         # JSON 파일에서 마스크 정보 로드
         self.load_mask_info()
-        self.artwork_name = artwork_name
         
-        # 색상 팔레트
-        self.colors = [
+        # 확장된 색상 팔레트 (20개)
+        self.base_colors = [
             "#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7",
             "#DDA0DD", "#98D8C8", "#F7DC6F", "#BB8FCE", "#85C1E9",
-            "#F8C471"
+            "#F8C471", "#FF8C94", "#6C5CE7", "#74B9FF", "#00B894",
+            "#FDCB6E", "#E17055", "#FD79A8", "#A29BFE", "#55A3FF"
         ]
         
         # 데이터 초기화
@@ -59,11 +62,26 @@ class TkinterSegmentationViewer:
         # 초기 마스크 그리기
         self.draw_all_masks()
     
+    def get_color_for_mask(self, mask_id):
+        """마스크 ID에 따라 색상을 반환합니다. 20개를 넘으면 HSV로 동적 생성"""
+        if mask_id <= len(self.base_colors):
+            return self.base_colors[mask_id - 1]
+        else:
+            # HSV 색상으로 동적 생성 (색조를 균등하게 분배)
+            hue = ((mask_id - 1) * 137.5) % 360  # 황금각(137.5도)으로 분산
+            saturation = 0.7 + (mask_id % 3) * 0.1  # 0.7, 0.8, 0.9 순환
+            value = 0.8 + (mask_id % 2) * 0.2  # 0.8, 1.0 순환
+            
+            rgb = colorsys.hsv_to_rgb(hue/360, saturation, value)
+            hex_color = "#{:02x}{:02x}{:02x}".format(
+                int(rgb[0] * 255), int(rgb[1] * 255), int(rgb[2] * 255)
+            )
+            return hex_color
+    
     def load_mask_info(self):
         """JSON 파일에서 마스크 이름과 설명을 로드합니다."""
         try:
-
-            json_path = "./mask_annotation/시녀들.json"
+            json_path = f"./mask_annotation/{self.artwork_name}.json"
             
             with open(json_path, 'r', encoding='utf-8') as f:
                 mask_info = json.load(f)
@@ -196,10 +214,8 @@ class TkinterSegmentationViewer:
         # 리스트박스 이벤트 바인딩
         self.mask_listbox.bind('<<ListboxSelect>>', self.on_listbox_select)
         
-        # 마스크 목록 채우기
-        for mask_id in range(1, 12):
-            if mask_id in self.mask_names:
-                self.mask_listbox.insert(tk.END, f"{mask_id}. {self.mask_names[mask_id]}")
+        # 마스크 목록은 나중에 load_mask_data 완료 후 채우기
+        # (setup_gui에서는 초기화만 하고, 실제 데이터는 load_mask_data 완료 후 추가)
         
         # 배경 이미지 로드 및 표시
         self.load_background_image()
@@ -251,7 +267,18 @@ class TkinterSegmentationViewer:
         scale_x = self.img_width / original_width
         scale_y = self.img_height / original_height
         
-        for i in range(1, 12):
+        # 마스크 디렉토리에서 실제 마스크 파일 개수 확인
+        mask_dir = f"./masks/{self.artwork_name}/array"
+        if not os.path.exists(mask_dir):
+            print(f"마스크 디렉토리를 찾을 수 없습니다: {mask_dir}")
+            return
+        
+        # 마스크 파일 개수 동적 감지
+        mask_files = [f for f in os.listdir(mask_dir) if f.endswith('.npy')]
+        max_mask_num = len(mask_files)
+        print(f"총 {max_mask_num}개의 마스크 파일 발견")
+        
+        for i in range(1, max_mask_num + 1):
             idx = f"{i:04d}"
             try:
                 # 마스크 배열 로드
@@ -276,7 +303,7 @@ class TkinterSegmentationViewer:
                         'name': self.mask_names.get(i, f'Mask {i}'),
                         'description': self.mask_descriptions.get(i, '설명이 없습니다.'),
                         'contour_points': contour_points,
-                        'color': self.colors[(i-1) % len(self.colors)],
+                        'color': self.get_color_for_mask(i),
                         'original_contour': main_contour  # 원본 컨투어도 저장
                     }
                     
@@ -284,6 +311,18 @@ class TkinterSegmentationViewer:
                     
             except Exception as e:
                 print(f"마스크 {i} 로드 실패: {e}")
+        
+        # 로드된 마스크 데이터를 기반으로 리스트박스 업데이트
+        self.update_mask_listbox()
+    
+    def update_mask_listbox(self):
+        """로드된 마스크 데이터를 기반으로 리스트박스를 업데이트합니다."""
+        self.mask_listbox.delete(0, tk.END)  # 기존 항목 모두 삭제
+        
+        # 마스크 ID 순서대로 정렬해서 추가
+        for mask_id in sorted(self.masks_data.keys()):
+            mask_name = self.masks_data[mask_id]['name']
+            self.mask_listbox.insert(tk.END, f"{mask_id}. {mask_name}")
     
     def update_description_panel(self, mask_id):
         """설명 패널을 업데이트합니다."""
@@ -299,8 +338,11 @@ class TkinterSegmentationViewer:
             
             # 리스트박스에서 해당 항목 선택
             self.mask_listbox.selection_clear(0, tk.END)
-            self.mask_listbox.selection_set(mask_id - 1)
-            self.mask_listbox.see(mask_id - 1)
+            sorted_mask_ids = sorted(self.masks_data.keys())
+            if mask_id in sorted_mask_ids:
+                index = sorted_mask_ids.index(mask_id)
+                self.mask_listbox.selection_set(index)
+                self.mask_listbox.see(index)
             
         else:
             self.selected_name_var.set("마스크를 선택하세요")
@@ -314,17 +356,20 @@ class TkinterSegmentationViewer:
         """리스트박스 선택 이벤트를 처리합니다."""
         selection = self.mask_listbox.curselection()
         if selection:
-            mask_id = selection[0] + 1  # 리스트 인덱스를 mask_id로 변환
-            if mask_id in self.masks_data:
-                # 해당 마스크를 하이라이트
-                self.current_hover_mask = mask_id
-                highlighted_masks = [mask_id]
-                if self.current_search_masks:
-                    highlighted_masks.extend(self.current_search_masks)
-                
-                self.draw_all_masks(highlight_mode=True, highlighted_masks=highlighted_masks)
-                self.update_description_panel(mask_id)
-                self.status_var.set(f"선택: {self.masks_data[mask_id]['name']}")
+            # 정렬된 마스크 ID 리스트에서 선택된 인덱스에 해당하는 mask_id 찾기
+            sorted_mask_ids = sorted(self.masks_data.keys())
+            if selection[0] < len(sorted_mask_ids):
+                mask_id = sorted_mask_ids[selection[0]]
+                if mask_id in self.masks_data:
+                    # 해당 마스크를 하이라이트
+                    self.current_hover_mask = mask_id
+                    highlighted_masks = [mask_id]
+                    if self.current_search_masks:
+                        highlighted_masks.extend(self.current_search_masks)
+                    
+                    self.draw_all_masks(highlight_mode=True, highlighted_masks=highlighted_masks)
+                    self.update_description_panel(mask_id)
+                    self.status_var.set(f"선택: {self.masks_data[mask_id]['name']}")
 
     # ... (기존 메서드들: draw_all_masks, point_in_polygon, find_mask_at_point, search_masks_by_name)
 
@@ -602,5 +647,5 @@ if __name__ == "__main__":
     main(artwork_name=args.artwork_name)
     
 """
-python -m contour_gui --artwork_name "Las Meninas"
+python -m contour_gui --artwork_name "최후의 만찬"
 """

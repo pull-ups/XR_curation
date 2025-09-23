@@ -28,7 +28,7 @@
    - segmentation mask는 이미지 width × height 만큼의 사이즈를 가져 용량이 크지만, contour만 저장하면 용량을 절약할 수 있습니다.
 
    ```bash
-   python -m contour_visualize --artwork_name "시녀들"
+   python -m contour_visualize --artwork_name "최후의 만찬"
    ```
 
 4. **Mask Annotation**: `mask_annotation` 폴더에 `[작품명].json`을 생성하여 mask_names와 mask_annotation 정보를 저장합니다.
@@ -42,5 +42,5 @@
 5. **`contour_gui.py`**: 시뮬레이션을 통해 결과를 확인할 수 있습니다. 
 
    ```bash
-   python -m contour_gui --artwork_name 시녀들
+   python -m contour_gui --artwork_name "프리마베라"
    ```

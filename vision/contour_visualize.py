@@ -62,7 +62,12 @@ def visualize_contours(artwork_name: str):
                 polygon_vertices.append([int(x), int(y)])
             
             # 컨투어를 이미지에 그리기 (각 마스크마다 다른 색상 사용)
-            colors = plt.cm.tab10(i / 11)  # 서로 다른 색상 생성
+            # 더 많은 색상 팔레트 사용 (tab20으로 20개 색상 지원)
+            if i <= 20:
+                colors = plt.cm.tab20((i - 1) % 20)  # 1-20 범위를 0-19로 변환
+            else:
+                # 20개를 넘으면 hsv 색상으로 무한 색상 생성
+                colors = plt.cm.hsv((i - 1) / mask_num)
             
             # 컨투어 라인 그리기
             contour_x = [p[1] for p in main_contour]  # col coordinates
@@ -106,5 +111,5 @@ if __name__ == "__main__":
     visualize_contours(artwork_name=args.artwork_name)
 
 """
-python -m contour_visualize --artwork_name 프리마베라
+python -m contour_visualize --artwork_name "야경"
 """
