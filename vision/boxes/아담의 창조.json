@@ -1,0 +1,71 @@
+{
+  "image_path": "/Users/jerife/mirlab/xr/XR_curation/vision/artwork_images/아담의 창조.jpg",
+  "image_width": 3572,
+  "image_height": 1663,
+  "total_boxes": 9,
+  "bounding_boxes": [
+    {
+      "id": 1,
+      "x": 32,
+      "y": 527,
+      "width": 1494,
+      "height": 1110
+    },
+    {
+      "id": 2,
+      "x": 1350,
+      "y": 201,
+      "width": 2174,
+      "height": 842
+    },
+    {
+      "id": 3,
+      "x": 1881,
+      "y": 769,
+      "width": 735,
+      "height": 670
+    },
+    {
+      "id": 4,
+      "x": 2291,
+      "y": 864,
+      "width": 1240,
+      "height": 542
+    },
+    {
+      "id": 5,
+      "x": 2302,
+      "y": 135,
+      "width": 530,
+      "height": 169
+    },
+    {
+      "id": 6,
+      "x": 2510,
+      "y": 227,
+      "width": 373,
+      "height": 388
+    },
+    {
+      "id": 7,
+      "x": 2792,
+      "y": 443,
+      "width": 640,
+      "height": 439
+    },
+    {
+      "id": 8,
+      "x": 2792,
+      "y": 164,
+      "width": 355,
+      "height": 301
+    },
+    {
+      "id": 9,
+      "x": 1654,
+      "y": 51,
+      "width": 1877,
+      "height": 1337
+    }
+  ]
+}

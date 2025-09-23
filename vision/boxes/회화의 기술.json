@@ -1,0 +1,50 @@
+{
+  "image_path": "/Users/jerife/mirlab/xr/XR_curation/vision/artwork_images/회화의 기술.jpg",
+  "image_width": 6209,
+  "image_height": 7377,
+  "total_boxes": 6,
+  "bounding_boxes": [
+    {
+      "id": 1,
+      "x": 2163,
+      "y": 2974,
+      "width": 1255,
+      "height": 2066
+    },
+    {
+      "id": 2,
+      "x": 3461,
+      "y": 3136,
+      "width": 2196,
+      "height": 3656
+    },
+    {
+      "id": 3,
+      "x": 54,
+      "y": 54,
+      "width": 2736,
+      "height": 7204
+    },
+    {
+      "id": 4,
+      "x": 2347,
+      "y": 1416,
+      "width": 3753,
+      "height": 2510
+    },
+    {
+      "id": 5,
+      "x": 3288,
+      "y": 421,
+      "width": 1622,
+      "height": 1547
+    },
+    {
+      "id": 6,
+      "x": 1546,
+      "y": 4305,
+      "width": 931,
+      "height": 681
+    }
+  ]
+}

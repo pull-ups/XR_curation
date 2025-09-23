@@ -1,0 +1,57 @@
+{
+  "image_path": "/Users/jerife/mirlab/xr/XR_curation/vision/artwork_images/아테네 학당.jpg",
+  "image_width": 1000,
+  "image_height": 666,
+  "total_boxes": 7,
+  "bounding_boxes": [
+    {
+      "id": 1,
+      "x": 437,
+      "y": 350,
+      "width": 57,
+      "height": 140
+    },
+    {
+      "id": 2,
+      "x": 490,
+      "y": 349,
+      "width": 61,
+      "height": 138
+    },
+    {
+      "id": 3,
+      "x": 503,
+      "y": 471,
+      "width": 155,
+      "height": 101
+    },
+    {
+      "id": 4,
+      "x": 356,
+      "y": 493,
+      "width": 114,
+      "height": 141
+    },
+    {
+      "id": 5,
+      "x": 182,
+      "y": 492,
+      "width": 116,
+      "height": 144
+    },
+    {
+      "id": 6,
+      "x": 152,
+      "y": 132,
+      "width": 74,
+      "height": 157
+    },
+    {
+      "id": 7,
+      "x": 753,
+      "y": 129,
+      "width": 81,
+      "height": 172
+    }
+  ]
+}

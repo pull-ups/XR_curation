@@ -1,5 +1,6 @@
 import sys
 import json
+import os
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QPushButton, QFileDialog, QMessageBox, QHBoxLayout
 from PyQt5.QtGui import QPixmap, QPainter, QPen, QColor
 from PyQt5.QtCore import Qt, QPoint
@@ -16,6 +17,7 @@ class ImageBoundingBoxApp(QMainWindow):
         self.original_pixmap = None
         self.click_points = []  # 현재 클릭한 두 점을 저장
         self.bounding_boxes = []  # 완성된 바운딩 박스들을 저장
+        self.current_mouse_pos = None  # 현재 마우스 위치
         
         self.init_ui()
         
@@ -56,6 +58,8 @@ class ImageBoundingBoxApp(QMainWindow):
         self.image_label.setStyleSheet("border: 1px solid black; background-color: white;")
         self.image_label.setMinimumSize(800, 600)
         self.image_label.mousePressEvent = self.on_image_click
+        self.image_label.mouseMoveEvent = self.on_mouse_move
+        self.image_label.setMouseTracking(True)  # 마우스 추적 활성화
         layout.addWidget(self.image_label)
         
         # 상태 표시 라벨
@@ -88,10 +92,11 @@ class ImageBoundingBoxApp(QMainWindow):
             )
             self.image_label.setPixmap(scaled_pixmap)
             
-            # 상태 초기화
-            self.click_points = []
-            self.bounding_boxes = []
-            self.update_status()
+        # 상태 초기화
+        self.click_points = []
+        self.bounding_boxes = []
+        self.current_mouse_pos = None
+        self.update_status()
             
     def on_image_click(self, event):
         if self.original_pixmap is None:
@@ -115,6 +120,18 @@ class ImageBoundingBoxApp(QMainWindow):
             
             self.update_status()
             # 이미지 업데이트 (점과 박스 그리기)
+            self.update_image_display()
+
+    def on_mouse_move(self, event):
+        """마우스 움직임 추적"""
+        if self.original_pixmap is None:
+            return
+            
+        # 현재 마우스 위치를 이미지 좌표로 변환
+        self.current_mouse_pos = self.convert_to_image_coordinates(event.pos())
+        
+        # 마우스가 이미지 위에 있을 때 항상 보조선 표시
+        if self.current_mouse_pos:
             self.update_image_display()
                 
     def convert_to_image_coordinates(self, label_pos):
@@ -235,6 +252,48 @@ class ImageBoundingBoxApp(QMainWindow):
             height = abs(y2 - y1)
             
             painter.drawRect(int(left), int(top), int(width), int(height))
+        
+        # 보조선 그리기 (마우스가 이미지 위에 있을 때)
+        if self.current_mouse_pos:
+            # 현재 마우스 위치의 스케일된 좌표
+            mouse_x = self.current_mouse_pos.x() * scale_x
+            mouse_y = self.current_mouse_pos.y() * scale_y
+            
+            # 이미지 경계
+            img_width = scaled_pixmap.width()
+            img_height = scaled_pixmap.height()
+            
+            # 기본 마우스 위치 보조선 (연한 빨간색)
+            painter.setPen(QPen(QColor(255, 100, 100), 1, Qt.DashLine))
+            
+            # 마우스 위치에서의 가로 보조선
+            painter.drawLine(0, int(mouse_y), img_width, int(mouse_y))
+            
+            # 마우스 위치에서의 세로 보조선
+            painter.drawLine(int(mouse_x), 0, int(mouse_x), img_height)
+            
+            # 첫 번째 점이 선택된 경우 추가 보조선
+            if len(self.click_points) == 1:
+                painter.setPen(QPen(QColor(255, 0, 0), 2, Qt.DashLine))  # 진한 빨간색 점선
+                
+                # 첫 번째 점의 스케일된 좌표
+                first_point = self.click_points[0]
+                first_x = first_point.x() * scale_x
+                first_y = first_point.y() * scale_y
+                
+                # 가로 보조선 (첫 번째 점의 Y축을 따라)
+                painter.drawLine(0, int(first_y), img_width, int(first_y))
+                
+                # 세로 보조선 (첫 번째 점의 X축을 따라)
+                painter.drawLine(int(first_x), 0, int(first_x), img_height)
+                
+                # 예상 바운딩 박스 미리보기 (매우 연한 색으로)
+                painter.setPen(QPen(QColor(0, 150, 255, 100), 1, Qt.DashLine))
+                left = min(first_x, mouse_x)
+                top = min(first_y, mouse_y)
+                width = abs(mouse_x - first_x)
+                height = abs(mouse_y - first_y)
+                painter.drawRect(int(left), int(top), int(width), int(height))
             
         painter.end()
         self.image_label.setPixmap(scaled_pixmap)
@@ -275,20 +334,48 @@ class ImageBoundingBoxApp(QMainWindow):
             self.update_status()
             self.update_image_display()
         
+    def get_image_filename_without_extension(self):
+        """이미지 파일명에서 확장자를 제거한 이름을 반환"""
+        if not self.image_path:
+            return "unknown"
+        
+        filename = os.path.basename(self.image_path)
+        name_without_extension = os.path.splitext(filename)[0]
+        return name_without_extension
+    
     def save_all_boxes(self):
         """모든 바운딩 박스 정보를 JSON 파일로 저장"""
         if not self.bounding_boxes:
             QMessageBox.warning(self, "경고", "저장할 바운딩 박스가 없습니다.")
             return
-            
-        file_path, _ = QFileDialog.getSaveFileName(
-            self, 
-            "바운딩 박스 정보 저장", 
-            "bounding_boxes.json", 
-            "JSON Files (*.json)"
+        
+        # 이미지 파일명 추출
+        image_name = self.get_image_filename_without_extension()
+        
+        # boxes 폴더 경로 설정
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        boxes_dir = os.path.join(current_dir, "boxes")
+        
+        # boxes 폴더가 없으면 생성
+        if not os.path.exists(boxes_dir):
+            os.makedirs(boxes_dir)
+        
+        # 기본 저장 파일명 설정
+        default_filename = f"{image_name}.json"
+        default_path = os.path.join(boxes_dir, default_filename)
+        
+        # 사용자에게 확인받기
+        reply = QMessageBox.question(
+            self,
+            "저장 확인",
+            f"다음 경로에 바운딩 박스 정보를 저장하시겠습니까?\n\n"
+            f"파일명: {default_filename}\n"
+            f"경로: {boxes_dir}\n\n"
+            f"총 {len(self.bounding_boxes)}개의 바운딩 박스가 저장됩니다.",
+            QMessageBox.Yes | QMessageBox.No
         )
         
-        if file_path:
+        if reply == QMessageBox.Yes:
             try:
                 # 저장할 데이터 구성
                 save_data = {
@@ -299,13 +386,13 @@ class ImageBoundingBoxApp(QMainWindow):
                     "bounding_boxes": self.bounding_boxes
                 }
                 
-                with open(file_path, 'w', encoding='utf-8') as f:
+                with open(default_path, 'w', encoding='utf-8') as f:
                     json.dump(save_data, f, indent=2, ensure_ascii=False)
                     
                 QMessageBox.information(
                     self, 
                     "저장 완료", 
-                    f"{len(self.bounding_boxes)}개의 바운딩 박스 정보가 저장되었습니다:\n{file_path}"
+                    f"{len(self.bounding_boxes)}개의 바운딩 박스 정보가 저장되었습니다:\n{default_path}"
                 )
                 print(f"저장된 바운딩 박스 정보:")
                 for bbox in self.bounding_boxes:
@@ -326,5 +413,5 @@ if __name__ == "__main__":
     main()
 
 """
-python -m get_box
+python -m get_box 
 """

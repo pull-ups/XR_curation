@@ -1,0 +1,57 @@
+{
+  "image_path": "/Users/jerife/mirlab/xr/XR_curation/vision/artwork_images/야경.jpg",
+  "image_width": 1200,
+  "image_height": 976,
+  "total_boxes": 7,
+  "bounding_boxes": [
+    {
+      "id": 1,
+      "x": 294,
+      "y": 566,
+      "width": 144,
+      "height": 286
+    },
+    {
+      "id": 2,
+      "x": 1063,
+      "y": 486,
+      "width": 135,
+      "height": 449
+    },
+    {
+      "id": 3,
+      "x": 462,
+      "y": 435,
+      "width": 201,
+      "height": 532
+    },
+    {
+      "id": 4,
+      "x": 655,
+      "y": 476,
+      "width": 198,
+      "height": 471
+    },
+    {
+      "id": 5,
+      "x": 154,
+      "y": 453,
+      "width": 221,
+      "height": 457
+    },
+    {
+      "id": 6,
+      "x": 776,
+      "y": 516,
+      "width": 164,
+      "height": 341
+    },
+    {
+      "id": 7,
+      "x": 897,
+      "y": 787,
+      "width": 174,
+      "height": 117
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "image_path": "/Users/jerife/mirlab/xr/XR_curation/vision/artwork_images/파리스의 심판.jpg",
+  "image_width": 5707,
+  "image_height": 4226,
+  "total_boxes": 10,
+  "bounding_boxes": [
+    {
+      "id": 1,
+      "x": 24,
+      "y": 3154,
+      "width": 769,
+      "height": 817
+    },
+    {
+      "id": 2,
+      "x": 99,
+      "y": 1803,
+      "width": 700,
+      "height": 892
+    },
+    {
+      "id": 3,
+      "x": 458,
+      "y": 1164,
+      "width": 874,
+      "height": 2436
+    },
+    {
+      "id": 4,
+      "x": 1357,
+      "y": 1164,
+      "width": 743,
+      "height": 2454
+    },
+    {
+      "id": 5,
+      "x": 3123,
+      "y": 2807,
+      "width": 799,
+      "height": 601
+    },
+    {
+      "id": 6,
+      "x": 2199,
+      "y": 1121,
+      "width": 1289,
+      "height": 2720
+    },
+    {
+      "id": 7,
+      "x": 4108,
+      "y": 1257,
+      "width": 272,
+      "height": 230
+    },
+    {
+      "id": 8,
+      "x": 3860,
+      "y": 1728,
+      "width": 149,
+      "height": 211
+    },
+    {
+      "id": 9,
+      "x": 3792,
+      "y": 1474,
+      "width": 1741,
+      "height": 2119
+    },
+    {
+      "id": 10,
+      "x": 3612,
+      "y": 2348,
+      "width": 508,
+      "height": 359
+    }
+  ]
+}

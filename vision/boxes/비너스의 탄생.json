@@ -1,0 +1,43 @@
+{
+  "image_path": "/Users/jerife/mirlab/xr/XR_curation/vision/artwork_images/비너스의 탄생.jpg",
+  "image_width": 1200,
+  "image_height": 754,
+  "total_boxes": 5,
+  "bounding_boxes": [
+    {
+      "id": 1,
+      "x": 212,
+      "y": 91,
+      "width": 249,
+      "height": 167
+    },
+    {
+      "id": 2,
+      "x": 6,
+      "y": 3,
+      "width": 420,
+      "height": 538
+    },
+    {
+      "id": 3,
+      "x": 290,
+      "y": 461,
+      "width": 520,
+      "height": 242
+    },
+    {
+      "id": 4,
+      "x": 490,
+      "y": 52,
+      "width": 269,
+      "height": 631
+    },
+    {
+      "id": 5,
+      "x": 709,
+      "y": 63,
+      "width": 470,
+      "height": 638
+    }
+  ]
+}

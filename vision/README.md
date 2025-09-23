@@ -5,22 +5,30 @@
 ## 워크플로우
 0. SAM 모델 다운로드하여 (링크: https://github.com/facebookresearch/segment-anything?tab=readme-ov-file#model-checkpoints:~:text=or%20vit_h%3A-,ViT%2DH%20SAM%20model.,-vit_l%3A%20ViT), segment-anything 디렉토리에 넣기
 
+0. vision 폴더 안에서 작업
+   ```bash
+   cd vision
+   ```
+
 1. **`get_box.py`**: "설명할 거리가 있는" 객체들에 대한 bounding box를 직접 annotation합니다.
 
    ```bash
-   #  수작업
+   #  수작업해야함 vision/artwork_images 폴더에서 이미지 선택하고 마스킹 하면 vision/boxes안에 json 파일 생김
+   
+   python get_box.py
    ```
 
 2. **`box_to_seg.py`**: SAM input으로 bounding box를 전달하여 객체들에 대한 segmentation mask를 얻습니다.
    ```bash
-   python -m box_to_seg --artwork_name 시녀들
+   # 작업을 하게 되면 
+   python -m box_to_seg --artwork_name "시녀들"
    ```
 
 3. **`contour_visualize.py`**: segmentation mask를 segmentation 테두리(contour)로 변환합니다. 
    - segmentation mask는 이미지 width × height 만큼의 사이즈를 가져 용량이 크지만, contour만 저장하면 용량을 절약할 수 있습니다.
 
    ```bash
-   python -m contour_visualize --artwork_name 시녀들
+   python -m contour_visualize --artwork_name "시녀들"
    ```
 
 4. **Mask Annotation**: `mask_annotation` 폴더에 `[작품명].json`을 생성하여 mask_names와 mask_annotation 정보를 저장합니다.

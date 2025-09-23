@@ -106,5 +106,46 @@ if __name__ == "__main__":
 
 
 """
-python -m box_to_seg --artwork_name 시녀들
+python get_box.py
+
+
+python -m box_to_seg --artwork_name "비너스의 탄생"
+python -m contour_visualize --artwork_name "비너스의 탄생"
+
+
+python -m box_to_seg --artwork_name "성 마태를 부르심"
+python -m contour_visualize --artwork_name "성 마태를 부르심"
+
+
+python -m box_to_seg --artwork_name "시녀들"
+python -m contour_visualize --artwork_name "시녀들"
+
+
+python -m box_to_seg --artwork_name "아담의 창조"
+python -m contour_visualize --artwork_name "아담의 창조"
+
+
+python -m box_to_seg --artwork_name "아테네 학당"
+python -m contour_visualize --artwork_name "아테네 학당"
+
+
+python -m box_to_seg --artwork_name "야경"
+python -m contour_visualize --artwork_name "야경"
+
+
+python -m box_to_seg --artwork_name "최후의 만찬"
+python -m contour_visualize --artwork_name "최후의 만찬"
+
+
+python -m box_to_seg --artwork_name "파리스의 심판"
+python -m contour_visualize --artwork_name "파리스의 심판"
+
+
+python -m box_to_seg --artwork_name "프리마베라"
+python -m contour_visualize --artwork_name "프리마베라"
+
+
+python -m box_to_seg --artwork_name "회화의 기술"
+python -m contour_visualize --artwork_name "회화의 기술"
+
 """

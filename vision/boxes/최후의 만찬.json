@@ -1,0 +1,99 @@
+{
+  "image_path": "/Users/jerife/mirlab/xr/XR_curation/vision/artwork_images/최후의 만찬.jpg",
+  "image_width": 960,
+  "image_height": 480,
+  "total_boxes": 13,
+  "bounding_boxes": [
+    {
+      "id": 1,
+      "x": 52,
+      "y": 207,
+      "width": 96,
+      "height": 136
+    },
+    {
+      "id": 2,
+      "x": 136,
+      "y": 213,
+      "width": 56,
+      "height": 119
+    },
+    {
+      "id": 3,
+      "x": 174,
+      "y": 215,
+      "width": 77,
+      "height": 114
+    },
+    {
+      "id": 4,
+      "x": 419,
+      "y": 213,
+      "width": 145,
+      "height": 117
+    },
+    {
+      "id": 5,
+      "x": 264,
+      "y": 243,
+      "width": 97,
+      "height": 94
+    },
+    {
+      "id": 6,
+      "x": 284,
+      "y": 227,
+      "width": 53,
+      "height": 50
+    },
+    {
+      "id": 7,
+      "x": 328,
+      "y": 228,
+      "width": 97,
+      "height": 96
+    },
+    {
+      "id": 8,
+      "x": 543,
+      "y": 210,
+      "width": 42,
+      "height": 56
+    },
+    {
+      "id": 9,
+      "x": 527,
+      "y": 218,
+      "width": 127,
+      "height": 100
+    },
+    {
+      "id": 10,
+      "x": 605,
+      "y": 203,
+      "width": 103,
+      "height": 72
+    },
+    {
+      "id": 11,
+      "x": 710,
+      "y": 204,
+      "width": 97,
+      "height": 119
+    },
+    {
+      "id": 12,
+      "x": 786,
+      "y": 208,
+      "width": 73,
+      "height": 103
+    },
+    {
+      "id": 13,
+      "x": 850,
+      "y": 209,
+      "width": 105,
+      "height": 123
+    }
+  ]
+}
