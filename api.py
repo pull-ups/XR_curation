@@ -3,118 +3,305 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
-# 기존 CuratorNPC 클래스를 가져옵니다.
-# curation_npc.py가 동일한 디렉터리 또는 파이썬 경로에 있어야 합니다.
-from curation_npc import CuratorNPC
+from curation_types import CurationTypes, ARTWORK_NAMES, ARTWORK_NAME_KR_TO_EN
+from touch_recognition import TouchRecognition
 
 # --- Pydantic 모델 정의 ---
-# 요청 본문의 데이터 구조를 정의합니다.
+class CurationRequest(BaseModel):
+    """큐레이션 타입 라우팅을 위한 요청 모델"""
+    curation_type: int = Field(..., ge=1, le=6, description="큐레이션 타입 (1-6)")
+    art_name: str = Field(..., description="작품명")
+    memory: str = Field(default="", description="이전 대화 기록")
+    viewed_artworks: Optional[List[str]] = Field(default=None, description="이미 본 작품 목록")
+    question: Optional[str] = Field(default=None, description="타입 2에서 사용하는 질문")
+    related_artwork: Optional[str] = Field(default=None, description="타입 3, 6에서 사용하는 연관 작품명")
 
-class ArtworkAttractionRequest(BaseModel):
-    current_section: int
-    viewed_artworks: List[str]
+class TouchRequest(BaseModel):
+    """터치 기반 객체 인식을 위한 요청 모델"""
+    art_name: str = Field(..., description="작품명")
+    x: float = Field(..., ge=0, le=1, description="x 좌표 (정규화: 0~1)")
+    y: float = Field(..., ge=0, le=1, description="y 좌표 (정규화: 0~1)")
 
-class SectionNarrationRequest(BaseModel):
-    current_section: int
-    viewed_artworks: Optional[List[str]] = None
-
-class ArtworkNarrationRequest(BaseModel):
-    art_name: str
-    memory: str = ""
-    viewed_artworks: Optional[List[str]] = None
-
-class RagQuestionRequest(BaseModel):
-    question: str
-    art_name: str
+class ObjectListRequest(BaseModel):
+    """작품의 객체 목록 조회를 위한 요청 모델"""
+    art_name: str = Field(..., description="작품명")
 
 # --- FastAPI 앱 생성 ---
 app = FastAPI(
-    title="Curator NPC API",
-    description="미술관 큐레이터 NPC의 다양한 기능을 API로 제공합니다.",
-    version="1.0.0"
+    title="Curation Types API",
+    description="큐레이션 타입별 나레이션 생성 및 터치 기반 객체 인식 API (Type 1-6 + Touch Recognition)",
+    version="2.0.0"
 )
 
-# --- CuratorNPC 인스턴스 생성 ---
-# curation_npc.py의 main 함수에 있던 경로를 사용합니다.
-# 실제 환경에 맞게 경로를 수정해야 할 수 있습니다.
+# --- CurationTypes 인스턴스 생성 ---
 try:
-    section_data_file = './assets/llm/section_level_data.json'
-    prompts_directory = './prompts'
-    documents_directory = './assets/llm/document'
-    common_and_different_path= './assets/llm/transformed_pair.json'
-
-    curator = CuratorNPC(
-        section_data_path=section_data_file, 
-        common_and_different_path=common_and_different_path,
-        prompts_dir=prompts_directory,
-        documents_dir=documents_directory
-    )
-except FileNotFoundError as e:
-    print(f"오류: 초기화에 필요한 파일을 찾을 수 없습니다. 경로를 확인하세요. {e}")
-    curator = None
+    curation_types = CurationTypes(comparison_data_path='./assets/llm/transformed_pair.json')
+    print("✅ CurationTypes 초기화 완료")
 except Exception as e:
-    print(f"CuratorNPC 초기화 중 오류 발생: {e}")
-    curator = None
+    print(f"❌ CurationTypes 초기화 중 오류 발생: {e}")
+    curation_types = None
+
+# --- TouchRecognition 인스턴스 생성 ---
+try:
+    touch_recognition = TouchRecognition(vision_base_path='./vision')
+    print("✅ TouchRecognition 초기화 완료")
+except Exception as e:
+    print(f"❌ TouchRecognition 초기화 중 오류 발생: {e}")
+    touch_recognition = None
 
 # --- API 엔드포인트 정의 ---
+
+@app.get("/", summary="API 정보")
+def root():
+    """
+    API 기본 정보를 반환합니다.
+    """
+    return {
+        "name": "Curation Types API",
+        "version": "2.0.0",
+        "description": "큐레이션 타입별 나레이션 생성 및 터치 기반 객체 인식 API",
+        "endpoints": {
+            "GET /": "API 정보",
+            "GET /ping": "서버 상태 확인",
+            "GET /artworks": "사용 가능한 작품 목록",
+            "POST /curation": "큐레이션 나레이션 생성 (Type 1-6)",
+            "POST /touch": "터치 좌표로 객체 인식 및 LLM 설명 생성",
+            "POST /objects": "작품의 모든 객체 목록 조회"
+        },
+        "features": {
+            "curation_types": [
+                "Type 1: 작품 핵심 맥락 (120~170자)",
+                "Type 2: 간단한 정보제공 (질문 기반)",
+                "Type 3: 작품 비교제공",
+                "Type 4: 배경지식 제공 (3문장)",
+                "Type 5: 배경지식 + 느낌 묻기 (4문장)",
+                "Type 6: 조형요소 + 타인의견 + 관계짓기 (4문장)"
+            ],
+            "touch_recognition": "작품 터치 시 객체 인식 → LLM 설명 생성"
+        }
+    }
 
 @app.get("/ping", summary="서버 상태 확인")
 def ping():
     """
     서버가 정상적으로 작동하는지 확인하는 간단한 핑 테스트입니다.
     """
-    return {"message": "pong", "status": "healthy"}
+    return {
+        "message": "pong",
+        "status": "healthy",
+        "curation_types_loaded": curation_types is not None,
+        "touch_recognition_loaded": touch_recognition is not None
+    }
 
-@app.post("/section-narration", summary="섹션 안내 나레이션 생성")
-def get_section_narration(request: SectionNarrationRequest):
+@app.post("/curation", summary="큐레이션 타입별 나레이션 생성")
+def route_curation_endpoint(request: CurationRequest):
     """
-    현재 섹션에 대한 안내 메시지를 생성합니다.
-    - **current_section**: 현재 섹션 번호 (1 또는 2)
-    - **viewed_artworks**: (선택) 이전에 감상한 작품 목록
-    """
-    if not curator:
-        raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
+    큐레이션 타입(1-6)에 따라 적절한 나레이션을 생성합니다.
     
-    previous_work = request.viewed_artworks[-1] if request.viewed_artworks else None
-    return {"response": curator.get_section_narration(request.current_section, previous_work)}
+    - **Type 1**: 작품 설명의 핵심 맥락 제공 (120~170자)
+    - **Type 2**: 간단한 정보제공 (질문 필요)
+    - **Type 3**: 간단한 비교제공 (연관 작품 필요)
+    - **Type 4**: 작품 배경지식 제공 (3문장)
+    - **Type 5**: 배경지식 + 관람자 느낌 묻기 (4문장)
+    - **Type 6**: 조형요소 + 타인의견 + 관계짓기 (4문장)
+    """
+    if not curation_types:
+        raise HTTPException(status_code=500, detail="CurationTypes 초기화에 실패했습니다.")
+    
+    # 작품명 검증
+    if request.art_name not in ARTWORK_NAMES:
+        raise HTTPException(
+            status_code=400, 
+            detail=f"유효하지 않은 작품명입니다. 가능한 작품: {', '.join(ARTWORK_NAMES)}"
+        )
+    
+    # 타입별 필수 파라미터 검증
+    if request.curation_type == 2 and not request.question:
+        raise HTTPException(status_code=400, detail="타입 2는 'question' 파라미터가 필요합니다.")
+    
+    if request.curation_type == 3 and not request.related_artwork:
+        raise HTTPException(status_code=400, detail="타입 3은 'related_artwork' 파라미터가 필요합니다.")
+    
+    # 연관 작품명 검증 (있는 경우)
+    if request.related_artwork and request.related_artwork not in ARTWORK_NAMES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"유효하지 않은 연관 작품명입니다. 가능한 작품: {', '.join(ARTWORK_NAMES)}"
+        )
+    
+    try:
+        # route_curation 호출
+        kwargs = {}
+        if request.question:
+            kwargs['question'] = request.question
+        if request.related_artwork:
+            kwargs['related_artwork'] = request.related_artwork
+        
+        response = curation_types.route_curation(
+            curation_type=request.curation_type,
+            art_name=request.art_name,
+            memory=request.memory,
+            viewed_artworks=request.viewed_artworks,
+            **kwargs
+        )
+        
+        return {
+            "response": response
+        }
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"큐레이션 생성 중 오류 발생: {str(e)}")
 
-@app.post("/artwork-attraction", summary="작품 흥미 유발 나레이션 생성")
-def get_artwork_attraction_narration(request: ArtworkAttractionRequest):
+@app.get("/artworks", summary="사용 가능한 작품 목록 조회")
+def get_artwork_list():
     """
-    현재 섹션에서 아직 관람하지 않은 작품에 대한 흥미 유발 질문을 생성합니다.
+    시스템에서 사용 가능한 모든 작품 목록을 반환합니다.
     """
-    if not curator:
-        raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
-    return {"response": curator.get_artwork_attraction_narration(request.current_section, request.viewed_artworks)}
+    return {"artworks": ARTWORK_NAMES}
 
-@app.post("/artwork-narration", summary="작품 설명 나레이션 생성")
-def get_artwork_narration(request: ArtworkNarrationRequest):
+@app.post("/touch", summary="터치 좌표로 객체 인식 및 설명 생성")
+def touch_object_recognition(request: TouchRequest):
     """
-    작품에 대한 설명을 생성합니다. 이전 감상 작품이 있으면 비교 설명합니다.
+    작품에서 사용자가 터치한 좌표(x, y)를 기반으로 해당 위치의 객체를 인식하고 
+    LLM을 통해 객체에 대한 설명을 생성합니다.
+    
+    - **art_name**: 작품명 (한글)
+    - **x**: x 좌표 (0~1 사이의 정규화된 값, 0=왼쪽, 1=오른쪽)
+    - **y**: y 좌표 (0~1 사이의 정규화된 값, 0=위, 1=아래)
+    
+    반환값:
+    - **found**: 객체를 찾았는지 여부
+    - **object_name**: 객체 이름
+    - **description**: LLM이 생성한 객체 설명
     """
-    if not curator:
-        raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
-    return {"response": curator.get_artwork_narration(request.art_name, request.memory, request.viewed_artworks)}
+    if not touch_recognition:
+        raise HTTPException(status_code=500, detail="TouchRecognition 초기화에 실패했습니다.")
+    
+    if not curation_types:
+        raise HTTPException(status_code=500, detail="CurationTypes 초기화에 실패했습니다.")
+    
+    # 작품명 검증
+    if request.art_name not in ARTWORK_NAMES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"유효하지 않은 작품명입니다. 가능한 작품: {', '.join(ARTWORK_NAMES)}"
+        )
+    
+    try:
+        # 객체 인식
+        print(f"🔍 객체 인식 시작: 작품={request.art_name}, 좌표=({request.x}, {request.y})")
+        result = touch_recognition.find_object_at_position(
+            art_name=request.art_name,
+            x=request.x,
+            y=request.y,
+            coordinate_type="normalized"
+        )
+        
+        if not result:
+            print(f"❌ 객체를 찾을 수 없음")
+            return {
+                "found": False,
+                "message": "해당 위치에 인식된 객체가 없습니다."
+            }
+        
+        # 객체를 찾았으면 LLM으로 설명 생성
+        mask_id = result['mask_id']
+        object_name = result['name']
+        object_description = result['description']
+        art_name_en = ARTWORK_NAME_KR_TO_EN.get(request.art_name, request.art_name)
+        print(f"✅ 객체 발견: ID={mask_id}, {object_name}")
+        
+        # LLM 프롬프트 생성
+        prompt = f"""당신은 미술관 큐레이터입니다.
 
-@app.post("/rag-question", summary="RAG 기반 질의응답")
-def answer_question_with_rag(request: RagQuestionRequest):
+작품명: {art_name_en} (한국어 작품명: {request.art_name})
+객체명: {object_name}
+객체 정보: {object_description}
+
+관람객이 작품에서 "{object_name}"을(를) 터치했습니다.
+이 객체에 대해 간결하게 설명해주세요.
+
+**분량 제약: 정확히 1문장**
+- 반드시 한 문장으로만 작성하세요
+- 객체의 핵심 의미와 역할을 간결하게 설명하세요
+- "이 작품에서 <객체명>은" 형식으로 시작하세요
+
+**중요: TTS(음성 합성)를 위한 출력 형식**
+- 자연스러운 구어체로 작성하세요
+- 따옴표, 괄호, 특수기호 등은 사용하지 마세요
+- 음성으로 읽었을 때 자연스럽게 들리도록 작성하세요
+- 문장의 종결어미는 반드시 "~니다" 체를 사용하세요 (예: ~합니다, ~입니다, ~습니다)
+- 작품명을 언급할 때는 반드시 한국어 작품명 '{request.art_name}'을(를) 사용하고 따옴표 없이 자연스럽게 말하세요
+- 객체명을 언급할 때도 따옴표 없이 자연스럽게 말하세요
+
+예시: "이 작품에서 마르가리타 공주는 이 작품의 중심 인물로 당시 스페인 왕실의 공주이며 화가가 중앙에 배치하여 그녀의 중요성을 강조했습니다."
+"""
+        
+        # LLM 호출
+        print(f"🤖 LLM 설명 생성 시작...")
+        llm_description = curation_types._get_llm_response(prompt)
+        print(f"✅ LLM 설명 생성 완료: {llm_description[:50]}...")
+        
+        return {
+            "found": True,
+            "mask_id": mask_id,
+            "object_name": object_name,
+            "object_info": object_description,
+            "description": llm_description,
+            "art_name": request.art_name,
+            "art_name_en": art_name_en
+        }
+    
+    except Exception as e:
+        print(f"❌ 에러 발생: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"객체 인식 및 설명 생성 중 오류 발생: {str(e)}")
+
+@app.post("/objects", summary="작품의 모든 객체 목록 조회")
+def get_all_objects(request: ObjectListRequest):
     """
-    작품에 대한 사용자의 질문에 RAG를 사용하여 답변합니다.
+    특정 작품에 포함된 모든 객체의 목록을 반환합니다.
+    
+    - **art_name**: 작품명 (한글)
+    
+    반환값:
+    - **art_name**: 작품명 (한글)
+    - **art_name_en**: 작품명 (영어)
+    - **object_count**: 객체 개수
+    - **objects**: 객체 리스트 (mask_id, name, description)
     """
-    if not curator:
-        raise HTTPException(status_code=500, detail="서버 초기화에 실패했습니다.")
-    if not curator.rag_chains:
-        raise HTTPException(status_code=503, detail="RAG 시스템을 사용할 수 없습니다.")
-    answer = curator.answer_question_with_rag(request.question, request.art_name)
-    return {"response": answer}
+    if not touch_recognition:
+        raise HTTPException(status_code=500, detail="TouchRecognition 초기화에 실패했습니다.")
+    
+    # 작품명 검증
+    if request.art_name not in ARTWORK_NAMES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"유효하지 않은 작품명입니다. 가능한 작품: {', '.join(ARTWORK_NAMES)}"
+        )
+    
+    try:
+        # 모든 객체 가져오기
+        objects = touch_recognition.get_all_objects(request.art_name)
+        
+        return {
+            "art_name": request.art_name,
+            "art_name_en": objects[0]["art_name_en"] if objects else "",
+            "object_count": len(objects),
+            "objects": objects
+        }
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"객체 목록 조회 중 오류 발생: {str(e)}")
 
 # --- API 서버 실행 ---
-# 이 파일을 직접 실행할 때 uvicorn 서버를 구동합니다.
 if __name__ == "__main__":
-    print("API 서버 실행 중...")
-    # host="0.0.0.0"으로 설정하면 외부에서도 접속 가능합니다.
+    print("\n" + "🎨" * 30)
+    print("Curation Types API 서버 시작")
+    print("🎨" * 30)
+    print(f"\n📍 서버 주소: http://localhost:14723")
+    print(f"📍 API 문서: http://localhost:14723/docs")
+    print(f"📍 ReDoc: http://localhost:14723/redoc\n")
+    
     uvicorn.run(app, host="0.0.0.0", port=14723)
-
-"""
-python -m api
-"""
