@@ -100,7 +100,7 @@ class CurationRequest(BaseModel):
     art_name: str  # required
     memory: str = ""  # optional, default=""
     viewed_artworks: Optional[List[str]] = None  # optional
-    question: Optional[str] = None  # 타입 2 전용
+    question: Optional[str] = None  # 모든 타입에서 선택적으로 사용 가능
     related_artwork: Optional[str] = None  # 타입 3, 6 전용
 ```
 
@@ -112,7 +112,7 @@ class CurationRequest(BaseModel):
 | `art_name` | `str` | ✅ | 작품명 (10개 중 하나) |
 | `memory` | `str` | ❌ | 이전 대화 기록 (중복 방지용) |
 | `viewed_artworks` | `List[str]` | ❌ | 관람한 작품 목록 |
-| `question` | `str` | 조건부 | 타입 2에서 필수 |
+| `question` | `str` | ❌ | 모든 타입에서 선택적. 질문이 있으면 먼저 간단히 답변 후 원래 응답 제공 |
 | `related_artwork` | `str` | 조건부 | 타입 3에서 필수, 타입 6에서 선택 |
 
 ### Response Model
@@ -147,7 +147,8 @@ POST /curation
   "curation_type": 1,
   "art_name": "시녀들",
   "memory": "",  # optional
-  "viewed_artworks": []  # optional
+  "viewed_artworks": [],  # optional
+  "question": "이 작품의 화가는 누구인가요?"  # optional
 }
 ```
 
@@ -163,11 +164,29 @@ POST /curation
 #### 선택 파라미터
 - `memory`: 이전 설명 (중복 방지)
 - `viewed_artworks`: 관람 이력
+- `question`: 관람객의 질문 (질문이 있으면 먼저 간단히 답변 후 핵심 설명 제공)
 
-#### Example Response
+#### Example Response (질문 없음)
 ```json
 {
   "response": "시녀들은 관찰자와 피관찰자 간의 시선의 교차를 탐구합니다. 복잡한 구도로 인물들이 상호작용하며, 색채에서 고요한 톤과 대비를 통해 깊이감을 표현합니다..."
+}
+```
+
+#### Example Response (질문 있음)
+**Request**:
+```json
+{
+  "curation_type": 1,
+  "art_name": "시녀들",
+  "question": "이 작품의 화가는 누구인가요?"
+}
+```
+
+**Response**:
+```json
+{
+  "response": "이 작품의 화가는 디에고 벨라스케스입니다. 시녀들은 관찰자와 피관찰자 간의 시선의 교차를 탐구합니다..."
 }
 ```
 
@@ -198,7 +217,7 @@ POST /curation
 {
   "curation_type": 2,
   "art_name": "최후의 만찬",
-  "question": "이 작품을 그린 화가는 누구인가요?",  # required
+  "question": "이 작품을 그린 화가는 누구인가요?",  # optional
   "memory": "",  # optional
   "viewed_artworks": []  # optional
 }
@@ -212,23 +231,47 @@ POST /curation
 #### 필수 파라미터
 - `curation_type`: `2`
 - `art_name`: 유효한 작품명
-- `question`: 사용자 질문 문자열
 
 #### 선택 파라미터
+- `question`: 사용자 질문 문자열 (질문이 있으면 먼저 간단히 답변 후 원래 응답 제공)
 - `memory`: 이전 설명
 - `viewed_artworks`: 관람 이력
 
-#### Example Response
+#### Example Response (질문 없음)
+**Request**:
 ```json
 {
-  "response": "작가가 궁금하시군요. 이 작품은 레오나르도 다 빈치가 그렸습니다. 작품의 배경에 대해 더 듣고 싶으신가요, 아니면 인물들의 의미를 알고 싶으신가요?"
+  "curation_type": 2,
+  "art_name": "최후의 만찬"
 }
 ```
 
-#### Validation
-- `question` 없이 타입 2 호출 시 → `400 Bad Request`
+**Response**:
+```json
+{
+  "response": "이 작품에 대해 어떤 부분이 궁금하신가요? 작가에 대해 듣고 싶으신가요, 아니면 작품의 배경에 대해 알고 싶으신가요?"
+}
+```
+
+#### Example Response (질문 있음)
+**Request**:
+```json
+{
+  "curation_type": 2,
+  "art_name": "최후의 만찬",
+  "question": "이 작품을 그린 화가는 누구인가요?"
+}
+```
+
+**Response**:
+```json
+{
+  "response": "이 작품은 레오나르도 다 빈치가 그렸습니다. 작가가 궁금하시군요. 작품의 배경에 대해 더 듣고 싶으신가요, 아니면 인물들의 의미를 알고 싶으신가요?"
+}
+```
 
 ---
+
 
 ### 타입 3: 질문응답 flat-2 (단순비교)
 
@@ -243,7 +286,8 @@ POST /curation
   "art_name": "프리마베라",
   "related_artwork": "비너스의 탄생",  # required
   "memory": "",  # optional
-  "viewed_artworks": ["비너스의 탄생"]  # optional
+  "viewed_artworks": ["비너스의 탄생"],  # optional
+  "question": "두 작품 모두 같은 화가가 그렸나요?"  # optional
 }
 ```
 
@@ -258,6 +302,7 @@ POST /curation
 - `related_artwork`: 비교할 작품명
 
 #### 선택 파라미터
+- `question`: 관람객의 질문 (질문이 있으면 먼저 간단히 답변 후 비교 설명 제공)
 - `memory`: 이전 설명
 - `viewed_artworks`: 관람 이력
 
@@ -265,10 +310,28 @@ POST /curation
 - 작품 비교 데이터: `assets/llm/transformed_pair.json`
 - 키 형식: `"{작품1}-{작품2}"` 또는 `"{작품2}-{작품1}"`
 
-#### Example Response
+#### Example Response (질문 없음)
 ```json
 {
   "response": "프리마베라와 비너스의 탄생은 모두 보티첼리가 그린 신화 주제 작품이지만, 프리마베라는 여러 인물이 복잡하게 구성된 반면 비너스의 탄생은 중심 인물에 집중합니다. 더 자세히 알아보시겠습니까?"
+}
+```
+
+#### Example Response (질문 있음)
+**Request**:
+```json
+{
+  "curation_type": 3,
+  "art_name": "프리마베라",
+  "related_artwork": "비너스의 탄생",
+  "question": "두 작품 모두 같은 화가가 그렸나요?"
+}
+```
+
+**Response**:
+```json
+{
+  "response": "네, 두 작품 모두 산드로 보티첼리가 그린 작품입니다. 프리마베라와 비너스의 탄생은 모두 보티첼리가 그린 신화 주제 작품이지만, 프리마베라는 여러 인물이 복잡하게 구성된 반면 비너스의 탄생은 중심 인물에 집중합니다. 더 자세히 알아보시겠습니까?"
 }
 ```
 
@@ -290,7 +353,8 @@ POST /curation
   "curation_type": 4,
   "art_name": "아담의 창조",
   "memory": "",  # optional
-  "viewed_artworks": []  # optional
+  "viewed_artworks": [],  # optional
+  "question": "이 작품이 그려진 시대는 언제인가요?"  # optional
 }
 ```
 
@@ -304,13 +368,31 @@ POST /curation
 - `art_name`: 유효한 작품명
 
 #### 선택 파라미터
+- `question`: 관람객의 질문 (질문이 있으면 먼저 간단히 답변 후 배경지식 제공)
 - `memory`: 이전 설명
 - `viewed_artworks`: 관람 이력
 
-#### Example Response
+#### Example Response (질문 없음)
 ```json
 {
   "response": "이 작품은 1508년부터 1512년 사이에 미켈란젤로에 의해 바티칸 시스티나 성당 천장에 그려졌습니다. 르네상스 시대를 대표하는 걸작으로, 인간 중심의 세계관과 신의 창조를 동시에 표현합니다. 당시 교황 율리오 2세의 의뢰로 제작되었으며, 성서의 창세기를 시각화한 대규모 프레스코화의 일부입니다."
+}
+```
+
+#### Example Response (질문 있음)
+**Request**:
+```json
+{
+  "curation_type": 4,
+  "art_name": "아담의 창조",
+  "question": "이 작품이 그려진 시대는 언제인가요?"
+}
+```
+
+**Response**:
+```json
+{
+  "response": "이 작품은 1508년부터 1512년 사이에 그려졌습니다. 이 작품은 1508년부터 1512년 사이에 미켈란젤로에 의해 바티칸 시스티나 성당 천장에 그려졌습니다. 르네상스 시대를 대표하는 걸작으로, 인간 중심의 세계관과 신의 창조를 동시에 표현합니다..."
 }
 ```
 
@@ -328,7 +410,8 @@ POST /curation
   "curation_type": 5,
   "art_name": "야경",
   "memory": "",  # optional
-  "viewed_artworks": []  # optional
+  "viewed_artworks": [],  # optional
+  "question": "이 작품의 주요 특징은 무엇인가요?"  # optional
 }
 ```
 
@@ -343,13 +426,31 @@ POST /curation
 - `art_name`: 유효한 작품명
 
 #### 선택 파라미터
+- `question`: 관람객의 질문 (질문이 있으면 먼저 간단히 답변 후 배경지식 및 질문 제공)
 - `memory`: 이전 설명
 - `viewed_artworks`: 관람 이력
 
-#### Example Response
+#### Example Response (질문 없음)
 ```json
 {
   "response": "야경은 1642년 렘브란트가 그린 작품으로 네덜란드 바로크 시대를 대표합니다. 암스테르담 시민 방위대의 모습을 담았으며, 극적인 명암 대비 기법인 키아로스쿠로를 사용했습니다. 당시 네덜란드는 황금시대로 불리며 경제적 번영과 문화적 발전을 이루었습니다. 이 작품의 역동적인 구도와 빛의 사용이 당신에게는 어떤 느낌을 줍니까?"
+}
+```
+
+#### Example Response (질문 있음)
+**Request**:
+```json
+{
+  "curation_type": 5,
+  "art_name": "야경",
+  "question": "이 작품의 주요 특징은 무엇인가요?"
+}
+```
+
+**Response**:
+```json
+{
+  "response": "이 작품의 주요 특징은 극적인 명암 대비 기법입니다. 야경은 1642년 렘브란트가 그린 작품으로 네덜란드 바로크 시대를 대표합니다. 암스테르담 시민 방위대의 모습을 담았으며, 극적인 명암 대비 기법인 키아로스쿠로를 사용했습니다. 당시 네덜란드는 황금시대로 불리며 경제적 번영과 문화적 발전을 이루었습니다. 이 작품의 역동적인 구도와 빛의 사용이 당신에게는 어떤 느낌을 줍니까?"
 }
 ```
 
@@ -368,7 +469,8 @@ POST /curation
   "art_name": "프리마베라",
   "related_artwork": "비너스의 탄생",  # optional
   "memory": "",  # optional
-  "viewed_artworks": ["비너스의 탄생"]  # optional
+  "viewed_artworks": ["비너스의 탄생"],  # optional
+  "question": "이 작품의 주제는 무엇인가요?"  # optional
 }
 ```
 
@@ -384,6 +486,7 @@ POST /curation
 - `art_name`: 유효한 작품명
 
 #### 선택 파라미터
+- `question`: 관람객의 질문 (질문이 있으면 먼저 간단히 답변 후 타인의견 및 관계짓기 제공)
 - `related_artwork`: 비교할 작품 (없으면 `viewed_artworks`에서 자동 선택)
 - `memory`: 이전 설명
 - `viewed_artworks`: 관람 이력
@@ -398,10 +501,28 @@ if not related_artwork and viewed_artworks:
 #### Data Source
 - 작품 비교 데이터: `assets/llm/transformed_pair.json` (있으면 사용)
 
-#### Example Response
+#### Example Response (질문 없음)
 ```json
 {
   "response": "많은 관람객들이 프리마베라의 화려한 색채와 섬세한 인물 표현에서 봄의 생명력을 느낀다고 말합니다. 비너스의 탄생과 비교하면 두 작품 모두 신화를 다루지만 프리마베라는 더 복잡한 구성과 풍부한 상징을 담고 있습니다. 당신은 이러한 생명력이 당신의 경험이나 가치관과도 연결된다고 느끼십니까?"
+}
+```
+
+#### Example Response (질문 있음)
+**Request**:
+```json
+{
+  "curation_type": 6,
+  "art_name": "프리마베라",
+  "related_artwork": "비너스의 탄생",
+  "question": "이 작품의 주제는 무엇인가요?"
+}
+```
+
+**Response**:
+```json
+{
+  "response": "이 작품은 봄의 신화를 주제로 다룹니다. 많은 관람객들이 프리마베라의 화려한 색채와 섬세한 인물 표현에서 봄의 생명력을 느낀다고 말합니다. 비너스의 탄생과 비교하면 두 작품 모두 신화를 다루지만 프리마베라는 더 복잡한 구성과 풍부한 상징을 담고 있습니다. 당신은 이러한 생명력이 당신의 경험이나 가치관과도 연결된다고 느끼십니까?"
 }
 ```
 
@@ -581,19 +702,13 @@ for obj in result['objects']:
 }
 ```
 
-#### 필수 파라미터 누락 (타입 2)
+#### 유효하지 않은 연관 작품명 (타입 3)
 ```json
 {
-  "detail": "타입 2는 'question' 파라미터가 필요합니다."
+  "detail": "유효하지 않은 연관 작품명입니다. 가능한 작품: 프리마베라, 비너스의 탄생, ..."
 }
 ```
 
-#### 필수 파라미터 누락 (타입 3)
-```json
-{
-  "detail": "타입 3은 'related_artwork' 파라미터가 필요합니다."
-}
-```
 
 #### CurationTypes 초기화 실패
 ```json
@@ -613,7 +728,7 @@ import requests
 
 BASE_URL = "http://localhost:14723"
 
-# 타입 1: 핵심 맥락
+# 타입 1: 핵심 맥락 (질문 없음)
 response = requests.post(
     f"{BASE_URL}/curation",
     json={
@@ -623,7 +738,18 @@ response = requests.post(
 )
 print(response.json()["response"])
 
-# 타입 2: 질문 답변
+# 타입 1: 핵심 맥락 (질문 있음)
+response = requests.post(
+    f"{BASE_URL}/curation",
+    json={
+        "curation_type": 1,
+        "art_name": "시녀들",
+        "question": "이 작품의 화가는 누구인가요?"
+    }
+)
+print(response.json()["response"])
+
+# 타입 2: 질문 답변 (질문 있음)
 response = requests.post(
     f"{BASE_URL}/curation",
     json={
@@ -634,13 +760,14 @@ response = requests.post(
 )
 print(response.json()["response"])
 
-# 타입 3: 비교
+# 타입 3: 비교 (질문 있음)
 response = requests.post(
     f"{BASE_URL}/curation",
     json={
         "curation_type": 3,
         "art_name": "프리마베라",
-        "related_artwork": "비너스의 탄생"
+        "related_artwork": "비너스의 탄생",
+        "question": "두 작품 모두 같은 화가가 그렸나요?"
     }
 )
 print(response.json()["response"])
@@ -657,7 +784,16 @@ curl -X POST "http://localhost:14723/curation" \
     "art_name": "시녀들"
   }'
 
-# 타입 2
+# 타입 1 (질문 있음)
+curl -X POST "http://localhost:14723/curation" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "curation_type": 1,
+    "art_name": "시녀들",
+    "question": "이 작품의 화가는 누구인가요?"
+  }'
+
+# 타입 2 (질문 있음)
 curl -X POST "http://localhost:14723/curation" \
   -H "Content-Type: application/json" \
   -d '{
@@ -665,12 +801,22 @@ curl -X POST "http://localhost:14723/curation" \
     "art_name": "최후의 만찬",
     "question": "이 작품을 그린 화가는 누구인가요?"
   }'
+
+# 타입 3 (질문 있음)
+curl -X POST "http://localhost:14723/curation" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "curation_type": 3,
+    "art_name": "프리마베라",
+    "related_artwork": "비너스의 탄생",
+    "question": "두 작품 모두 같은 화가가 그렸나요?"
+  }'
 ```
 
 ### JavaScript (fetch)
 
 ```javascript
-// 타입 1
+// 타입 1 (질문 없음)
 fetch('http://localhost:14723/curation', {
   method: 'POST',
   headers: {
@@ -684,7 +830,22 @@ fetch('http://localhost:14723/curation', {
 .then(response => response.json())
 .then(data => console.log(data.response));
 
-// 타입 6 (연관작품 자동 선택)
+// 타입 1 (질문 있음)
+fetch('http://localhost:14723/curation', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    curation_type: 1,
+    art_name: '시녀들',
+    question: '이 작품의 화가는 누구인가요?'
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data.response));
+
+// 타입 6 (연관작품 자동 선택, 질문 있음)
 fetch('http://localhost:14723/curation', {
   method: 'POST',
   headers: {
@@ -693,7 +854,8 @@ fetch('http://localhost:14723/curation', {
   body: JSON.stringify({
     curation_type: 6,
     art_name: '프리마베라',
-    viewed_artworks: ['비너스의 탄생', '파리스의 심판']
+    viewed_artworks: ['비너스의 탄생', '파리스의 심판'],
+    question: '이 작품의 주제는 무엇인가요?'
   })
 })
 .then(response => response.json())

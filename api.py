@@ -1,5 +1,7 @@
 import uvicorn
 from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
@@ -49,10 +51,51 @@ except Exception as e:
     print(f"❌ TouchRecognition 초기화 중 오류 발생: {e}")
     touch_recognition = None
 
+# --- 정적 파일 서빙 설정 ---
+import os
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.exists(static_dir):
+    app.mount("/static", StaticFiles(directory=static_dir), name="static")
+
 # --- API 엔드포인트 정의 ---
 
-@app.get("/", summary="API 정보")
+@app.get("/", summary="웹 인터페이스")
 def root():
+    """
+    HTML 웹 인터페이스를 반환합니다.
+    """
+    index_path = os.path.join(static_dir, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    else:
+        # 정적 파일이 없으면 API 정보 반환
+        return {
+            "name": "Curation Types API",
+            "version": "2.0.0",
+            "description": "큐레이션 타입별 나레이션 생성 및 터치 기반 객체 인식 API",
+            "endpoints": {
+                "GET /": "웹 인터페이스",
+                "GET /ping": "서버 상태 확인",
+                "GET /artworks": "사용 가능한 작품 목록",
+                "POST /curation": "큐레이션 나레이션 생성 (Type 1-6)",
+                "POST /touch": "터치 좌표로 객체 인식 및 LLM 설명 생성",
+                "POST /objects": "작품의 모든 객체 목록 조회"
+            },
+            "features": {
+                "curation_types": [
+                    "Type 1: 작품 핵심 맥락 (120~170자)",
+                    "Type 2: 간단한 정보제공 (질문 기반)",
+                    "Type 3: 작품 비교제공",
+                    "Type 4: 배경지식 제공 (3문장)",
+                    "Type 5: 배경지식 + 느낌 묻기 (4문장)",
+                    "Type 6: 조형요소 + 타인의견 + 관계짓기 (4문장)"
+                ],
+                "touch_recognition": "작품 터치 시 객체 인식 → LLM 설명 생성"
+            }
+        }
+
+@app.get("/api/info", summary="API 정보")
+def api_info():
     """
     API 기본 정보를 반환합니다.
     """
@@ -61,7 +104,8 @@ def root():
         "version": "2.0.0",
         "description": "큐레이션 타입별 나레이션 생성 및 터치 기반 객체 인식 API",
         "endpoints": {
-            "GET /": "API 정보",
+            "GET /": "웹 인터페이스",
+            "GET /api/info": "API 정보",
             "GET /ping": "서버 상태 확인",
             "GET /artworks": "사용 가능한 작품 목록",
             "POST /curation": "큐레이션 나레이션 생성 (Type 1-6)",
@@ -99,11 +143,14 @@ def route_curation_endpoint(request: CurationRequest):
     큐레이션 타입(1-6)에 따라 적절한 나레이션을 생성합니다.
     
     - **Type 1**: 작품 설명의 핵심 맥락 제공 (120~170자)
-    - **Type 2**: 간단한 정보제공 (질문 필요)
-    - **Type 3**: 간단한 비교제공 (연관 작품 필요)
-    - **Type 4**: 작품 배경지식 제공 (3문장)
-    - **Type 5**: 배경지식 + 관람자 느낌 묻기 (4문장)
-    - **Type 6**: 조형요소 + 타인의견 + 관계짓기 (4문장)
+    - **Type 2**: 간단한 정보제공 (질문 선택적 - 질문이 있으면 먼저 간단히 답변 후 원래 응답)
+    - **Type 3**: 간단한 비교제공 (연관 작품 필요, 질문 선택적)
+    - **Type 4**: 작품 배경지식 제공 (3문장, 질문 선택적)
+    - **Type 5**: 배경지식 + 관람자 느낌 묻기 (4문장, 질문 선택적)
+    - **Type 6**: 조형요소 + 타인의견 + 관계짓기 (4문장, 질문 선택적)
+    
+    모든 타입에서 question 파라미터를 선택적으로 전달할 수 있으며, 
+    질문이 있으면 먼저 간단히 답변한 후 원래 설계대로 응답합니다.
     """
     if not curation_types:
         raise HTTPException(status_code=500, detail="CurationTypes 초기화에 실패했습니다.")
@@ -116,9 +163,6 @@ def route_curation_endpoint(request: CurationRequest):
         )
     
     # 타입별 필수 파라미터 검증
-    if request.curation_type == 2 and not request.question:
-        raise HTTPException(status_code=400, detail="타입 2는 'question' 파라미터가 필요합니다.")
-    
     if request.curation_type == 3 and not request.related_artwork:
         raise HTTPException(status_code=400, detail="타입 3은 'related_artwork' 파라미터가 필요합니다.")
     
@@ -301,6 +345,7 @@ if __name__ == "__main__":
     print("Curation Types API 서버 시작")
     print("🎨" * 30)
     print(f"\n📍 서버 주소: http://localhost:14723")
+    print(f"📍 웹 인터페이스: http://localhost:14723/")
     print(f"📍 API 문서: http://localhost:14723/docs")
     print(f"📍 ReDoc: http://localhost:14723/redoc\n")
     

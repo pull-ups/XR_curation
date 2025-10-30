@@ -52,12 +52,13 @@ class CurationTypes:
     6가지 큐레이션 타입에 따라 다른 방식의 나레이션을 생성합니다.
     """
     
-    def __init__(self, api_key=None, comparison_data_path="assets/llm/transformed_pair.json"):
+    def __init__(self, api_key=None, comparison_data_path="assets/llm/transformed_pair.json", prompts_dir="prompts"):
         """
         CurationTypes 클래스를 초기화합니다.
         
         :param api_key: OpenAI API 키. None이면 환경 변수에서 찾습니다.
         :param comparison_data_path: 작품 비교 데이터 JSON 파일 경로
+        :param prompts_dir: 프롬프트 파일들이 있는 디렉토리 경로
         """
         if api_key is None:
             api_key = os.getenv("OPENAI_API_KEY")
@@ -69,6 +70,7 @@ class CurationTypes:
             )
         
         self.client = OpenAI(api_key=api_key)
+        self.prompts_dir = prompts_dir
         
         # 작품 비교 데이터 로드
         self.comparison_data = {}
@@ -79,6 +81,20 @@ class CurationTypes:
             print(f"경고: 비교 데이터 파일을 찾을 수 없습니다: {comparison_data_path}")
         except json.JSONDecodeError:
             print(f"경고: 비교 데이터 파일을 읽을 수 없습니다: {comparison_data_path}")
+    
+    def _load_prompt(self, filename):
+        """
+        프롬프트 파일을 읽어오는 내부 메서드
+        
+        :param filename: 프롬프트 파일명 (예: "prompt_1.txt")
+        :return: 프롬프트 문자열
+        """
+        filepath = os.path.join(self.prompts_dir, filename)
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                return f.read()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"프롬프트 파일을 찾을 수 없습니다: {filepath}")
     
     def _get_llm_response(self, prompt):
         """
@@ -112,94 +128,108 @@ class CurationTypes:
         else:
             return None
     
-    def curation_type_1(self, art_name, memory="", viewed_artworks=None):
+    def _get_question_answer(self, art_name, question, memory=""):
+        """
+        사용자 질문에 대한 간단한 답변을 생성하는 헬퍼 메서드
+        
+        :param art_name: 작품명
+        :param question: 사용자 질문
+        :param memory: 이전 대화 기록
+        :return: 간단한 답변 문자열 (1문장)
+        """
+        art_name_en = ARTWORK_NAME_KR_TO_EN.get(art_name, art_name)
+        
+        memory_section = ""
+        if memory:
+            memory_section = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용을 참고하여 답변하되, 중복을 피하세요."
+        
+        prompt_template = self._load_prompt("prompt_question_answer.txt")
+        prompt = prompt_template.format(
+            art_name=art_name,
+            art_name_en=art_name_en,
+            question=question,
+            memory_section=memory_section
+        )
+        return self._get_llm_response(prompt)
+    
+    def curation_type_1(self, art_name, memory="", viewed_artworks=None, question=None):
         """
         큐레이션 타입 1: 작품 설명의 핵심 맥락 제공
         작품의 핵심 주제와 맥락을 120~170자로 간결하게 설명합니다.
         """
+        # 질문이 있으면 먼저 간단히 답변
+        question_answer = ""
+        if question:
+            question_answer = self._get_question_answer(art_name, question, memory)
+        
         # 영어 작품명으로 변환
         art_name_en = ARTWORK_NAME_KR_TO_EN.get(art_name, art_name)
         
-        context_info = ""
+        memory_section = ""
         if memory:
-            context_info = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 관점을 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
+            memory_section = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 관점을 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
         
-        prompt = f"""당신은 미술관 큐레이터입니다. 
-작품 '{art_name_en}'의 핵심 주제와 맥락을 간결하게 설명해주세요.
-조형적 특징(구도, 색채 등)과 작품의 의미를 함께 언급하세요.
-
-**글자 수 제약: 120자 이상 170자 이하**
-- 반드시 120자 이상 170자 이하로 작성하세요
-
-**중복 방지: 이미 설명한 내용은 되도록 반복하지 마세요**
-- 설명을 위해 어쩔 수 없이 필요한 경우에만 "앞서 언급했듯"이라고 말하며 간단히 언급하세요
-
-**중요: TTS(음성 합성)를 위한 출력 형식**
-- 자연스러운 구어체로 작성하세요
-- 따옴표, 괄호, 특수기호 등은 사용하지 마세요
-- 음성으로 읽었을 때 자연스럽게 들리도록 작성하세요
-- 모든 문장의 종결어미는 반드시 "~니다" 체를 사용하세요 (예: ~합니다, ~입니다, ~습니다)
-- 작품명을 언급할 때는 반드시 한국어 작품명 '{art_name}'을(를) 사용하세요
-
-예시: "전후 상실을 개인 초상으로 응축한 작품입니다. 사선 구도와 냉색 대비가 고립감을 강화합니다."
-{context_info}
-"""
-        return self._get_llm_response(prompt)
+        prompt_template = self._load_prompt("prompt_1.txt")
+        prompt = prompt_template.format(
+            art_name=art_name,
+            art_name_en=art_name_en,
+            memory_section=memory_section
+        )
+        main_response = self._get_llm_response(prompt)
+        
+        # 질문 답변이 있으면 연결해서 반환
+        if question_answer:
+            return f"{question_answer} {main_response}"
+        return main_response
     
-    def curation_type_2(self, art_name, question, memory="", viewed_artworks=None):
+    def curation_type_2(self, art_name, question=None, memory="", viewed_artworks=None):
         """
         큐레이션 타입 2: 간단한 정보제공
-        사용자의 질문에 대해 핵심 정보를 1문장으로 답하고,
-        더 듣기 선택지를 제시합니다.
+        질문이 있으면 먼저 간단히 답변한 후, 작품에 대한 핵심 정보를 제공하고 더 듣기 선택지를 제시합니다.
+        질문이 없으면 원래 설계대로 작품 정보와 선택지를 제시합니다.
         """
+        # 질문이 있으면 먼저 간단히 답변
+        question_answer = ""
+        if question:
+            question_answer = self._get_question_answer(art_name, question, memory)
+        
         # 영어 작품명으로 변환
         art_name_en = ARTWORK_NAME_KR_TO_EN.get(art_name, art_name)
         
-        context_info = ""
-        if memory:
-            context_info = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 정보를 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
+        question_section = f"관람객의 질문: {question}" if question else ""
         
-        prompt = f"""당신은 미술관 큐레이터입니다.
-
-작품명: {art_name_en} (한국어 작품명: {art_name})
-관람객의 질문: {question}
-
-1. 먼저 질문의 핵심을 1문장으로 확인하세요.
-2. 그 다음 작품에 대한 핵심 정보를 1문장으로 답변하세요.
-3. 마지막으로 더 듣기 선택지를 1문장으로 제시하세요.
-
-**분량 제약: 최대 3문장 (1–2문장 답변 + 선택지 1문장)**
-**전문용어 최소화: 일반인도 이해할 수 있는 쉬운 표현 사용**
-**단정/가치판단 금지: 객관적 사실 중심으로 서술**
-
-**중복 방지: 이미 설명한 내용은 되도록 반복하지 마세요**
-- 설명을 위해 어쩔 수 없이 필요한 경우에만 "앞서 언급했듯"이라고 말하며 간단히 언급하세요
-
-**중요: TTS(음성 합성)를 위한 출력 형식**
-- 자연스러운 구어체로 작성하세요
-- 따옴표, 괄호, 특수기호 등은 사용하지 마세요
-- 음성으로 읽었을 때 자연스럽게 들리도록 작성하세요
-- 모든 문장의 종결어미는 반드시 "~니다" 체를 사용하세요 (예: ~합니다, ~입니다, ~습니다)
-- 작품명을 언급할 때는 반드시 한국어 작품명 '{art_name}'을(를) 사용하고 따옴표 없이 자연스럽게 말하세요
-
-예시: "작가의 스승입니다. 그의 화풍이 여기에도 드러납니다. 배경을 더 들어보시겠습니까, 아니면 비슷한 작품을 보시겠습니까?"
-{context_info}
-"""
-        return self._get_llm_response(prompt)
+        memory_section = ""
+        if memory:
+            memory_section = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 정보를 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
+        
+        prompt_template = self._load_prompt("prompt_2.txt")
+        prompt = prompt_template.format(
+            art_name=art_name,
+            art_name_en=art_name_en,
+            question_section=question_section,
+            memory_section=memory_section
+        )
+        main_response = self._get_llm_response(prompt)
+        
+        # 질문 답변이 있으면 연결해서 반환
+        if question_answer:
+            return f"{question_answer} {main_response}"
+        return main_response
     
-    def curation_type_3(self, art_name, related_artwork, memory="", viewed_artworks=None):
+    def curation_type_3(self, art_name, related_artwork, memory="", viewed_artworks=None, question=None):
         """
         큐레이션 타입 3: 간단한 비교제공 및 질문응답 deep-1으로의 유도        
         연관 작품과의 공통점과 차이점을 간단히 비교하고,
         더 자세한 설명을 들을 수 있도록 유도합니다.
         """
+        # 질문이 있으면 먼저 간단히 답변
+        question_answer = ""
+        if question:
+            question_answer = self._get_question_answer(art_name, question, memory)
+        
         # 영어 작품명으로 변환
         art_name_en = ARTWORK_NAME_KR_TO_EN.get(art_name, art_name)
         related_artwork_en = ARTWORK_NAME_KR_TO_EN.get(related_artwork, related_artwork)
-        
-        context_info = ""
-        if memory:
-            context_info = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 비교를 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
         
         # 비교 데이터 가져오기
         comparison_info = self._get_comparison_data(art_name, related_artwork)
@@ -207,122 +237,100 @@ class CurationTypes:
         if comparison_info:
             comparison_context = f"\n\n참고 자료 (아래 공통점과 차이점을 참고하여 답변하세요):\n{comparison_info}"
         
-        prompt = f"""당신은 미술관 큐레이터입니다.
-
-작품명: {art_name_en} (한국어 작품명: {art_name})
-연관 작품: {related_artwork_en} (한국어 작품명: {related_artwork})
-
-1. 두 작품의 공통점 1개를 1구로 언급하세요.
-2. 두 작품의 차이점 1개를 1구로 언급하세요.
-3. 더 자세한 설명을 듣도록 유도하는 선택지를 1문장으로 제시하세요.
-
-**구성: 한 문장 비교(공통점→차이점 순서) + 선택지 1문장**
-**수치/전문용어 과다 금지: 일반적이고 쉬운 표현 사용**
-
-**중복 방지: 이미 설명한 내용은 되도록 반복하지 마세요**
-- 설명을 위해 어쩔 수 없이 필요한 경우에만 "앞서 언급했듯"이라고 말하며 간단히 언급하세요
-
-**중요: TTS(음성 합성)를 위한 출력 형식**
-- 자연스러운 구어체로 작성하세요
-- 따옴표, 괄호, 특수기호 등은 사용하지 마세요
-- 음성으로 읽었을 때 자연스럽게 들리도록 작성하세요
-- 모든 문장의 종결어미는 반드시 "~니다" 체를 사용하세요 (예: ~합니다, ~입니다, ~습니다)
-- 작품명을 언급할 때는 반드시 한국어 작품명 '{art_name}'과(와) '{related_artwork}'을(를) 사용하고 따옴표 없이 자연스럽게 말하세요
-
-예시: "이 작품과 프리마베라는 같은 주제를 다루지만, 여기는 색을 단순화하고 프리마베라는 세부 묘사가 풍부합니다. 자세히 알아보시겠습니까?"
-{comparison_context}
-{context_info}
-"""
-        return self._get_llm_response(prompt)
+        memory_section = ""
+        if memory:
+            memory_section = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 비교를 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
+        
+        prompt_template = self._load_prompt("prompt_3.txt")
+        prompt = prompt_template.format(
+            art_name=art_name,
+            art_name_en=art_name_en,
+            related_artwork=related_artwork,
+            related_artwork_en=related_artwork_en,
+            comparison_context=comparison_context,
+            memory_section=memory_section
+        )
+        main_response = self._get_llm_response(prompt)
+        
+        # 질문 답변이 있으면 연결해서 반환
+        if question_answer:
+            return f"{question_answer} {main_response}"
+        return main_response
     
-    def curation_type_4(self, art_name, memory="", viewed_artworks=None):
+    def curation_type_4(self, art_name, memory="", viewed_artworks=None, question=None):
         """
         큐레이션 타입 4: 작품과 관련된 배경지식 제공   
         작품의 시대적 배경, 사조, 철학적 배경, 작가 이야기 등
         배경지식을 정확히 3문장으로 설명합니다.
         """
+        # 질문이 있으면 먼저 간단히 답변
+        question_answer = ""
+        if question:
+            question_answer = self._get_question_answer(art_name, question, memory)
+        
         # 영어 작품명으로 변환
         art_name_en = ARTWORK_NAME_KR_TO_EN.get(art_name, art_name)
         
-        context_info = ""
+        memory_section = ""
         if memory:
-            context_info = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 배경지식을 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
+            memory_section = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 배경지식을 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
         
-        prompt = f"""당신은 미술관 큐레이터입니다.
-
-작품명: {art_name_en} (한국어 작품명: {art_name})
-
-작품의 배경지식을 설명해주세요. 다음 요소를 포함하세요:
-- 제작 시기
-- 예술 사조
-- 작가 정보
-- 시대적/철학적 컨텍스트
-
-**분량 제약: 정확히 3문장**
-- 반드시 3문장으로 작성하세요
-
-**중복 방지: 이미 설명한 내용은 되도록 반복하지 마세요**
-- 설명을 위해 어쩔 수 없이 필요한 경우에만 "앞서 언급했듯"이라고 말하며 간단히 언급하세요
-
-**중요: TTS(음성 합성)를 위한 출력 형식**
-- 자연스러운 구어체로 작성하세요
-- 따옴표, 괄호, 특수기호 등은 사용하지 마세요
-- 음성으로 읽었을 때 자연스럽게 들리도록 작성하세요
-- 모든 문장의 종결어미는 반드시 "~니다" 체를 사용하세요 (예: ~합니다, ~입니다, ~습니다)
-- 작품명을 언급할 때는 반드시 한국어 작품명 '{art_name}'을(를) 사용하고 따옴표 없이 자연스럽게 말하세요
-
-예시: "이 작품은 19세기 말 파리에서 활동한 인상주의 작가가 제작한 도시 풍경 시리즈 중 하나로, 당시 도시의 변화와 사람들의 일상을 담고 있습니다."
-{context_info}
-"""
-        return self._get_llm_response(prompt)
+        prompt_template = self._load_prompt("prompt_4.txt")
+        prompt = prompt_template.format(
+            art_name=art_name,
+            art_name_en=art_name_en,
+            memory_section=memory_section
+        )
+        main_response = self._get_llm_response(prompt)
+        
+        # 질문 답변이 있으면 연결해서 반환
+        if question_answer:
+            return f"{question_answer} {main_response}"
+        return main_response
     
-    def curation_type_5(self, art_name, memory="", viewed_artworks=None):
+    def curation_type_5(self, art_name, memory="", viewed_artworks=None, question=None):
         """
         큐레이션 타입 5: 배경지식 제공 + 관람자 느낌 묻기
         작품의 배경지식을 설명한 후, 관람자의 인상과 느낌을 묻는
         열린 질문을 던집니다.
         """
+        # 질문이 있으면 먼저 간단히 답변
+        question_answer = ""
+        if question:
+            question_answer = self._get_question_answer(art_name, question, memory)
+        
         # 영어 작품명으로 변환
         art_name_en = ARTWORK_NAME_KR_TO_EN.get(art_name, art_name)
         
-        context_info = ""
+        memory_section = ""
         if memory:
-            context_info = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 배경지식을 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
+            memory_section = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용과 중복되지 않는 새로운 배경지식을 제공하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
         
-        prompt = f"""당신은 미술관 큐레이터입니다.
-
-작품명: {art_name_en} (한국어 작품명: {art_name})
-
-1. 작품의 배경지식을 3문장 이내로 설명하세요 (제작시기, 사조, 작가, 컨텍스트 포함)
-2. 이어서 관람자의 느낌이나 선호를 묻는 열린 질문을 1문장 생성하세요
-
-**분량 제약: 정확히 4문장 (배경지식 3문장 + 질문 1문장)**
-**톤: 친근하고 중립적인 톤 유지**
-**질문 포함: 반드시 관람자에게 묻는 질문 포함**
-
-**중복 방지: 이미 설명한 내용은 되도록 반복하지 마세요**
-- 설명을 위해 어쩔 수 없이 필요한 경우에만 "앞서 언급했듯"이라고 말하며 간단히 언급하세요
-
-**중요: TTS(음성 합성)를 위한 출력 형식**
-- 자연스러운 구어체로 작성하세요
-- 따옴표, 괄호, 특수기호 등은 사용하지 마세요
-- 음성으로 읽었을 때 자연스럽게 들리도록 작성하세요
-- 모든 문장의 종결어미는 반드시 "~니다" 체를 사용하세요 (예: ~합니다, ~입니다, ~습니다)
-- 작품명을 언급할 때는 반드시 한국어 작품명 '{art_name}'을(를) 사용하고 따옴표 없이 자연스럽게 말하세요
-- 질문은 자연스럽게 대화하듯 던지세요
-
-예시: "이 작품은 19세기 말 파리에서 활동한 인상주의 작가가 제작한 도시 풍경 시리즈 중 하나로, 당시 도시의 변화와 사람들의 일상을 담고 있습니다. 이 색감과 구도가 당신에게는 어떤 느낌을 줍니까? 특별히 마음에 드는 부분이 있으십니까?"
-{context_info}
-"""
-        return self._get_llm_response(prompt)
+        prompt_template = self._load_prompt("prompt_5.txt")
+        prompt = prompt_template.format(
+            art_name=art_name,
+            art_name_en=art_name_en,
+            memory_section=memory_section
+        )
+        main_response = self._get_llm_response(prompt)
+        
+        # 질문 답변이 있으면 연결해서 반환
+        if question_answer:
+            return f"{question_answer} {main_response}"
+        return main_response
     
-    def curation_type_6(self, art_name, related_artwork=None, memory="", viewed_artworks=None):
+    def curation_type_6(self, art_name, related_artwork=None, memory="", viewed_artworks=None, question=None):
         """
         큐레이션 타입 6: 조형요소 + 타인의견 노출 + 관계짓기        
         다른 관람객들의 의견, 일반적 해석, 연관 작품과의 비교를 제시한 후,
         관람자가 자신의 경험이나 가치관과 작품을 연결하도록 유도하는
         열린 질문을 던집니다.
             """
+        # 질문이 있으면 먼저 간단히 답변
+        question_answer = ""
+        if question:
+            question_answer = self._get_question_answer(art_name, question, memory)
+        
         # 연관 작품이 명시되지 않았다면 viewed_artworks에서 가져오기
         if not related_artwork and viewed_artworks and len(viewed_artworks) > 0:
             # 현재 작품을 제외한 마지막 관람 작품
@@ -332,10 +340,6 @@ class CurationTypes:
         # 영어 작품명으로 변환
         art_name_en = ARTWORK_NAME_KR_TO_EN.get(art_name, art_name)
         related_artwork_en = ARTWORK_NAME_KR_TO_EN.get(related_artwork, related_artwork) if related_artwork else None
-        
-        context_info = ""
-        if memory:
-            context_info = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용을 고려하여 새로운 관점을 제시하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
         
         # 비교 데이터 가져오기
         comparison_context = ""
@@ -348,37 +352,29 @@ class CurationTypes:
         if related_artwork:
             comparison_text = f"연관 작품과의 공통점과 차이점을 언급하고, "
         
-        prompt = f"""당신은 미술관 큐레이터입니다.
-
-작품명: {art_name_en} (한국어 작품명: {art_name})
-{f"연관 작품: {related_artwork_en} (한국어 작품명: {related_artwork})" if related_artwork else ""}
-
-다음 내용을 구성하세요:
-1. 다른 관람객들이 자주 느끼는 점이나 일반적인 해석을 1문장으로 언급
-2. {comparison_text if related_artwork else ""}조형적 특징(색감, 구도 등)을 언급
-3. 관람자가 자신의 경험이나 가치관과 작품을 연결하도록 유도하는 열린 질문 1문장
-
-**분량 제약: 정확히 4문장**
-**공통점·차이점 포함: 연관 작품이 있을 경우 반드시 비교**
-**열린 질문 포함: 관람자의 생각과 연결하는 질문 필수**
-**톤: 긍정적이고 중립적인 톤 유지**
-
-**중복 방지: 이미 설명한 내용은 되도록 반복하지 마세요**
-- 설명을 위해 어쩔 수 없이 필요한 경우에만 "앞서 언급했듯"이라고 말하며 간단히 언급하세요
-
-**중요: TTS(음성 합성)를 위한 출력 형식**
-- 자연스러운 구어체로 작성하세요
-- 따옴표, 괄호, 특수기호 등은 사용하지 마세요
-- 음성으로 읽었을 때 자연스럽게 들리도록 작성하세요
-- 모든 문장의 종결어미는 반드시 "~니다" 체를 사용하세요 (예: ~합니다, ~입니다, ~습니다)
-- 작품명을 언급할 때는 반드시 한국어 작품명 '{art_name}'{f" 또는 '{related_artwork}'" if related_artwork else ""}을(를) 사용하고 따옴표 없이 자연스럽게 말하세요
-- 대화하듯 자연스럽고 친근하게 작성하세요
-
-예시: "많은 분들이 이 작품의 강렬한 색감과 구도가 당시 사회의 긴장과 희망을 함께 전한다고 느끼며, 아까 보신 작품과 비교하면 표현 방식은 다르지만 주제의식은 유사하다고 이야기합니다. 당신은 이런 표현이 본인의 경험이나 가치관과도 닮았다고 느끼십니까?"
-{comparison_context}
-{context_info}
-"""
-        return self._get_llm_response(prompt)
+        related_artwork_section = f"연관 작품: {related_artwork_en} (한국어 작품명: {related_artwork})" if related_artwork else ""
+        related_artwork_name_mention = f" 또는 '{related_artwork}'" if related_artwork else ""
+        
+        memory_section = ""
+        if memory:
+            memory_section = f"\n\n이미 설명한 내용:\n{memory}\n\n위 내용을 고려하여 새로운 관점을 제시하세요. 이미 설명한 내용을 다시 언급해야 한다면 '앞서 언급했듯'이라고 말하세요."
+        
+        prompt_template = self._load_prompt("prompt_6.txt")
+        prompt = prompt_template.format(
+            art_name=art_name,
+            art_name_en=art_name_en,
+            related_artwork_section=related_artwork_section,
+            comparison_text=comparison_text,
+            related_artwork_name_mention=related_artwork_name_mention,
+            comparison_context=comparison_context,
+            memory_section=memory_section
+        )
+        main_response = self._get_llm_response(prompt)
+        
+        # 질문 답변이 있으면 연결해서 반환
+        if question_answer:
+            return f"{question_answer} {main_response}"
+        return main_response
     
     def route_curation(self, curation_type, art_name, memory="", viewed_artworks=None, **kwargs):
         """
@@ -389,34 +385,34 @@ class CurationTypes:
         :param memory: 현재 작품에 대해 이미 생성된 정보
         :param viewed_artworks: 현재까지 관람한 작품 리스트
         :param kwargs: 타입별 추가 인자
-            - question: 타입 2에서 사용자 질문
+            - question: 모든 타입에서 선택적으로 사용 가능한 사용자 질문
             - related_artwork: 타입 3, 6에서 비교할 연관 작품명
         :return: 해당 타입의 큐레이션 나레이션
         """
+        question = kwargs.get('question', None)
+        
         if curation_type == 1:
-            return self.curation_type_1(art_name, memory, viewed_artworks)
+            return self.curation_type_1(art_name, memory, viewed_artworks, question)
         
         elif curation_type == 2:
-            question = kwargs.get('question', '')
-            if not question:
-                return "오류: 타입 2는 'question' 파라미터가 필요합니다."
+            # Type 2는 question이 없어도 작동하도록 변경 (question이 없으면 원래 설계대로만 응답)
             return self.curation_type_2(art_name, question, memory, viewed_artworks)
         
         elif curation_type == 3:
             related_artwork = kwargs.get('related_artwork', '')
             if not related_artwork:
                 return "오류: 타입 3은 'related_artwork' 파라미터가 필요합니다."
-            return self.curation_type_3(art_name, related_artwork, memory, viewed_artworks)
+            return self.curation_type_3(art_name, related_artwork, memory, viewed_artworks, question)
         
         elif curation_type == 4:
-            return self.curation_type_4(art_name, memory, viewed_artworks)
+            return self.curation_type_4(art_name, memory, viewed_artworks, question)
         
         elif curation_type == 5:
-            return self.curation_type_5(art_name, memory, viewed_artworks)
+            return self.curation_type_5(art_name, memory, viewed_artworks, question)
         
         elif curation_type == 6:
             related_artwork = kwargs.get('related_artwork', None)
-            return self.curation_type_6(art_name, related_artwork, memory, viewed_artworks)
+            return self.curation_type_6(art_name, related_artwork, memory, viewed_artworks, question)
         
         else:
             return f"오류: 잘못된 큐레이션 타입입니다. 1-6 사이의 값을 입력하세요. (입력값: {curation_type})"

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>큐레이션 타입 테스트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group select:focus,
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+            font-family: inherit;
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 6px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            font-weight: normal;
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .response-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .response-section.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .response-section h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .response-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #667eea;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .error {
+            background: #fee;
+            border-left-color: #f44336;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .required {
+            color: #f44336;
+        }
+
+        .type-description {
+            background: #e3f2fd;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #1565c0;
+            border-left: 4px solid #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 큐레이션 타입 테스트</h1>
+            <p>각 큐레이션 타입을 테스트하고 응답을 확인하세요</p>
+        </div>
+        
+        <div class="content">
+            <form id="curationForm">
+                <!-- 큐레이션 타입 선택 -->
+                <div class="form-group">
+                    <label for="curation_type">큐레이션 타입 <span class="required">*</span></label>
+                    <select id="curation_type" name="curation_type" required>
+                        <option value="">타입을 선택하세요</option>
+                        <option value="1">핵심 설명</option>
+                        <option value="2">질문응답flat-1(정보제공)</option>
+                        <option value="3">질문응답flat-2(단순비교)</option>
+                        <option value="4">질문응답deep-0(정보제공 심화)</option>
+                        <option value="5">질문응답deep-1(정보제공 및 인상나누기)</option>
+                        <option value="6">질문응답deep-2(연관작품 읽기 및 나만의 작품읽기)</option>
+                    </select>
+                    <div id="type_description" class="type-description" style="display: none;"></div>
+                </div>
+
+                <!-- 작품명 선택 -->
+                <div class="form-group">
+                    <label for="art_name">작품명 <span class="required">*</span></label>
+                    <select id="art_name" name="art_name" required>
+                        <option value="">작품을 선택하세요</option>
+                    </select>
+                </div>
+
+                <!-- 관련 작품 (Type 3, 6에서 사용) -->
+                <div class="form-group" id="related_artwork_group" style="display: none;">
+                    <label for="related_artwork">연관 작품</label>
+                    <select id="related_artwork" name="related_artwork">
+                        <option value="">선택 안 함</option>
+                    </select>
+                    <small>Type 3은 필수, Type 6은 선택입니다</small>
+                </div>
+
+                <!-- 질문 (모든 타입에서 선택) -->
+                <div class="form-group" id="question_group" style="display: none;">
+                    <label for="question">질문 (선택사항)</label>
+                    <input type="text" id="question" name="question" placeholder="예: 이 그림은 무슨 내용이에요?">
+                    <small>질문이 있으면 먼저 간단히 답변한 후 원래 응답이 제공됩니다</small>
+                </div>
+
+                <!-- 메모리 (이전 대화 기록) -->
+                <div class="form-group" id="memory_group" style="display: none;">
+                    <label for="memory">이전 대화 기록 (선택사항)</label>
+                    <textarea id="memory" name="memory" placeholder="예: 이 작품은 벨라스케스의 걸작으로 스페인 왕실의 일상을 담았습니다."></textarea>
+                    <small>이미 설명한 내용을 입력하면 중복을 피하고 새로운 관점을 제공합니다</small>
+                </div>
+
+                <!-- 관람한 작품 목록 -->
+                <div class="form-group" id="viewed_artworks_group" style="display: none;">
+                    <label>관람한 작품 목록 (선택사항)</label>
+                    <div class="checkbox-group" id="viewed_artworks_checkboxes"></div>
+                    <small>이미 본 작품들을 선택하세요</small>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">API 호출</button>
+            </form>
+
+            <div class="loading" id="loading">
+                <p>⏳ 응답을 생성하는 중...</p>
+            </div>
+
+            <div class="response-section" id="responseSection">
+                <h3>📝 응답</h3>
+                <div class="response-content" id="responseContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:14723';
+        let artworks = [];
+
+        // 작품 목록 가져오기
+        async function loadArtworks() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/artworks`);
+                const data = await response.json();
+                artworks = data.artworks || [];
+                
+                const artNameSelect = document.getElementById('art_name');
+                const relatedArtworkSelect = document.getElementById('related_artwork');
+                
+                artworks.forEach(artwork => {
+                    const option1 = document.createElement('option');
+                    option1.value = artwork;
+                    option1.textContent = artwork;
+                    artNameSelect.appendChild(option1);
+                    
+                    const option2 = document.createElement('option');
+                    option2.value = artwork;
+                    option2.textContent = artwork;
+                    relatedArtworkSelect.appendChild(option2);
+                });
+
+                // 관람한 작품 체크박스 추가
+                const checkboxesContainer = document.getElementById('viewed_artworks_checkboxes');
+                artworks.forEach(artwork => {
+                    const div = document.createElement('div');
+                    div.className = 'checkbox-item';
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = `viewed_${artwork}`;
+                    checkbox.value = artwork;
+                    checkbox.name = 'viewed_artworks';
+                    const label = document.createElement('label');
+                    label.htmlFor = `viewed_${artwork}`;
+                    label.textContent = artwork;
+                    div.appendChild(checkbox);
+                    div.appendChild(label);
+                    checkboxesContainer.appendChild(div);
+                });
+            } catch (error) {
+                console.error('작품 목록을 가져오는 중 오류:', error);
+                alert('작품 목록을 가져올 수 없습니다. API 서버가 실행 중인지 확인하세요.');
+            }
+        }
+
+        // 타입 설명 업데이트
+        const typeDescriptions = {
+            '1': '작품의 핵심 주제와 맥락을 120~170자로 간결하게 설명합니다.',
+            '2': '작품에 대한 핵심 정보를 제공하고 더 듣기 선택지를 제시합니다.',
+            '3': '연관 작품과의 공통점과 차이점을 간단히 비교하고, 더 자세한 설명을 들을 수 있도록 유도합니다. (연관 작품 필수)',
+            '4': '작품의 시대적 배경, 사조, 철학적 배경, 작가 이야기 등 배경지식을 정확히 3문장으로 설명합니다.',
+            '5': '작품의 배경지식을 설명한 후, 관람자의 인상과 느낌을 묻는 열린 질문을 던집니다. (4문장)',
+            '6': '다른 관람객들의 의견, 일반적 해석, 연관 작품과의 비교를 제시한 후, 관람자가 자신의 경험이나 가치관과 작품을 연결하도록 유도합니다. (4문장)'
+        };
+
+        document.getElementById('curation_type').addEventListener('change', function() {
+            const type = this.value;
+            const descriptionDiv = document.getElementById('type_description');
+            const relatedArtworkGroup = document.getElementById('related_artwork_group');
+            const questionGroup = document.getElementById('question_group');
+            const memoryGroup = document.getElementById('memory_group');
+            const viewedArtworksGroup = document.getElementById('viewed_artworks_group');
+
+            // 타입 설명 표시
+            if (type && typeDescriptions[type]) {
+                descriptionDiv.textContent = typeDescriptions[type];
+                descriptionDiv.style.display = 'block';
+            } else {
+                descriptionDiv.style.display = 'none';
+            }
+
+            // Type 3, 6에 따라 연관 작품 필드 표시
+            if (type === '3' || type === '6') {
+                relatedArtworkGroup.style.display = 'block';
+                if (type === '3') {
+                    document.querySelector('#related_artwork_group label').innerHTML = '연관 작품 <span class="required">*</span>';
+                    document.getElementById('related_artwork').required = true;
+                } else {
+                    document.querySelector('#related_artwork_group label').innerHTML = '연관 작품';
+                    document.getElementById('related_artwork').required = false;
+                }
+            } else {
+                relatedArtworkGroup.style.display = 'none';
+                document.getElementById('related_artwork').required = false;
+            }
+
+            // 모든 타입에서 선택적 필드 표시
+            questionGroup.style.display = 'block';
+            memoryGroup.style.display = 'block';
+            viewedArtworksGroup.style.display = 'block';
+        });
+
+        // 폼 제출
+        document.getElementById('curationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const responseSection = document.getElementById('responseSection');
+            const responseContent = document.getElementById('responseContent');
+
+            // UI 업데이트
+            submitBtn.disabled = true;
+            loading.classList.add('show');
+            responseSection.classList.remove('show');
+
+            // 폼 데이터 수집
+            const formData = new FormData(this);
+            const curationType = parseInt(formData.get('curation_type'));
+            const artName = formData.get('art_name');
+            const question = formData.get('question') || null;
+            const relatedArtwork = formData.get('related_artwork') || null;
+            const memory = formData.get('memory') || '';
+            const viewedArtworks = Array.from(formData.getAll('viewed_artworks'));
+
+            // Type 3 검증
+            if (curationType === 3 && !relatedArtwork) {
+                alert('Type 3은 연관 작품이 필수입니다.');
+                submitBtn.disabled = false;
+                loading.classList.remove('show');
+                return;
+            }
+
+            // 요청 페이로드 생성
+            const payload = {
+                curation_type: curationType,
+                art_name: artName,
+                memory: memory,
+                viewed_artworks: viewedArtworks.length > 0 ? viewedArtworks : null
+            };
+
+            if (question) {
+                payload.question = question;
+            }
+
+            if (relatedArtwork && (curationType === 3 || curationType === 6)) {
+                payload.related_artwork = relatedArtwork;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/curation`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.detail || 'API 호출 실패');
+                }
+
+                // 응답 표시
+                responseContent.textContent = data.response || JSON.stringify(data, null, 2);
+                responseContent.className = 'response-content';
+                responseSection.classList.add('show');
+
+            } catch (error) {
+                responseContent.textContent = `오류 발생: ${error.message}`;
+                responseContent.className = 'response-content error';
+                responseSection.classList.add('show');
+                console.error('API 호출 오류:', error);
+            } finally {
+                submitBtn.disabled = false;
+                loading.classList.remove('show');
+            }
+        });
+
+        // 페이지 로드 시 작품 목록 가져오기
+        loadArtworks();
+    </script>
+</body>
+</html>
+
