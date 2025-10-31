@@ -1,0 +1,272 @@
+{
+  "artwork_name": "아테네 학당",
+  "original_image_size": {
+    "width": 1000,
+    "height": 666
+  },
+  "total_clicks": 20,
+  "found_objects": 10,
+  "not_found": 10,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 510.0,
+        "y": 363.0
+      },
+      "timestamp": "2025-10-31T09:00:51.828542",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "가운데 오른쪽 청록색 옷 사람",
+        "description": "가운데 오른쪽 청록색 옷 사람은 아리스토텔레스이며, 손바닥을 땅으로 향해 현실적 윤리를 강조합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 509.0,
+        "y": 397.0
+      },
+      "timestamp": "2025-10-31T09:00:52.187954",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "가운데 오른쪽 청록색 옷 사람",
+        "description": "가운데 오른쪽 청록색 옷 사람은 아리스토텔레스이며, 손바닥을 땅으로 향해 현실적 윤리를 강조합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 517.0,
+        "y": 443.0
+      },
+      "timestamp": "2025-10-31T09:00:52.521280",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "가운데 오른쪽 청록색 옷 사람",
+        "description": "가운데 오른쪽 청록색 옷 사람은 아리스토텔레스이며, 손바닥을 땅으로 향해 현실적 윤리를 강조합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 472.0,
+        "y": 371.0
+      },
+      "timestamp": "2025-10-31T09:00:53.083597",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 왼쪽 빨간옷 사람",
+        "description": "가운데 왼쪽 빨간옷 사람은 플라톤이며, 하늘을 가리키며 이데아 세계를 상징합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 473.0,
+        "y": 427.0
+      },
+      "timestamp": "2025-10-31T09:00:53.478921",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 왼쪽 빨간옷 사람",
+        "description": "가운데 왼쪽 빨간옷 사람은 플라톤이며, 하늘을 가리키며 이데아 세계를 상징합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 423.0,
+        "y": 524.0
+      },
+      "timestamp": "2025-10-31T09:00:54.121235",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "계단 아래 머리를 괴고 있는 사람",
+        "description": "계단 아래 머리를 괴고 있는 사람은 헤라클레이토스이며, 깊은 사색에 잠긴 모습으로 미켈란젤로의 초상을 반영합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 340.0,
+        "y": 495.0
+      },
+      "timestamp": "2025-10-31T09:00:54.678399",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 282.0,
+        "y": 483.0
+      },
+      "timestamp": "2025-10-31T09:00:55.473493",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 708.0,
+        "y": 524.0
+      },
+      "timestamp": "2025-10-31T09:00:56.102803",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 769.0,
+        "y": 555.0
+      },
+      "timestamp": "2025-10-31T09:00:56.554848",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 797.0,
+        "y": 495.0
+      },
+      "timestamp": "2025-10-31T09:00:57.032373",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 873.0,
+        "y": 469.0
+      },
+      "timestamp": "2025-10-31T09:00:57.733328",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 791.0,
+        "y": 189.0
+      },
+      "timestamp": "2025-10-31T09:00:58.786875",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "오른쪽 벽 조각상",
+        "description": "오른쪽 벽 조각상은 아테나(미네르바)이며, 지혜와 논리적 탐구를 수호합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 202.0,
+        "y": 210.0
+      },
+      "timestamp": "2025-10-31T09:00:59.451698",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "왼쪽 벽 조각상",
+        "description": "왼쪽 벽 조각상은 아폴론이며, 음악과 예술, 이성적 조화를 상징합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 598.0,
+        "y": 370.0
+      },
+      "timestamp": "2025-10-31T09:01:03.068549",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 246.0,
+        "y": 381.0
+      },
+      "timestamp": "2025-10-31T09:01:03.950226",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 308.0,
+        "y": 395.0
+      },
+      "timestamp": "2025-10-31T09:01:04.436112",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 345.0,
+        "y": 407.0
+      },
+      "timestamp": "2025-10-31T09:01:04.990437",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 473.0,
+        "y": 399.0
+      },
+      "timestamp": "2025-10-31T09:01:07.071022",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 왼쪽 빨간옷 사람",
+        "description": "가운데 왼쪽 빨간옷 사람은 플라톤이며, 하늘을 가리키며 이데아 세계를 상징합니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 568.0,
+        "y": 502.0
+      },
+      "timestamp": "2025-10-31T09:01:08.867903",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "계단 위에 홀로 앉은 사람",
+        "description": "계단 위에 홀로 앉은 사람은 디오게네스이며, 무심하게 늘어진 자세로 냉소 철학자의 고독을 보여줍니다.",
+        "art_name": "아테네 학당",
+        "art_name_en": "The School of Athens"
+      }
+    }
+  ]
+}

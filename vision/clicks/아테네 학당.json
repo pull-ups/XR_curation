@@ -1,0 +1,259 @@
+{
+  "artwork_name": "아테네 학당",
+  "total_clicks": 20,
+  "image_path": "./artwork_images/아테네 학당.jpg",
+  "original_image_size": {
+    "width": 1000,
+    "height": 666
+  },
+  "display_image_size": {
+    "width": 1000,
+    "height": 666
+  },
+  "scale_factors": {
+    "scale_x": 1.0,
+    "scale_y": 1.0
+  },
+  "clicks": [
+    {
+      "click_number": 1,
+      "canvas_coordinates": {
+        "x": 510.0,
+        "y": 363.0
+      },
+      "original_coordinates": {
+        "x": 510.0,
+        "y": 363.0
+      },
+      "timestamp": "2025-10-31T09:00:51.828542"
+    },
+    {
+      "click_number": 2,
+      "canvas_coordinates": {
+        "x": 509.0,
+        "y": 397.0
+      },
+      "original_coordinates": {
+        "x": 509.0,
+        "y": 397.0
+      },
+      "timestamp": "2025-10-31T09:00:52.187954"
+    },
+    {
+      "click_number": 3,
+      "canvas_coordinates": {
+        "x": 517.0,
+        "y": 443.0
+      },
+      "original_coordinates": {
+        "x": 517.0,
+        "y": 443.0
+      },
+      "timestamp": "2025-10-31T09:00:52.521280"
+    },
+    {
+      "click_number": 4,
+      "canvas_coordinates": {
+        "x": 472.0,
+        "y": 371.0
+      },
+      "original_coordinates": {
+        "x": 472.0,
+        "y": 371.0
+      },
+      "timestamp": "2025-10-31T09:00:53.083597"
+    },
+    {
+      "click_number": 5,
+      "canvas_coordinates": {
+        "x": 473.0,
+        "y": 427.0
+      },
+      "original_coordinates": {
+        "x": 473.0,
+        "y": 427.0
+      },
+      "timestamp": "2025-10-31T09:00:53.478921"
+    },
+    {
+      "click_number": 6,
+      "canvas_coordinates": {
+        "x": 423.0,
+        "y": 524.0
+      },
+      "original_coordinates": {
+        "x": 423.0,
+        "y": 524.0
+      },
+      "timestamp": "2025-10-31T09:00:54.121235"
+    },
+    {
+      "click_number": 7,
+      "canvas_coordinates": {
+        "x": 340.0,
+        "y": 495.0
+      },
+      "original_coordinates": {
+        "x": 340.0,
+        "y": 495.0
+      },
+      "timestamp": "2025-10-31T09:00:54.678399"
+    },
+    {
+      "click_number": 8,
+      "canvas_coordinates": {
+        "x": 282.0,
+        "y": 483.0
+      },
+      "original_coordinates": {
+        "x": 282.0,
+        "y": 483.0
+      },
+      "timestamp": "2025-10-31T09:00:55.473493"
+    },
+    {
+      "click_number": 9,
+      "canvas_coordinates": {
+        "x": 708.0,
+        "y": 524.0
+      },
+      "original_coordinates": {
+        "x": 708.0,
+        "y": 524.0
+      },
+      "timestamp": "2025-10-31T09:00:56.102803"
+    },
+    {
+      "click_number": 10,
+      "canvas_coordinates": {
+        "x": 769.0,
+        "y": 555.0
+      },
+      "original_coordinates": {
+        "x": 769.0,
+        "y": 555.0
+      },
+      "timestamp": "2025-10-31T09:00:56.554848"
+    },
+    {
+      "click_number": 11,
+      "canvas_coordinates": {
+        "x": 797.0,
+        "y": 495.0
+      },
+      "original_coordinates": {
+        "x": 797.0,
+        "y": 495.0
+      },
+      "timestamp": "2025-10-31T09:00:57.032373"
+    },
+    {
+      "click_number": 12,
+      "canvas_coordinates": {
+        "x": 873.0,
+        "y": 469.0
+      },
+      "original_coordinates": {
+        "x": 873.0,
+        "y": 469.0
+      },
+      "timestamp": "2025-10-31T09:00:57.733328"
+    },
+    {
+      "click_number": 13,
+      "canvas_coordinates": {
+        "x": 791.0,
+        "y": 189.0
+      },
+      "original_coordinates": {
+        "x": 791.0,
+        "y": 189.0
+      },
+      "timestamp": "2025-10-31T09:00:58.786875"
+    },
+    {
+      "click_number": 14,
+      "canvas_coordinates": {
+        "x": 202.0,
+        "y": 210.0
+      },
+      "original_coordinates": {
+        "x": 202.0,
+        "y": 210.0
+      },
+      "timestamp": "2025-10-31T09:00:59.451698"
+    },
+    {
+      "click_number": 15,
+      "canvas_coordinates": {
+        "x": 598.0,
+        "y": 370.0
+      },
+      "original_coordinates": {
+        "x": 598.0,
+        "y": 370.0
+      },
+      "timestamp": "2025-10-31T09:01:03.068549"
+    },
+    {
+      "click_number": 16,
+      "canvas_coordinates": {
+        "x": 246.0,
+        "y": 381.0
+      },
+      "original_coordinates": {
+        "x": 246.0,
+        "y": 381.0
+      },
+      "timestamp": "2025-10-31T09:01:03.950226"
+    },
+    {
+      "click_number": 17,
+      "canvas_coordinates": {
+        "x": 308.0,
+        "y": 395.0
+      },
+      "original_coordinates": {
+        "x": 308.0,
+        "y": 395.0
+      },
+      "timestamp": "2025-10-31T09:01:04.436112"
+    },
+    {
+      "click_number": 18,
+      "canvas_coordinates": {
+        "x": 345.0,
+        "y": 407.0
+      },
+      "original_coordinates": {
+        "x": 345.0,
+        "y": 407.0
+      },
+      "timestamp": "2025-10-31T09:01:04.990437"
+    },
+    {
+      "click_number": 19,
+      "canvas_coordinates": {
+        "x": 473.0,
+        "y": 399.0
+      },
+      "original_coordinates": {
+        "x": 473.0,
+        "y": 399.0
+      },
+      "timestamp": "2025-10-31T09:01:07.071022"
+    },
+    {
+      "click_number": 20,
+      "canvas_coordinates": {
+        "x": 568.0,
+        "y": 502.0
+      },
+      "original_coordinates": {
+        "x": 568.0,
+        "y": 502.0
+      },
+      "timestamp": "2025-10-31T09:01:08.867903"
+    }
+  ]
+}

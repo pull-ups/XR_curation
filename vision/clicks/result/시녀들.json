@@ -1,0 +1,332 @@
+{
+  "artwork_name": "시녀들",
+  "original_image_size": {
+    "width": 600,
+    "height": 691
+  },
+  "total_clicks": 20,
+  "found_objects": 20,
+  "not_found": 0,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 291.0,
+        "y": 480.0
+      },
+      "timestamp": "2025-10-31T09:00:01.090472",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 소녀",
+        "description": "마르가리타 왕녀가 이 작품의 앞부분 중앙에 서 있습니다. 당시 펠리페 4세와 마리아나 왕비 사이의 유일한 자녀였던 다섯 살 난 공주이며, 이후 신성 로마 제국 황제 레오폴트 1세와 결혼했습니다. 1734년 화재로 인해 그녀의 왼쪽 볼 부분이 손상되어 이후 다시 채색되었습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 280.0,
+        "y": 587.0
+      },
+      "timestamp": "2025-10-31T09:00:01.618142",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 소녀",
+        "description": "마르가리타 왕녀가 이 작품의 앞부분 중앙에 서 있습니다. 당시 펠리페 4세와 마리아나 왕비 사이의 유일한 자녀였던 다섯 살 난 공주이며, 이후 신성 로마 제국 황제 레오폴트 1세와 결혼했습니다. 1734년 화재로 인해 그녀의 왼쪽 볼 부분이 손상되어 이후 다시 채색되었습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 204.0,
+        "y": 466.0
+      },
+      "timestamp": "2025-10-31T09:00:02.214504",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 8,
+        "name": "소녀 왼쪽 여자",
+        "description": "마르가리타 왕녀에게 고개를 숙이고 있는 시녀인 도나 이사벨 데 벨라스코입니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 181.0,
+        "y": 557.0
+      },
+      "timestamp": "2025-10-31T09:00:02.685412",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 8,
+        "name": "소녀 왼쪽 여자",
+        "description": "마르가리타 왕녀에게 고개를 숙이고 있는 시녀인 도나 이사벨 데 벨라스코입니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 145.0,
+        "y": 375.0
+      },
+      "timestamp": "2025-10-31T09:00:03.360078",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "화가",
+        "description": "그림 바로 뒤에 벨라스케스 자신이 큰 캔버스에 작업 중인 그림을 바라보고 있는 모습이 그려져 있습니다. 그는 작품 내부의 공간을 넘어 이 그림을 감상할 누군가가 자리할 캔버스 밖 저편을 바라보고 있습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 140.0,
+        "y": 449.0
+      },
+      "timestamp": "2025-10-31T09:00:03.830640",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "화가",
+        "description": "그림 바로 뒤에 벨라스케스 자신이 큰 캔버스에 작업 중인 그림을 바라보고 있는 모습이 그려져 있습니다. 그는 작품 내부의 공간을 넘어 이 그림을 감상할 누군가가 자리할 캔버스 밖 저편을 바라보고 있습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 247.0,
+        "y": 384.0
+      },
+      "timestamp": "2025-10-31T09:00:04.653545",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "벽면 가운데 그림",
+        "description": "배경에는 거울이 걸려 있으며, 거울 속에는 왕과 왕비의 상반신이 보입니다. 이 왕과 왕비는 감상자와 마찬가지로 \"작품 내부가 아닌 바깥 공간에 자리하고 있는 것\"처럼 보이지만, 몇몇 학자들은 이 왕과 왕비의 모습이 \"그림 속에서 벨라스케스가 캔버스에 작업 중인 그림 속의 것\"이라고 주장하기도 합니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 383.0,
+        "y": 404.0
+      },
+      "timestamp": "2025-10-31T09:00:05.508219",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "소녀 오른쪽 여자",
+        "description": "마르가리타 왕녀 앞에서 무릎을 꿇고 금 쟁반 위의 붉은 컵을 들고 있는 독일인 난쟁이인 **마리바르볼라(마리아 바르볼라)**입니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 395.0,
+        "y": 473.0
+      },
+      "timestamp": "2025-10-31T09:00:05.922677",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "소녀 오른쪽 여자",
+        "description": "마르가리타 왕녀 앞에서 무릎을 꿇고 금 쟁반 위의 붉은 컵을 들고 있는 독일인 난쟁이인 **마리바르볼라(마리아 바르볼라)**입니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 280.0,
+        "y": 523.0
+      },
+      "timestamp": "2025-10-31T09:00:06.533084",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 소녀",
+        "description": "마르가리타 왕녀가 이 작품의 앞부분 중앙에 서 있습니다. 당시 펠리페 4세와 마리아나 왕비 사이의 유일한 자녀였던 다섯 살 난 공주이며, 이후 신성 로마 제국 황제 레오폴트 1세와 결혼했습니다. 1734년 화재로 인해 그녀의 왼쪽 볼 부분이 손상되어 이후 다시 채색되었습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 325.0,
+        "y": 590.0
+      },
+      "timestamp": "2025-10-31T09:00:06.984440",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 소녀",
+        "description": "마르가리타 왕녀가 이 작품의 앞부분 중앙에 서 있습니다. 당시 펠리페 4세와 마리아나 왕비 사이의 유일한 자녀였던 다섯 살 난 공주이며, 이후 신성 로마 제국 황제 레오폴트 1세와 결혼했습니다. 1734년 화재로 인해 그녀의 왼쪽 볼 부분이 손상되어 이후 다시 채색되었습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 440.0,
+        "y": 626.0
+      },
+      "timestamp": "2025-10-31T09:00:07.552198",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "개",
+        "description": "작품 속에는 왜소증을 앓는 이탈리아인 궁정 광대 니콜라스 페르투사토가 장난스럽게 발로 깨우려는 개가 있습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 491.0,
+        "y": 645.0
+      },
+      "timestamp": "2025-10-31T09:00:08.012881",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "개",
+        "description": "작품 속에는 왜소증을 앓는 이탈리아인 궁정 광대 니콜라스 페르투사토가 장난스럽게 발로 깨우려는 개가 있습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 504.0,
+        "y": 453.0
+      },
+      "timestamp": "2025-10-31T09:00:09.004943",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 10,
+        "name": "오른쪽 두 번째 여자",
+        "description": "상복을 입은 채 호위병에게 말을 걸고 있는 사람이 왕녀의 샤프롱인 도나 마르셀라 데 울로아입니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 500.0,
+        "y": 527.0
+      },
+      "timestamp": "2025-10-31T09:00:09.472469",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 10,
+        "name": "오른쪽 두 번째 여자",
+        "description": "상복을 입은 채 호위병에게 말을 걸고 있는 사람이 왕녀의 샤프롱인 도나 마르셀라 데 울로아입니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 579.0,
+        "y": 484.0
+      },
+      "timestamp": "2025-10-31T09:00:09.975441",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 11,
+        "name": "맨 오른쪽 여자",
+        "description": "호위병으로 보이며, 샤프롱인 도나 마르셀라 데 울로아가 그에게 말을 걸고 있습니다. 그의 신원은 파악되지 않았습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 434.0,
+        "y": 603.0
+      },
+      "timestamp": "2025-10-31T09:00:10.763282",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "개",
+        "description": "작품 속에는 왜소증을 앓는 이탈리아인 궁정 광대 니콜라스 페르투사토가 장난스럽게 발로 깨우려는 개가 있습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 40.0,
+        "y": 314.0
+      },
+      "timestamp": "2025-10-31T09:00:12.368074",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "왼쪽 캔버스",
+        "description": "벨라스케스가 그림 속에서 작업 중인 거대한 캔버스입니다. 그는 이 캔버스를 바라보며 작업을 하고 있습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 33.0,
+        "y": 575.0
+      },
+      "timestamp": "2025-10-31T09:00:13.104652",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "왼쪽 캔버스",
+        "description": "벨라스케스가 그림 속에서 작업 중인 거대한 캔버스입니다. 그는 이 캔버스를 바라보며 작업을 하고 있습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 338.0,
+        "y": 292.0
+      },
+      "timestamp": "2025-10-31T09:00:13.887009",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "벽면 오른쪽 그림",
+        "description": "펠리페 4세가 벨라스케스에게 하사한 방에 전시되어 있던 많은 왕실 컬렉션의 서양화 작품 중 하나일 가능성이 높습니다. 벨라스케스는 펠리페 4세의 수많은 서양화 컬렉션을 담당하는 학예사 역할을 했으며, 티티안, 라파엘로, 루벤스 등의 작품을 포함한 많은 작품들을 직접 수집하고 정리했습니다.",
+        "art_name": "시녀들",
+        "art_name_en": "Las Meninas"
+      }
+    }
+  ]
+}

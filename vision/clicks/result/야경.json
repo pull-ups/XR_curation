@@ -1,0 +1,296 @@
+{
+  "artwork_name": "야경",
+  "original_image_size": {
+    "width": 1200,
+    "height": 976
+  },
+  "total_clicks": 20,
+  "found_objects": 14,
+  "not_found": 6,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 590.23,
+        "y": 503.34
+      },
+      "timestamp": "2025-10-31T08:56:56.330123",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "가운데 검은 옷 남자",
+        "description": "가운데 검은 옷 남자는 프란스 반닝 코크 대장으로, 검은 복장과 붉은 띠를 착용한 위엄 있는 모습으로 묘사됩니다. 시민군의 지휘자이자 질서를 대표합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 569.3,
+        "y": 656.71
+      },
+      "timestamp": "2025-10-31T08:56:56.892578",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "가운데 검은 옷 남자",
+        "description": "가운데 검은 옷 남자는 프란스 반닝 코크 대장으로, 검은 복장과 붉은 띠를 착용한 위엄 있는 모습으로 묘사됩니다. 시민군의 지휘자이자 질서를 대표합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 735.35,
+        "y": 706.9
+      },
+      "timestamp": "2025-10-31T08:56:57.365263",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "가운데 하얀 옷 남자",
+        "description": "가운데 하얀 옷 남자는 빌럼 반 루이튼부르흐 대위로, 밝은 옷차림으로 강조되어 있습니다. 그는 대장의 명령을 따르는 핵심 장교를 상징합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 745.12,
+        "y": 528.43
+      },
+      "timestamp": "2025-10-31T08:56:57.934011",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "가운데 하얀 옷 남자",
+        "description": "가운데 하얀 옷 남자는 빌럼 반 루이튼부르흐 대위로, 밝은 옷차림으로 강조되어 있습니다. 그는 대장의 명령을 따르는 핵심 장교를 상징합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 252.56,
+        "y": 527.04
+      },
+      "timestamp": "2025-10-31T08:56:58.678125",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "왼쪽빨간색 옷에 검들고 있는 남자",
+        "description": "왼쪽 빨간색 옷에 검을 들고 있는 남자는 병사 중 한 명으로, 무장한 시민군의 전투 준비 태세를 드러냅니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 234.42,
+        "y": 658.1
+      },
+      "timestamp": "2025-10-31T08:56:59.644612",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "왼쪽빨간색 옷에 검들고 있는 남자",
+        "description": "왼쪽 빨간색 옷에 검을 들고 있는 남자는 병사 중 한 명으로, 무장한 시민군의 전투 준비 태세를 드러냅니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 376.74,
+        "y": 605.12
+      },
+      "timestamp": "2025-10-31T08:57:02.637063",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "병사 뒤의 하얀 옷 소녀",
+        "description": "병사 뒤의 하얀 옷 소녀는 작품 속에서 비현실적으로 빛을 받으며 가장 눈에 띄는 인물입니다. 그녀는 총잡이 길드의 상징인 닭을 허리에 매달고 있어 '클로벤이어스(Cloveniers)'를 상징합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 355.81,
+        "y": 722.24
+      },
+      "timestamp": "2025-10-31T08:57:03.220396",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "병사 뒤의 하얀 옷 소녀",
+        "description": "병사 뒤의 하얀 옷 소녀는 작품 속에서 비현실적으로 빛을 받으며 가장 눈에 띄는 인물입니다. 그녀는 총잡이 길드의 상징인 닭을 허리에 매달고 있어 '클로벤이어스(Cloveniers)'를 상징합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 411.63,
+        "y": 380.64
+      },
+      "timestamp": "2025-10-31T08:57:04.082812",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 399.07,
+        "y": 460.11
+      },
+      "timestamp": "2025-10-31T08:57:04.550759",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 566.51,
+        "y": 568.87
+      },
+      "timestamp": "2025-10-31T08:57:05.264391",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "가운데 검은 옷 남자",
+        "description": "가운데 검은 옷 남자는 프란스 반닝 코크 대장으로, 검은 복장과 붉은 띠를 착용한 위엄 있는 모습으로 묘사됩니다. 시민군의 지휘자이자 질서를 대표합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 754.88,
+        "y": 631.61
+      },
+      "timestamp": "2025-10-31T08:57:05.942218",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "가운데 하얀 옷 남자",
+        "description": "가운데 하얀 옷 남자는 빌럼 반 루이튼부르흐 대위로, 밝은 옷차림으로 강조되어 있습니다. 그는 대장의 명령을 따르는 핵심 장교를 상징합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 256.74,
+        "y": 605.12
+      },
+      "timestamp": "2025-10-31T08:57:06.652460",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "왼쪽빨간색 옷에 검들고 있는 남자",
+        "description": "왼쪽 빨간색 옷에 검을 들고 있는 남자는 병사 중 한 명으로, 무장한 시민군의 전투 준비 태세를 드러냅니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 207.91,
+        "y": 531.22
+      },
+      "timestamp": "2025-10-31T08:57:09.285045",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "왼쪽빨간색 옷에 검들고 있는 남자",
+        "description": "왼쪽 빨간색 옷에 검을 들고 있는 남자는 병사 중 한 명으로, 무장한 시민군의 전투 준비 태세를 드러냅니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 549.77,
+        "y": 733.39
+      },
+      "timestamp": "2025-10-31T08:57:10.031015",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "가운데 검은 옷 남자",
+        "description": "가운데 검은 옷 남자는 프란스 반닝 코크 대장으로, 검은 복장과 붉은 띠를 착용한 위엄 있는 모습으로 묘사됩니다. 시민군의 지휘자이자 질서를 대표합니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 775.81,
+        "y": 768.25
+      },
+      "timestamp": "2025-10-31T08:57:11.050840",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 833.02,
+        "y": 570.26
+      },
+      "timestamp": "2025-10-31T08:57:12.433541",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "오른쪽 총들고 있는남자",
+        "description": "오른쪽 총을 들고 있는 남자는 시민군의 일원으로, 전투적 긴장감을 고조시키며 집단의 힘을 보여줍니다.",
+        "art_name": "야경",
+        "art_name_en": "The Night Watch"
+      }
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 620.93,
+        "y": 416.89
+      },
+      "timestamp": "2025-10-31T08:57:14.055135",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 993.49,
+        "y": 292.8
+      },
+      "timestamp": "2025-10-31T08:57:15.734496",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 1015.81,
+        "y": 575.84
+      },
+      "timestamp": "2025-10-31T08:57:16.344081",
+      "object_found": false,
+      "object_info": null
+    }
+  ]
+}

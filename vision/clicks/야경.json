@@ -1,0 +1,259 @@
+{
+  "artwork_name": "야경",
+  "total_clicks": 20,
+  "image_path": "./artwork_images/야경.jpg",
+  "original_image_size": {
+    "width": 1200,
+    "height": 976
+  },
+  "display_image_size": {
+    "width": 860,
+    "height": 700
+  },
+  "scale_factors": {
+    "scale_x": 0.7166666666666667,
+    "scale_y": 0.7172131147540983
+  },
+  "clicks": [
+    {
+      "click_number": 1,
+      "canvas_coordinates": {
+        "x": 423.0,
+        "y": 361.0
+      },
+      "original_coordinates": {
+        "x": 590.23,
+        "y": 503.34
+      },
+      "timestamp": "2025-10-31T08:56:56.330123"
+    },
+    {
+      "click_number": 2,
+      "canvas_coordinates": {
+        "x": 408.0,
+        "y": 471.0
+      },
+      "original_coordinates": {
+        "x": 569.3,
+        "y": 656.71
+      },
+      "timestamp": "2025-10-31T08:56:56.892578"
+    },
+    {
+      "click_number": 3,
+      "canvas_coordinates": {
+        "x": 527.0,
+        "y": 507.0
+      },
+      "original_coordinates": {
+        "x": 735.35,
+        "y": 706.9
+      },
+      "timestamp": "2025-10-31T08:56:57.365263"
+    },
+    {
+      "click_number": 4,
+      "canvas_coordinates": {
+        "x": 534.0,
+        "y": 379.0
+      },
+      "original_coordinates": {
+        "x": 745.12,
+        "y": 528.43
+      },
+      "timestamp": "2025-10-31T08:56:57.934011"
+    },
+    {
+      "click_number": 5,
+      "canvas_coordinates": {
+        "x": 181.0,
+        "y": 378.0
+      },
+      "original_coordinates": {
+        "x": 252.56,
+        "y": 527.04
+      },
+      "timestamp": "2025-10-31T08:56:58.678125"
+    },
+    {
+      "click_number": 6,
+      "canvas_coordinates": {
+        "x": 168.0,
+        "y": 472.0
+      },
+      "original_coordinates": {
+        "x": 234.42,
+        "y": 658.1
+      },
+      "timestamp": "2025-10-31T08:56:59.644612"
+    },
+    {
+      "click_number": 7,
+      "canvas_coordinates": {
+        "x": 270.0,
+        "y": 434.0
+      },
+      "original_coordinates": {
+        "x": 376.74,
+        "y": 605.12
+      },
+      "timestamp": "2025-10-31T08:57:02.637063"
+    },
+    {
+      "click_number": 8,
+      "canvas_coordinates": {
+        "x": 255.0,
+        "y": 518.0
+      },
+      "original_coordinates": {
+        "x": 355.81,
+        "y": 722.24
+      },
+      "timestamp": "2025-10-31T08:57:03.220396"
+    },
+    {
+      "click_number": 9,
+      "canvas_coordinates": {
+        "x": 295.0,
+        "y": 273.0
+      },
+      "original_coordinates": {
+        "x": 411.63,
+        "y": 380.64
+      },
+      "timestamp": "2025-10-31T08:57:04.082812"
+    },
+    {
+      "click_number": 10,
+      "canvas_coordinates": {
+        "x": 286.0,
+        "y": 330.0
+      },
+      "original_coordinates": {
+        "x": 399.07,
+        "y": 460.11
+      },
+      "timestamp": "2025-10-31T08:57:04.550759"
+    },
+    {
+      "click_number": 11,
+      "canvas_coordinates": {
+        "x": 406.0,
+        "y": 408.0
+      },
+      "original_coordinates": {
+        "x": 566.51,
+        "y": 568.87
+      },
+      "timestamp": "2025-10-31T08:57:05.264391"
+    },
+    {
+      "click_number": 12,
+      "canvas_coordinates": {
+        "x": 541.0,
+        "y": 453.0
+      },
+      "original_coordinates": {
+        "x": 754.88,
+        "y": 631.61
+      },
+      "timestamp": "2025-10-31T08:57:05.942218"
+    },
+    {
+      "click_number": 13,
+      "canvas_coordinates": {
+        "x": 184.0,
+        "y": 434.0
+      },
+      "original_coordinates": {
+        "x": 256.74,
+        "y": 605.12
+      },
+      "timestamp": "2025-10-31T08:57:06.652460"
+    },
+    {
+      "click_number": 14,
+      "canvas_coordinates": {
+        "x": 149.0,
+        "y": 381.0
+      },
+      "original_coordinates": {
+        "x": 207.91,
+        "y": 531.22
+      },
+      "timestamp": "2025-10-31T08:57:09.285045"
+    },
+    {
+      "click_number": 15,
+      "canvas_coordinates": {
+        "x": 394.0,
+        "y": 526.0
+      },
+      "original_coordinates": {
+        "x": 549.77,
+        "y": 733.39
+      },
+      "timestamp": "2025-10-31T08:57:10.031015"
+    },
+    {
+      "click_number": 16,
+      "canvas_coordinates": {
+        "x": 556.0,
+        "y": 551.0
+      },
+      "original_coordinates": {
+        "x": 775.81,
+        "y": 768.25
+      },
+      "timestamp": "2025-10-31T08:57:11.050840"
+    },
+    {
+      "click_number": 17,
+      "canvas_coordinates": {
+        "x": 597.0,
+        "y": 409.0
+      },
+      "original_coordinates": {
+        "x": 833.02,
+        "y": 570.26
+      },
+      "timestamp": "2025-10-31T08:57:12.433541"
+    },
+    {
+      "click_number": 18,
+      "canvas_coordinates": {
+        "x": 445.0,
+        "y": 299.0
+      },
+      "original_coordinates": {
+        "x": 620.93,
+        "y": 416.89
+      },
+      "timestamp": "2025-10-31T08:57:14.055135"
+    },
+    {
+      "click_number": 19,
+      "canvas_coordinates": {
+        "x": 712.0,
+        "y": 210.0
+      },
+      "original_coordinates": {
+        "x": 993.49,
+        "y": 292.8
+      },
+      "timestamp": "2025-10-31T08:57:15.734496"
+    },
+    {
+      "click_number": 20,
+      "canvas_coordinates": {
+        "x": 728.0,
+        "y": 413.0
+      },
+      "original_coordinates": {
+        "x": 1015.81,
+        "y": 575.84
+      },
+      "timestamp": "2025-10-31T08:57:16.344081"
+    }
+  ]
+}

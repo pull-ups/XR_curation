@@ -1,0 +1,314 @@
+{
+  "artwork_name": "파리스의 심판",
+  "original_image_size": {
+    "width": 5707,
+    "height": 4226
+  },
+  "total_clicks": 20,
+  "found_objects": 17,
+  "not_found": 3,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 845.48,
+        "y": 1545.51
+      },
+      "timestamp": "2025-10-31T09:01:29.463148",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "서있는 첫번째 여자",
+        "description": "서 있는 첫 번째 여자는 아프로디테(비너스)로, 사랑과 아름다움의 여신입니다. 황금사과의 주인공으로 선택받게 됩니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 960.23,
+        "y": 1919.81
+      },
+      "timestamp": "2025-10-31T09:01:29.937688",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "서있는 첫번째 여자",
+        "description": "서 있는 첫 번째 여자는 아프로디테(비너스)로, 사랑과 아름다움의 여신입니다. 황금사과의 주인공으로 선택받게 됩니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 960.23,
+        "y": 2276.0
+      },
+      "timestamp": "2025-10-31T09:01:30.376699",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "서있는 첫번째 여자",
+        "description": "서 있는 첫 번째 여자는 아프로디테(비너스)로, 사랑과 아름다움의 여신입니다. 황금사과의 주인공으로 선택받게 됩니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 942.11,
+        "y": 2620.12
+      },
+      "timestamp": "2025-10-31T09:01:30.861450",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "서있는 첫번째 여자",
+        "description": "서 있는 첫 번째 여자는 아프로디테(비너스)로, 사랑과 아름다움의 여신입니다. 황금사과의 주인공으로 선택받게 됩니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 1799.67,
+        "y": 1521.36
+      },
+      "timestamp": "2025-10-31T09:01:31.560932",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "서있는 두번째 여자",
+        "description": "서 있는 두 번째 여자는 헤라(주노)로, 권력과 결혼을 상징합니다. 그녀 곁에는 공작새가 배치되어 있어 상징성을 강화합니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 1727.2,
+        "y": 2306.19
+      },
+      "timestamp": "2025-10-31T09:01:32.018291",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "서있는 두번째 여자",
+        "description": "서 있는 두 번째 여자는 헤라(주노)로, 권력과 결혼을 상징합니다. 그녀 곁에는 공작새가 배치되어 있어 상징성을 강화합니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 1564.14,
+        "y": 2505.41
+      },
+      "timestamp": "2025-10-31T09:01:32.515669",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "서있는 두번째 여자",
+        "description": "서 있는 두 번째 여자는 헤라(주노)로, 권력과 결혼을 상징합니다. 그녀 곁에는 공작새가 배치되어 있어 상징성을 강화합니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 2633.07,
+        "y": 1684.36
+      },
+      "timestamp": "2025-10-31T09:01:33.063569",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "서있는 세 번째 여자",
+        "description": "서 있는 세 번째 여자는 아테나(미네르바)로, 지혜와 전쟁의 여신입니다. 투구나 갑옷으로 무장한 여신으로 자주 표현됩니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 2820.28,
+        "y": 2215.63
+      },
+      "timestamp": "2025-10-31T09:01:33.557095",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "서있는 세 번째 여자",
+        "description": "서 있는 세 번째 여자는 아테나(미네르바)로, 지혜와 전쟁의 여신입니다. 투구나 갑옷으로 무장한 여신으로 자주 표현됩니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 2669.31,
+        "y": 2493.34
+      },
+      "timestamp": "2025-10-31T09:01:33.977030",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "서있는 세 번째 여자",
+        "description": "서 있는 세 번째 여자는 아테나(미네르바)로, 지혜와 전쟁의 여신입니다. 투구나 갑옷으로 무장한 여신으로 자주 표현됩니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 4305.92,
+        "y": 1358.36
+      },
+      "timestamp": "2025-10-31T09:01:35.544971",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "나무옆에 서있는 사람",
+        "description": "나무 옆에 서 있는 사람은 헤르메스(메르쿠리우스)로, 전령의 신이자 파리스를 이 심판 장면으로 이끈 안내자입니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 4819.24,
+        "y": 2324.3
+      },
+      "timestamp": "2025-10-31T09:01:36.215424",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "황금사과를 들고있는 남자",
+        "description": "황금사과를 들고 있는 남자는 파리스로, 트로이의 왕자이자 목동으로 변장한 인물입니다. 그는 심판자로서 세 여신 중 하나에게 사과를 건네려 합니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 4686.38,
+        "y": 1696.44
+      },
+      "timestamp": "2025-10-31T09:01:36.691512",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "황금사과를 들고있는 남자",
+        "description": "황금사과를 들고 있는 남자는 파리스로, 트로이의 왕자이자 목동으로 변장한 인물입니다. 그는 심판자로서 세 여신 중 하나에게 사과를 건네려 합니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 2778.01,
+        "y": 3024.61
+      },
+      "timestamp": "2025-10-31T09:01:37.768892",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "서있는 세 번째 여자",
+        "description": "서 있는 세 번째 여자는 아테나(미네르바)로, 지혜와 전쟁의 여신입니다. 투구나 갑옷으로 무장한 여신으로 자주 표현됩니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 3732.2,
+        "y": 1297.99
+      },
+      "timestamp": "2025-10-31T09:01:38.864365",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 4680.34,
+        "y": 821.05
+      },
+      "timestamp": "2025-10-31T09:01:39.412033",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 4384.43,
+        "y": 1823.22
+      },
+      "timestamp": "2025-10-31T09:01:40.084867",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 5042.69,
+        "y": 2070.74
+      },
+      "timestamp": "2025-10-31T09:01:40.621226",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "황금사과를 들고있는 남자",
+        "description": "황금사과를 들고 있는 남자는 파리스로, 트로이의 왕자이자 목동으로 변장한 인물입니다. 그는 심판자로서 세 여신 중 하나에게 사과를 건네려 합니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 5084.97,
+        "y": 2777.09
+      },
+      "timestamp": "2025-10-31T09:01:41.263424",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "황금사과를 들고있는 남자",
+        "description": "황금사과를 들고 있는 남자는 파리스로, 트로이의 왕자이자 목동으로 변장한 인물입니다. 그는 심판자로서 세 여신 중 하나에게 사과를 건네려 합니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 5024.58,
+        "y": 3127.24
+      },
+      "timestamp": "2025-10-31T09:01:41.677025",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "황금사과를 들고있는 남자",
+        "description": "황금사과를 들고 있는 남자는 파리스로, 트로이의 왕자이자 목동으로 변장한 인물입니다. 그는 심판자로서 세 여신 중 하나에게 사과를 건네려 합니다.",
+        "art_name": "파리스의 심판",
+        "art_name_en": "The Judgment of Paris"
+      }
+    }
+  ]
+}

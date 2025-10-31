@@ -1,0 +1,259 @@
+{
+  "artwork_name": "프리마베라",
+  "total_clicks": 20,
+  "image_path": "./artwork_images/프리마베라.jpg",
+  "original_image_size": {
+    "width": 770,
+    "height": 504
+  },
+  "display_image_size": {
+    "width": 770,
+    "height": 504
+  },
+  "scale_factors": {
+    "scale_x": 1.0,
+    "scale_y": 1.0
+  },
+  "clicks": [
+    {
+      "click_number": 1,
+      "canvas_coordinates": {
+        "x": 582.0,
+        "y": 196.0
+      },
+      "original_coordinates": {
+        "x": 582.0,
+        "y": 196.0
+      },
+      "timestamp": "2025-10-31T09:01:50.423241"
+    },
+    {
+      "click_number": 2,
+      "canvas_coordinates": {
+        "x": 627.0,
+        "y": 259.0
+      },
+      "original_coordinates": {
+        "x": 627.0,
+        "y": 259.0
+      },
+      "timestamp": "2025-10-31T09:01:50.774305"
+    },
+    {
+      "click_number": 3,
+      "canvas_coordinates": {
+        "x": 663.0,
+        "y": 309.0
+      },
+      "original_coordinates": {
+        "x": 663.0,
+        "y": 309.0
+      },
+      "timestamp": "2025-10-31T09:01:51.144625"
+    },
+    {
+      "click_number": 4,
+      "canvas_coordinates": {
+        "x": 404.0,
+        "y": 133.0
+      },
+      "original_coordinates": {
+        "x": 404.0,
+        "y": 133.0
+      },
+      "timestamp": "2025-10-31T09:01:51.834737"
+    },
+    {
+      "click_number": 5,
+      "canvas_coordinates": {
+        "x": 416.0,
+        "y": 220.0
+      },
+      "original_coordinates": {
+        "x": 416.0,
+        "y": 220.0
+      },
+      "timestamp": "2025-10-31T09:01:52.189973"
+    },
+    {
+      "click_number": 6,
+      "canvas_coordinates": {
+        "x": 285.0,
+        "y": 182.0
+      },
+      "original_coordinates": {
+        "x": 285.0,
+        "y": 182.0
+      },
+      "timestamp": "2025-10-31T09:01:52.655210"
+    },
+    {
+      "click_number": 7,
+      "canvas_coordinates": {
+        "x": 287.0,
+        "y": 279.0
+      },
+      "original_coordinates": {
+        "x": 287.0,
+        "y": 279.0
+      },
+      "timestamp": "2025-10-31T09:01:53.055811"
+    },
+    {
+      "click_number": 8,
+      "canvas_coordinates": {
+        "x": 238.0,
+        "y": 221.0
+      },
+      "original_coordinates": {
+        "x": 238.0,
+        "y": 221.0
+      },
+      "timestamp": "2025-10-31T09:01:53.435629"
+    },
+    {
+      "click_number": 9,
+      "canvas_coordinates": {
+        "x": 235.0,
+        "y": 303.0
+      },
+      "original_coordinates": {
+        "x": 235.0,
+        "y": 303.0
+      },
+      "timestamp": "2025-10-31T09:01:53.804171"
+    },
+    {
+      "click_number": 10,
+      "canvas_coordinates": {
+        "x": 171.0,
+        "y": 200.0
+      },
+      "original_coordinates": {
+        "x": 171.0,
+        "y": 200.0
+      },
+      "timestamp": "2025-10-31T09:01:54.336582"
+    },
+    {
+      "click_number": 11,
+      "canvas_coordinates": {
+        "x": 110.0,
+        "y": 85.0
+      },
+      "original_coordinates": {
+        "x": 110.0,
+        "y": 85.0
+      },
+      "timestamp": "2025-10-31T09:01:54.870944"
+    },
+    {
+      "click_number": 12,
+      "canvas_coordinates": {
+        "x": 182.0,
+        "y": 54.0
+      },
+      "original_coordinates": {
+        "x": 182.0,
+        "y": 54.0
+      },
+      "timestamp": "2025-10-31T09:01:55.234712"
+    },
+    {
+      "click_number": 13,
+      "canvas_coordinates": {
+        "x": 549.0,
+        "y": 58.0
+      },
+      "original_coordinates": {
+        "x": 549.0,
+        "y": 58.0
+      },
+      "timestamp": "2025-10-31T09:01:55.636949"
+    },
+    {
+      "click_number": 14,
+      "canvas_coordinates": {
+        "x": 402.0,
+        "y": 37.0
+      },
+      "original_coordinates": {
+        "x": 402.0,
+        "y": 37.0
+      },
+      "timestamp": "2025-10-31T09:01:56.048591"
+    },
+    {
+      "click_number": 15,
+      "canvas_coordinates": {
+        "x": 72.0,
+        "y": 207.0
+      },
+      "original_coordinates": {
+        "x": 72.0,
+        "y": 207.0
+      },
+      "timestamp": "2025-10-31T09:01:56.753977"
+    },
+    {
+      "click_number": 16,
+      "canvas_coordinates": {
+        "x": 63.0,
+        "y": 303.0
+      },
+      "original_coordinates": {
+        "x": 63.0,
+        "y": 303.0
+      },
+      "timestamp": "2025-10-31T09:01:57.096665"
+    },
+    {
+      "click_number": 17,
+      "canvas_coordinates": {
+        "x": 516.0,
+        "y": 223.0
+      },
+      "original_coordinates": {
+        "x": 516.0,
+        "y": 223.0
+      },
+      "timestamp": "2025-10-31T09:01:57.622398"
+    },
+    {
+      "click_number": 18,
+      "canvas_coordinates": {
+        "x": 523.0,
+        "y": 322.0
+      },
+      "original_coordinates": {
+        "x": 523.0,
+        "y": 322.0
+      },
+      "timestamp": "2025-10-31T09:01:57.942378"
+    },
+    {
+      "click_number": 19,
+      "canvas_coordinates": {
+        "x": 406.0,
+        "y": 330.0
+      },
+      "original_coordinates": {
+        "x": 406.0,
+        "y": 330.0
+      },
+      "timestamp": "2025-10-31T09:01:58.415966"
+    },
+    {
+      "click_number": 20,
+      "canvas_coordinates": {
+        "x": 243.0,
+        "y": 366.0
+      },
+      "original_coordinates": {
+        "x": 243.0,
+        "y": 366.0
+      },
+      "timestamp": "2025-10-31T09:01:59.023471"
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "artwork_name": "회화의 기술",
+  "original_image_size": {
+    "width": 6209,
+    "height": 7377
+  },
+  "total_clicks": 20,
+  "found_objects": 15,
+  "not_found": 5,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 4532.89,
+        "y": 3498.81
+      },
+      "timestamp": "2025-10-31T09:02:06.603172",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "화가",
+        "description": "화가는 베르메르 자신으로 보는 견해가 많습니다. 그는 모델을 바라보며 그림을 그리는 모습으로 묘사되어 있으며, 예술가의 창작 행위를 주제의 중심에 놓습니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 4174.47,
+        "y": 4215.43
+      },
+      "timestamp": "2025-10-31T09:02:06.944249",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "화가",
+        "description": "화가는 베르메르 자신으로 보는 견해가 많습니다. 그는 모델을 바라보며 그림을 그리는 모습으로 묘사되어 있으며, 예술가의 창작 행위를 주제의 중심에 놓습니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 4585.59,
+        "y": 4615.89
+      },
+      "timestamp": "2025-10-31T09:02:07.255866",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "화가",
+        "description": "화가는 베르메르 자신으로 보는 견해가 많습니다. 그는 모델을 바라보며 그림을 그리는 모습으로 묘사되어 있으며, 예술가의 창작 행위를 주제의 중심에 놓습니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 2898.94,
+        "y": 3182.65
+      },
+      "timestamp": "2025-10-31T09:02:08.156245",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "여자",
+        "description": "여자는 로렐 화관을 쓰고 나팔을 든 모습으로 묘사되며, 역사와 명성을 상징하는 ‘클리오(Clio, 역사의 뮤즈)’로 해석됩니다. 그녀는 예술가가 추구해야 할 영광과 불멸의 기록을 상징합니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 2793.52,
+        "y": 4141.66
+      },
+      "timestamp": "2025-10-31T09:02:08.604212",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "여자",
+        "description": "여자는 로렐 화관을 쓰고 나팔을 든 모습으로 묘사되며, 역사와 명성을 상징하는 ‘클리오(Clio, 역사의 뮤즈)’로 해석됩니다. 그녀는 예술가가 추구해야 할 영광과 불멸의 기록을 상징합니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 4037.43,
+        "y": 1264.63
+      },
+      "timestamp": "2025-10-31T09:02:09.572546",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "샹들리에",
+        "description": "샹들리에는 당시 부르주아 계층의 부와 교양을 상징합니다. 장식적이면서도 공간에 위엄을 부여하는 요소입니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 4954.55,
+        "y": 3098.34
+      },
+      "timestamp": "2025-10-31T09:02:10.350377",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 5133.76,
+        "y": 3751.73
+      },
+      "timestamp": "2025-10-31T09:02:10.858106",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 5312.96,
+        "y": 4921.51
+      },
+      "timestamp": "2025-10-31T09:02:11.390761",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 4016.35,
+        "y": 5248.21
+      },
+      "timestamp": "2025-10-31T09:02:11.988503",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "화가",
+        "description": "화가는 베르메르 자신으로 보는 견해가 많습니다. 그는 모델을 바라보며 그림을 그리는 모습으로 묘사되어 있으며, 예술가의 창작 행위를 주제의 중심에 놓습니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 3067.6,
+        "y": 4721.28
+      },
+      "timestamp": "2025-10-31T09:02:12.484502",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "여자",
+        "description": "여자는 로렐 화관을 쓰고 나팔을 든 모습으로 묘사되며, 역사와 명성을 상징하는 ‘클리오(Clio, 역사의 뮤즈)’로 해석됩니다. 그녀는 예술가가 추구해야 할 영광과 불멸의 기록을 상징합니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 2688.11,
+        "y": 3783.35
+      },
+      "timestamp": "2025-10-31T09:02:12.809048",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 1180.66,
+        "y": 3572.58
+      },
+      "timestamp": "2025-10-31T09:02:13.427179",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "커튼",
+        "description": "커튼은 장면을 은밀히 드러내는 장치로, 관람자가 마치 스튜디오를 엿보는 듯한 효과를 줍니다. 이는 베르메르 특유의 공간 연출 기법입니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 695.75,
+        "y": 1443.78
+      },
+      "timestamp": "2025-10-31T09:02:13.908878",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "커튼",
+        "description": "커튼은 장면을 은밀히 드러내는 장치로, 관람자가 마치 스튜디오를 엿보는 듯한 효과를 줍니다. 이는 베르메르 특유의 공간 연출 기법입니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 2023.99,
+        "y": 4615.89
+      },
+      "timestamp": "2025-10-31T09:02:15.916379",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "가면",
+        "description": "가면은 탁자 위에 놓여 있으며, 예술과 창작의 환영, 혹은 모방(mimesis)의 상징으로 해석됩니다. 회화 속에서 현실과 허구의 경계를 은유적으로 보여줍니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 2804.06,
+        "y": 4963.67
+      },
+      "timestamp": "2025-10-31T09:02:16.360611",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 3183.56,
+        "y": 2402.79
+      },
+      "timestamp": "2025-10-31T09:02:17.030598",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "지도",
+        "description": "벽에 걸린 지도는 네덜란드의 지도를 나타내며, 역사적·지리적 정체성을 강조합니다. 또한 ‘역사의 기록’이라는 주제와 연결됩니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 5397.3,
+        "y": 2740.03
+      },
+      "timestamp": "2025-10-31T09:02:17.969393",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "지도",
+        "description": "벽에 걸린 지도는 네덜란드의 지도를 나타내며, 역사적·지리적 정체성을 강조합니다. 또한 ‘역사의 기록’이라는 주제와 연결됩니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 5049.42,
+        "y": 1960.17
+      },
+      "timestamp": "2025-10-31T09:02:18.281820",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "지도",
+        "description": "벽에 걸린 지도는 네덜란드의 지도를 나타내며, 역사적·지리적 정체성을 강조합니다. 또한 ‘역사의 기록’이라는 주제와 연결됩니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 3995.26,
+        "y": 2740.03
+      },
+      "timestamp": "2025-10-31T09:02:19.593445",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "지도",
+        "description": "벽에 걸린 지도는 네덜란드의 지도를 나타내며, 역사적·지리적 정체성을 강조합니다. 또한 ‘역사의 기록’이라는 주제와 연결됩니다.",
+        "art_name": "회화의 기술",
+        "art_name_en": "The Art of Painting"
+      }
+    }
+  ]
+}

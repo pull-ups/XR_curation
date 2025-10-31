@@ -1,0 +1,259 @@
+{
+  "artwork_name": "아담의 창조",
+  "total_clicks": 20,
+  "image_path": "./artwork_images/아담의 창조.jpg",
+  "original_image_size": {
+    "width": 3572,
+    "height": 1663
+  },
+  "display_image_size": {
+    "width": 1000,
+    "height": 465
+  },
+  "scale_factors": {
+    "scale_x": 0.2799552071668533,
+    "scale_y": 0.27961515333734216
+  },
+  "clicks": [
+    {
+      "click_number": 1,
+      "canvas_coordinates": {
+        "x": 108.0,
+        "y": 188.0
+      },
+      "original_coordinates": {
+        "x": 385.78,
+        "y": 672.35
+      },
+      "timestamp": "2025-10-31T09:00:23.566851"
+    },
+    {
+      "click_number": 2,
+      "canvas_coordinates": {
+        "x": 71.0,
+        "y": 280.0
+      },
+      "original_coordinates": {
+        "x": 253.61,
+        "y": 1001.38
+      },
+      "timestamp": "2025-10-31T09:00:24.015816"
+    },
+    {
+      "click_number": 3,
+      "canvas_coordinates": {
+        "x": 139.0,
+        "y": 281.0
+      },
+      "original_coordinates": {
+        "x": 496.51,
+        "y": 1004.95
+      },
+      "timestamp": "2025-10-31T09:00:24.679603"
+    },
+    {
+      "click_number": 4,
+      "canvas_coordinates": {
+        "x": 108.0,
+        "y": 321.0
+      },
+      "original_coordinates": {
+        "x": 385.78,
+        "y": 1148.01
+      },
+      "timestamp": "2025-10-31T09:00:25.116386"
+    },
+    {
+      "click_number": 5,
+      "canvas_coordinates": {
+        "x": 174.0,
+        "y": 230.0
+      },
+      "original_coordinates": {
+        "x": 621.53,
+        "y": 822.56
+      },
+      "timestamp": "2025-10-31T09:00:25.642553"
+    },
+    {
+      "click_number": 6,
+      "canvas_coordinates": {
+        "x": 613.0,
+        "y": 97.0
+      },
+      "original_coordinates": {
+        "x": 2189.64,
+        "y": 346.91
+      },
+      "timestamp": "2025-10-31T09:00:26.801097"
+    },
+    {
+      "click_number": 7,
+      "canvas_coordinates": {
+        "x": 644.0,
+        "y": 149.0
+      },
+      "original_coordinates": {
+        "x": 2300.37,
+        "y": 532.88
+      },
+      "timestamp": "2025-10-31T09:00:27.219319"
+    },
+    {
+      "click_number": 8,
+      "canvas_coordinates": {
+        "x": 731.0,
+        "y": 207.0
+      },
+      "original_coordinates": {
+        "x": 2611.13,
+        "y": 740.3
+      },
+      "timestamp": "2025-10-31T09:00:27.684914"
+    },
+    {
+      "click_number": 9,
+      "canvas_coordinates": {
+        "x": 643.0,
+        "y": 188.0
+      },
+      "original_coordinates": {
+        "x": 2296.8,
+        "y": 672.35
+      },
+      "timestamp": "2025-10-31T09:00:28.175860"
+    },
+    {
+      "click_number": 10,
+      "canvas_coordinates": {
+        "x": 768.0,
+        "y": 93.0
+      },
+      "original_coordinates": {
+        "x": 2743.3,
+        "y": 332.6
+      },
+      "timestamp": "2025-10-31T09:00:29.187962"
+    },
+    {
+      "click_number": 11,
+      "canvas_coordinates": {
+        "x": 875.0,
+        "y": 148.0
+      },
+      "original_coordinates": {
+        "x": 3125.5,
+        "y": 529.3
+      },
+      "timestamp": "2025-10-31T09:00:29.903665"
+    },
+    {
+      "click_number": 12,
+      "canvas_coordinates": {
+        "x": 852.0,
+        "y": 117.0
+      },
+      "original_coordinates": {
+        "x": 3043.34,
+        "y": 418.43
+      },
+      "timestamp": "2025-10-31T09:00:30.503415"
+    },
+    {
+      "click_number": 13,
+      "canvas_coordinates": {
+        "x": 826.0,
+        "y": 79.0
+      },
+      "original_coordinates": {
+        "x": 2950.47,
+        "y": 282.53
+      },
+      "timestamp": "2025-10-31T09:00:30.984591"
+    },
+    {
+      "click_number": 14,
+      "canvas_coordinates": {
+        "x": 945.0,
+        "y": 88.0
+      },
+      "original_coordinates": {
+        "x": 3375.54,
+        "y": 314.72
+      },
+      "timestamp": "2025-10-31T09:00:31.568088"
+    },
+    {
+      "click_number": 15,
+      "canvas_coordinates": {
+        "x": 374.0,
+        "y": 205.0
+      },
+      "original_coordinates": {
+        "x": 1335.93,
+        "y": 733.15
+      },
+      "timestamp": "2025-10-31T09:00:32.652398"
+    },
+    {
+      "click_number": 16,
+      "canvas_coordinates": {
+        "x": 265.0,
+        "y": 223.0
+      },
+      "original_coordinates": {
+        "x": 946.58,
+        "y": 797.52
+      },
+      "timestamp": "2025-10-31T09:00:33.999324"
+    },
+    {
+      "click_number": 17,
+      "canvas_coordinates": {
+        "x": 174.0,
+        "y": 380.0
+      },
+      "original_coordinates": {
+        "x": 621.53,
+        "y": 1359.01
+      },
+      "timestamp": "2025-10-31T09:00:37.141870"
+    },
+    {
+      "click_number": 18,
+      "canvas_coordinates": {
+        "x": 216.0,
+        "y": 302.0
+      },
+      "original_coordinates": {
+        "x": 771.55,
+        "y": 1080.06
+      },
+      "timestamp": "2025-10-31T09:00:37.680864"
+    },
+    {
+      "click_number": 19,
+      "canvas_coordinates": {
+        "x": 792.0,
+        "y": 244.0
+      },
+      "original_coordinates": {
+        "x": 2829.02,
+        "y": 872.63
+      },
+      "timestamp": "2025-10-31T09:00:38.351946"
+    },
+    {
+      "click_number": 20,
+      "canvas_coordinates": {
+        "x": 879.0,
+        "y": 230.0
+      },
+      "original_coordinates": {
+        "x": 3139.79,
+        "y": 822.56
+      },
+      "timestamp": "2025-10-31T09:00:39.271912"
+    }
+  ]
+}

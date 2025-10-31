@@ -1,0 +1,302 @@
+{
+  "artwork_name": "프리마베라",
+  "original_image_size": {
+    "width": 770,
+    "height": 504
+  },
+  "total_clicks": 20,
+  "found_objects": 15,
+  "not_found": 5,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 582.0,
+        "y": 196.0
+      },
+      "timestamp": "2025-10-31T09:01:50.423241",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "검정색 사람한테 잡힌 사람",
+        "description": "검정색 사람한테 잡힌 여자는 클로리스(Chloris)로, 제피로스에게 쫓기다가 그의 아내가 되어 꽃의 여신 플로라로 변신합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 627.0,
+        "y": 259.0
+      },
+      "timestamp": "2025-10-31T09:01:50.774305",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 663.0,
+        "y": 309.0
+      },
+      "timestamp": "2025-10-31T09:01:51.144625",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "검정색 사람한테 잡힌 사람",
+        "description": "검정색 사람한테 잡힌 여자는 클로리스(Chloris)로, 제피로스에게 쫓기다가 그의 아내가 되어 꽃의 여신 플로라로 변신합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 404.0,
+        "y": 133.0
+      },
+      "timestamp": "2025-10-31T09:01:51.834737",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 여자",
+        "description": "가운데 여자는 비너스(아프로디테)로, 작품의 중심에 서 있으며 사랑과 조화를 상징합니다. 그녀의 뒤에는 월계수 숲이 펼쳐져 신성한 분위기를 강조합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 416.0,
+        "y": 220.0
+      },
+      "timestamp": "2025-10-31T09:01:52.189973",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 여자",
+        "description": "가운데 여자는 비너스(아프로디테)로, 작품의 중심에 서 있으며 사랑과 조화를 상징합니다. 그녀의 뒤에는 월계수 숲이 펼쳐져 신성한 분위기를 강조합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 285.0,
+        "y": 182.0
+      },
+      "timestamp": "2025-10-31T09:01:52.655210",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 287.0,
+        "y": 279.0
+      },
+      "timestamp": "2025-10-31T09:01:53.055811",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 238.0,
+        "y": 221.0
+      },
+      "timestamp": "2025-10-31T09:01:53.435629",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "뒤돌아고보고 있는 여자",
+        "description": "뒤돌아보고 있는 세 명의 여자는 세 미의 여신(그라치아, The Three Graces)으로, 아름다움, 순수, 쾌락을 상징하며 원무를 추고 있습니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 235.0,
+        "y": 303.0
+      },
+      "timestamp": "2025-10-31T09:01:53.804171",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "뒤돌아고보고 있는 여자",
+        "description": "뒤돌아보고 있는 세 명의 여자는 세 미의 여신(그라치아, The Three Graces)으로, 아름다움, 순수, 쾌락을 상징하며 원무를 추고 있습니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 171.0,
+        "y": 200.0
+      },
+      "timestamp": "2025-10-31T09:01:54.336582",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 110.0,
+        "y": 85.0
+      },
+      "timestamp": "2025-10-31T09:01:54.870944",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 8,
+        "name": "열매가 맺힌 나무",
+        "description": "열매가 맺힌 나무는 배경 전체를 이루며, 생명과 풍요를 상징하고 비너스를 중심으로 신성한 정원을 형성합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 182.0,
+        "y": 54.0
+      },
+      "timestamp": "2025-10-31T09:01:55.234712",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 8,
+        "name": "열매가 맺힌 나무",
+        "description": "열매가 맺힌 나무는 배경 전체를 이루며, 생명과 풍요를 상징하고 비너스를 중심으로 신성한 정원을 형성합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 549.0,
+        "y": 58.0
+      },
+      "timestamp": "2025-10-31T09:01:55.636949",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 402.0,
+        "y": 37.0
+      },
+      "timestamp": "2025-10-31T09:01:56.048591",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "천사",
+        "description": "천사는 큐피드(아모르)로, 비너스 위에서 눈을 가린 채 화살을 겨누고 있습니다. 사랑의 맹목성과 운명을 나타냅니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 72.0,
+        "y": 207.0
+      },
+      "timestamp": "2025-10-31T09:01:56.753977",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "나무를 처다보는 남자",
+        "description": "나무를 쳐다보는 남자는 머큐리(헤르메스)로, 여행자의 지팡이 카두케우스를 들고 구름을 걷어내며 하늘을 살피는 모습입니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 63.0,
+        "y": 303.0
+      },
+      "timestamp": "2025-10-31T09:01:57.096665",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "나무를 처다보는 남자",
+        "description": "나무를 쳐다보는 남자는 머큐리(헤르메스)로, 여행자의 지팡이 카두케우스를 들고 구름을 걷어내며 하늘을 살피는 모습입니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 516.0,
+        "y": 223.0
+      },
+      "timestamp": "2025-10-31T09:01:57.622398",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "꽃무늬 드레스 여자",
+        "description": "꽃무늬 드레스 여자는 플로라(Flora)로, 꽃으로 장식된 옷을 입고 꽃을 흩뿌리며 봄의 풍요와 생명을 상징합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 523.0,
+        "y": 322.0
+      },
+      "timestamp": "2025-10-31T09:01:57.942378",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "꽃무늬 드레스 여자",
+        "description": "꽃무늬 드레스 여자는 플로라(Flora)로, 꽃으로 장식된 옷을 입고 꽃을 흩뿌리며 봄의 풍요와 생명을 상징합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 406.0,
+        "y": 330.0
+      },
+      "timestamp": "2025-10-31T09:01:58.415966",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "가운데 여자",
+        "description": "가운데 여자는 비너스(아프로디테)로, 작품의 중심에 서 있으며 사랑과 조화를 상징합니다. 그녀의 뒤에는 월계수 숲이 펼쳐져 신성한 분위기를 강조합니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 243.0,
+        "y": 366.0
+      },
+      "timestamp": "2025-10-31T09:01:59.023471",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "뒤돌아고보고 있는 여자",
+        "description": "뒤돌아보고 있는 세 명의 여자는 세 미의 여신(그라치아, The Three Graces)으로, 아름다움, 순수, 쾌락을 상징하며 원무를 추고 있습니다.",
+        "art_name": "프리마베라",
+        "art_name_en": "Primavera"
+      }
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "artwork_name": "성 마태를 부르심",
+  "original_image_size": {
+    "width": 625,
+    "height": 599
+  },
+  "total_clicks": 20,
+  "found_objects": 16,
+  "not_found": 4,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 131.0,
+        "y": 278.0
+      },
+      "timestamp": "2025-10-31T08:59:39.693548",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽에서 서있는 남자",
+        "description": "왼쪽 서 있는 남자는 밑에 있는 사람과 돈을 세며 대화하는 듯한 모습입니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 104.0,
+        "y": 321.0
+      },
+      "timestamp": "2025-10-31T08:59:40.221712",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "왼쪽 끝 남자",
+        "description": "탁자 맨 왼쪽에 앉아 있는 남자로, 동전을 세며 고개를 숙이고 있습니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 112.0,
+        "y": 372.0
+      },
+      "timestamp": "2025-10-31T08:59:40.754160",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "왼쪽 끝 남자",
+        "description": "탁자 맨 왼쪽에 앉아 있는 남자로, 동전을 세며 고개를 숙이고 있습니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 194.0,
+        "y": 279.0
+      },
+      "timestamp": "2025-10-31T08:59:41.327779",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "가운데 수염 난 남자",
+        "description": "탁자 가운데 앉아 있는 수염 난 남자는 오른손으로 자기 가슴을 가리키며 놀란 표정을 짓고 있습니다. 바로 마태오로 해석됩니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 275.0,
+        "y": 276.0
+      },
+      "timestamp": "2025-10-31T08:59:41.926529",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "가운데 앉은 여자",
+        "description": "탁자 가운데에 앉은 여자로, 붉은 옷을 입고 있으며 빛과 사람들 사이에서 시선을 두고 있습니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 373.0,
+        "y": 318.0
+      },
+      "timestamp": "2025-10-31T08:59:42.473086",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "의자에 앉아 있는 소년",
+        "description": "탁자 오른쪽에 앉아 있는 소년은 다리를 꼬고 앉아 있으며, 시선은 여전히 돈과 탁자 위를 향해 있습니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 550.0,
+        "y": 226.0
+      },
+      "timestamp": "2025-10-31T08:59:43.320834",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 495.0,
+        "y": 243.0
+      },
+      "timestamp": "2025-10-31T08:59:44.106144",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "오른쪽 손 뻗은 남자",
+        "description": "오른쪽에서 손을 뻗은 남자는 예수 그리스도로, 마태오를 가리키며 ‘소명’을 전달하는 장면입니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 523.0,
+        "y": 291.0
+      },
+      "timestamp": "2025-10-31T08:59:44.438780",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "오른쪽 몸을 돌린 남자",
+        "description": "예수 옆에 서서 몸으로 길을 가로막는 듯한 남자는 성 베드로로, 예수와 함께 방 안으로 들어오며 장면의 공간적 연결을 형성합니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 538.0,
+        "y": 340.0
+      },
+      "timestamp": "2025-10-31T08:59:44.801854",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "오른쪽 몸을 돌린 남자",
+        "description": "예수 옆에 서서 몸으로 길을 가로막는 듯한 남자는 성 베드로로, 예수와 함께 방 안으로 들어오며 장면의 공간적 연결을 형성합니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 351.0,
+        "y": 365.0
+      },
+      "timestamp": "2025-10-31T08:59:45.331178",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "의자에 앉아 있는 소년",
+        "description": "탁자 오른쪽에 앉아 있는 소년은 다리를 꼬고 앉아 있으며, 시선은 여전히 돈과 탁자 위를 향해 있습니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 331.0,
+        "y": 425.0
+      },
+      "timestamp": "2025-10-31T08:59:45.794800",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "의자에 앉아 있는 소년",
+        "description": "탁자 오른쪽에 앉아 있는 소년은 다리를 꼬고 앉아 있으며, 시선은 여전히 돈과 탁자 위를 향해 있습니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 399.0,
+        "y": 140.0
+      },
+      "timestamp": "2025-10-31T08:59:46.647321",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 8,
+        "name": "창문",
+        "description": "방 안 상단에 있는 사각형 창문으로, 빛의 상징성을 강조하며 장면의 극적 효과를 더합니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 414.0,
+        "y": 67.0
+      },
+      "timestamp": "2025-10-31T08:59:47.356653",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 8,
+        "name": "창문",
+        "description": "방 안 상단에 있는 사각형 창문으로, 빛의 상징성을 강조하며 장면의 극적 효과를 더합니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 280.0,
+        "y": 344.0
+      },
+      "timestamp": "2025-10-31T08:59:48.041192",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "가운데 앉은 여자",
+        "description": "탁자 가운데에 앉은 여자로, 붉은 옷을 입고 있으며 빛과 사람들 사이에서 시선을 두고 있습니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 220.0,
+        "y": 338.0
+      },
+      "timestamp": "2025-10-31T08:59:48.622414",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "가운데 수염 난 남자",
+        "description": "탁자 가운데 앉아 있는 수염 난 남자는 오른손으로 자기 가슴을 가리키며 놀란 표정을 짓고 있습니다. 바로 마태오로 해석됩니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 110.0,
+        "y": 401.0
+      },
+      "timestamp": "2025-10-31T08:59:49.287743",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "왼쪽 끝 남자",
+        "description": "탁자 맨 왼쪽에 앉아 있는 남자로, 동전을 세며 고개를 숙이고 있습니다.",
+        "art_name": "성 마태를 부르심",
+        "art_name_en": "The Calling of Saint Matthew"
+      }
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 120.0,
+        "y": 450.0
+      },
+      "timestamp": "2025-10-31T08:59:49.762181",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 194.0,
+        "y": 444.0
+      },
+      "timestamp": "2025-10-31T08:59:50.178398",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 277.0,
+        "y": 484.0
+      },
+      "timestamp": "2025-10-31T08:59:50.628738",
+      "object_found": false,
+      "object_info": null
+    }
+  ]
+}

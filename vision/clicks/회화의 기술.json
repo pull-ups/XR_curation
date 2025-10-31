@@ -1,0 +1,259 @@
+{
+  "artwork_name": "회화의 기술",
+  "total_clicks": 20,
+  "image_path": "./artwork_images/회화의 기술.jpg",
+  "original_image_size": {
+    "width": 6209,
+    "height": 7377
+  },
+  "display_image_size": {
+    "width": 589,
+    "height": 700
+  },
+  "scale_factors": {
+    "scale_x": 0.09486229666612982,
+    "scale_y": 0.09488952148569879
+  },
+  "clicks": [
+    {
+      "click_number": 1,
+      "canvas_coordinates": {
+        "x": 430.0,
+        "y": 332.0
+      },
+      "original_coordinates": {
+        "x": 4532.89,
+        "y": 3498.81
+      },
+      "timestamp": "2025-10-31T09:02:06.603172"
+    },
+    {
+      "click_number": 2,
+      "canvas_coordinates": {
+        "x": 396.0,
+        "y": 400.0
+      },
+      "original_coordinates": {
+        "x": 4174.47,
+        "y": 4215.43
+      },
+      "timestamp": "2025-10-31T09:02:06.944249"
+    },
+    {
+      "click_number": 3,
+      "canvas_coordinates": {
+        "x": 435.0,
+        "y": 438.0
+      },
+      "original_coordinates": {
+        "x": 4585.59,
+        "y": 4615.89
+      },
+      "timestamp": "2025-10-31T09:02:07.255866"
+    },
+    {
+      "click_number": 4,
+      "canvas_coordinates": {
+        "x": 275.0,
+        "y": 302.0
+      },
+      "original_coordinates": {
+        "x": 2898.94,
+        "y": 3182.65
+      },
+      "timestamp": "2025-10-31T09:02:08.156245"
+    },
+    {
+      "click_number": 5,
+      "canvas_coordinates": {
+        "x": 265.0,
+        "y": 393.0
+      },
+      "original_coordinates": {
+        "x": 2793.52,
+        "y": 4141.66
+      },
+      "timestamp": "2025-10-31T09:02:08.604212"
+    },
+    {
+      "click_number": 6,
+      "canvas_coordinates": {
+        "x": 383.0,
+        "y": 120.0
+      },
+      "original_coordinates": {
+        "x": 4037.43,
+        "y": 1264.63
+      },
+      "timestamp": "2025-10-31T09:02:09.572546"
+    },
+    {
+      "click_number": 7,
+      "canvas_coordinates": {
+        "x": 470.0,
+        "y": 294.0
+      },
+      "original_coordinates": {
+        "x": 4954.55,
+        "y": 3098.34
+      },
+      "timestamp": "2025-10-31T09:02:10.350377"
+    },
+    {
+      "click_number": 8,
+      "canvas_coordinates": {
+        "x": 487.0,
+        "y": 356.0
+      },
+      "original_coordinates": {
+        "x": 5133.76,
+        "y": 3751.73
+      },
+      "timestamp": "2025-10-31T09:02:10.858106"
+    },
+    {
+      "click_number": 9,
+      "canvas_coordinates": {
+        "x": 504.0,
+        "y": 467.0
+      },
+      "original_coordinates": {
+        "x": 5312.96,
+        "y": 4921.51
+      },
+      "timestamp": "2025-10-31T09:02:11.390761"
+    },
+    {
+      "click_number": 10,
+      "canvas_coordinates": {
+        "x": 381.0,
+        "y": 498.0
+      },
+      "original_coordinates": {
+        "x": 4016.35,
+        "y": 5248.21
+      },
+      "timestamp": "2025-10-31T09:02:11.988503"
+    },
+    {
+      "click_number": 11,
+      "canvas_coordinates": {
+        "x": 291.0,
+        "y": 448.0
+      },
+      "original_coordinates": {
+        "x": 3067.6,
+        "y": 4721.28
+      },
+      "timestamp": "2025-10-31T09:02:12.484502"
+    },
+    {
+      "click_number": 12,
+      "canvas_coordinates": {
+        "x": 255.0,
+        "y": 359.0
+      },
+      "original_coordinates": {
+        "x": 2688.11,
+        "y": 3783.35
+      },
+      "timestamp": "2025-10-31T09:02:12.809048"
+    },
+    {
+      "click_number": 13,
+      "canvas_coordinates": {
+        "x": 112.0,
+        "y": 339.0
+      },
+      "original_coordinates": {
+        "x": 1180.66,
+        "y": 3572.58
+      },
+      "timestamp": "2025-10-31T09:02:13.427179"
+    },
+    {
+      "click_number": 14,
+      "canvas_coordinates": {
+        "x": 66.0,
+        "y": 137.0
+      },
+      "original_coordinates": {
+        "x": 695.75,
+        "y": 1443.78
+      },
+      "timestamp": "2025-10-31T09:02:13.908878"
+    },
+    {
+      "click_number": 15,
+      "canvas_coordinates": {
+        "x": 192.0,
+        "y": 438.0
+      },
+      "original_coordinates": {
+        "x": 2023.99,
+        "y": 4615.89
+      },
+      "timestamp": "2025-10-31T09:02:15.916379"
+    },
+    {
+      "click_number": 16,
+      "canvas_coordinates": {
+        "x": 266.0,
+        "y": 471.0
+      },
+      "original_coordinates": {
+        "x": 2804.06,
+        "y": 4963.67
+      },
+      "timestamp": "2025-10-31T09:02:16.360611"
+    },
+    {
+      "click_number": 17,
+      "canvas_coordinates": {
+        "x": 302.0,
+        "y": 228.0
+      },
+      "original_coordinates": {
+        "x": 3183.56,
+        "y": 2402.79
+      },
+      "timestamp": "2025-10-31T09:02:17.030598"
+    },
+    {
+      "click_number": 18,
+      "canvas_coordinates": {
+        "x": 512.0,
+        "y": 260.0
+      },
+      "original_coordinates": {
+        "x": 5397.3,
+        "y": 2740.03
+      },
+      "timestamp": "2025-10-31T09:02:17.969393"
+    },
+    {
+      "click_number": 19,
+      "canvas_coordinates": {
+        "x": 479.0,
+        "y": 186.0
+      },
+      "original_coordinates": {
+        "x": 5049.42,
+        "y": 1960.17
+      },
+      "timestamp": "2025-10-31T09:02:18.281820"
+    },
+    {
+      "click_number": 20,
+      "canvas_coordinates": {
+        "x": 379.0,
+        "y": 260.0
+      },
+      "original_coordinates": {
+        "x": 3995.26,
+        "y": 2740.03
+      },
+      "timestamp": "2025-10-31T09:02:19.593445"
+    }
+  ]
+}

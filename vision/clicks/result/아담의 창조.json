@@ -1,0 +1,326 @@
+{
+  "artwork_name": "아담의 창조",
+  "original_image_size": {
+    "width": 3572,
+    "height": 1663
+  },
+  "total_clicks": 20,
+  "found_objects": 19,
+  "not_found": 1,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 385.78,
+        "y": 672.35
+      },
+      "timestamp": "2025-10-31T09:00:23.566851",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽 남자",
+        "description": "왼쪽 남자는 아담으로, 땅 위에 누워 오른손을 뻗고 있습니다. 그는 아직 생명이 완전히 불어넣어지지 않은 상태로, 신의 손길을 기다립니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 253.61,
+        "y": 1001.38
+      },
+      "timestamp": "2025-10-31T09:00:24.015816",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽 남자",
+        "description": "왼쪽 남자는 아담으로, 땅 위에 누워 오른손을 뻗고 있습니다. 그는 아직 생명이 완전히 불어넣어지지 않은 상태로, 신의 손길을 기다립니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 496.51,
+        "y": 1004.95
+      },
+      "timestamp": "2025-10-31T09:00:24.679603",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽 남자",
+        "description": "왼쪽 남자는 아담으로, 땅 위에 누워 오른손을 뻗고 있습니다. 그는 아직 생명이 완전히 불어넣어지지 않은 상태로, 신의 손길을 기다립니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 385.78,
+        "y": 1148.01
+      },
+      "timestamp": "2025-10-31T09:00:25.116386",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽 남자",
+        "description": "왼쪽 남자는 아담으로, 땅 위에 누워 오른손을 뻗고 있습니다. 그는 아직 생명이 완전히 불어넣어지지 않은 상태로, 신의 손길을 기다립니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 621.53,
+        "y": 822.56
+      },
+      "timestamp": "2025-10-31T09:00:25.642553",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽 남자",
+        "description": "왼쪽 남자는 아담으로, 땅 위에 누워 오른손을 뻗고 있습니다. 그는 아직 생명이 완전히 불어넣어지지 않은 상태로, 신의 손길을 기다립니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 2189.64,
+        "y": 346.91
+      },
+      "timestamp": "2025-10-31T09:00:26.801097",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "중앙 남자",
+        "description": "중앙 남자는 하느님(신)으로, 하얀 옷을 입고 역동적으로 팔을 뻗으며 아담에게 생명을 불어넣으려 합니다. 인류 창조의 순간을 상징합니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 2300.37,
+        "y": 532.88
+      },
+      "timestamp": "2025-10-31T09:00:27.219319",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "중앙 남자",
+        "description": "중앙 남자는 하느님(신)으로, 하얀 옷을 입고 역동적으로 팔을 뻗으며 아담에게 생명을 불어넣으려 합니다. 인류 창조의 순간을 상징합니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 2611.13,
+        "y": 740.3
+      },
+      "timestamp": "2025-10-31T09:00:27.684914",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "중앙 남자",
+        "description": "중앙 남자는 하느님(신)으로, 하얀 옷을 입고 역동적으로 팔을 뻗으며 아담에게 생명을 불어넣으려 합니다. 인류 창조의 순간을 상징합니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 2296.8,
+        "y": 672.35
+      },
+      "timestamp": "2025-10-31T09:00:28.175860",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "중앙 남자",
+        "description": "중앙 남자는 하느님(신)으로, 하얀 옷을 입고 역동적으로 팔을 뻗으며 아담에게 생명을 불어넣으려 합니다. 인류 창조의 순간을 상징합니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 2743.3,
+        "y": 332.6
+      },
+      "timestamp": "2025-10-31T09:00:29.187962",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 6,
+        "name": "중앙 남자에게 안긴 여자",
+        "description": "중앙 남자에게 안긴 여자는 ‘하와’로 해석되며, 아직 창조되지 않았지만 이미 신의 품 안에 존재하는 가능성으로 묘사됩니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 3125.5,
+        "y": 529.3
+      },
+      "timestamp": "2025-10-31T09:00:29.903665",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "중앙 남자의 위쪽 다리에 있는 사람",
+        "description": "중앙 남자의 위쪽 다리에 있는 사람은 어린아이 형상의 천사로, 신을 둘러싼 천상의 군중의 일부입니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 3043.34,
+        "y": 418.43
+      },
+      "timestamp": "2025-10-31T09:00:30.503415",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 8,
+        "name": "중앙 남자 주변 사람들",
+        "description": "중앙 남자 주변 사람들은 다양한 천사들로, 신을 둘러싸고 있으며 창조의 장엄함과 신성함을 강조합니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 2950.47,
+        "y": 282.53
+      },
+      "timestamp": "2025-10-31T09:00:30.984591",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 8,
+        "name": "중앙 남자 주변 사람들",
+        "description": "중앙 남자 주변 사람들은 다양한 천사들로, 신을 둘러싸고 있으며 창조의 장엄함과 신성함을 강조합니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 3375.54,
+        "y": 314.72
+      },
+      "timestamp": "2025-10-31T09:00:31.568088",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "망토",
+        "description": "망토는 신과 천사들을 감싸며 뇌 모양처럼 묘사된다는 해석도 있습니다. 이는 지혜와 의식, 신의 이성을 상징한다는 학설로도 유명합니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 1335.93,
+        "y": 733.15
+      },
+      "timestamp": "2025-10-31T09:00:32.652398",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 946.58,
+        "y": 797.52
+      },
+      "timestamp": "2025-10-31T09:00:33.999324",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽 남자",
+        "description": "왼쪽 남자는 아담으로, 땅 위에 누워 오른손을 뻗고 있습니다. 그는 아직 생명이 완전히 불어넣어지지 않은 상태로, 신의 손길을 기다립니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 621.53,
+        "y": 1359.01
+      },
+      "timestamp": "2025-10-31T09:00:37.141870",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽 남자",
+        "description": "왼쪽 남자는 아담으로, 땅 위에 누워 오른손을 뻗고 있습니다. 그는 아직 생명이 완전히 불어넣어지지 않은 상태로, 신의 손길을 기다립니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 771.55,
+        "y": 1080.06
+      },
+      "timestamp": "2025-10-31T09:00:37.680864",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "왼쪽 남자",
+        "description": "왼쪽 남자는 아담으로, 땅 위에 누워 오른손을 뻗고 있습니다. 그는 아직 생명이 완전히 불어넣어지지 않은 상태로, 신의 손길을 기다립니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 2829.02,
+        "y": 872.63
+      },
+      "timestamp": "2025-10-31T09:00:38.351946",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "중앙 남자",
+        "description": "중앙 남자는 하느님(신)으로, 하얀 옷을 입고 역동적으로 팔을 뻗으며 아담에게 생명을 불어넣으려 합니다. 인류 창조의 순간을 상징합니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 3139.79,
+        "y": 822.56
+      },
+      "timestamp": "2025-10-31T09:00:39.271912",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "중앙 남자의 위쪽 다리에 있는 사람",
+        "description": "중앙 남자의 위쪽 다리에 있는 사람은 어린아이 형상의 천사로, 신을 둘러싼 천상의 군중의 일부입니다.",
+        "art_name": "아담의 창조",
+        "art_name_en": "The Creation of Adam"
+      }
+    }
+  ]
+}

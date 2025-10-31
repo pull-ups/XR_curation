@@ -1,0 +1,259 @@
+{
+  "artwork_name": "파리스의 심판",
+  "total_clicks": 20,
+  "image_path": "./artwork_images/파리스의 심판.jpg",
+  "original_image_size": {
+    "width": 5707,
+    "height": 4226
+  },
+  "display_image_size": {
+    "width": 945,
+    "height": 700
+  },
+  "scale_factors": {
+    "scale_x": 0.16558612230594008,
+    "scale_y": 0.1656412683388547
+  },
+  "clicks": [
+    {
+      "click_number": 1,
+      "canvas_coordinates": {
+        "x": 140.0,
+        "y": 256.0
+      },
+      "original_coordinates": {
+        "x": 845.48,
+        "y": 1545.51
+      },
+      "timestamp": "2025-10-31T09:01:29.463148"
+    },
+    {
+      "click_number": 2,
+      "canvas_coordinates": {
+        "x": 159.0,
+        "y": 318.0
+      },
+      "original_coordinates": {
+        "x": 960.23,
+        "y": 1919.81
+      },
+      "timestamp": "2025-10-31T09:01:29.937688"
+    },
+    {
+      "click_number": 3,
+      "canvas_coordinates": {
+        "x": 159.0,
+        "y": 377.0
+      },
+      "original_coordinates": {
+        "x": 960.23,
+        "y": 2276.0
+      },
+      "timestamp": "2025-10-31T09:01:30.376699"
+    },
+    {
+      "click_number": 4,
+      "canvas_coordinates": {
+        "x": 156.0,
+        "y": 434.0
+      },
+      "original_coordinates": {
+        "x": 942.11,
+        "y": 2620.12
+      },
+      "timestamp": "2025-10-31T09:01:30.861450"
+    },
+    {
+      "click_number": 5,
+      "canvas_coordinates": {
+        "x": 298.0,
+        "y": 252.0
+      },
+      "original_coordinates": {
+        "x": 1799.67,
+        "y": 1521.36
+      },
+      "timestamp": "2025-10-31T09:01:31.560932"
+    },
+    {
+      "click_number": 6,
+      "canvas_coordinates": {
+        "x": 286.0,
+        "y": 382.0
+      },
+      "original_coordinates": {
+        "x": 1727.2,
+        "y": 2306.19
+      },
+      "timestamp": "2025-10-31T09:01:32.018291"
+    },
+    {
+      "click_number": 7,
+      "canvas_coordinates": {
+        "x": 259.0,
+        "y": 415.0
+      },
+      "original_coordinates": {
+        "x": 1564.14,
+        "y": 2505.41
+      },
+      "timestamp": "2025-10-31T09:01:32.515669"
+    },
+    {
+      "click_number": 8,
+      "canvas_coordinates": {
+        "x": 436.0,
+        "y": 279.0
+      },
+      "original_coordinates": {
+        "x": 2633.07,
+        "y": 1684.36
+      },
+      "timestamp": "2025-10-31T09:01:33.063569"
+    },
+    {
+      "click_number": 9,
+      "canvas_coordinates": {
+        "x": 467.0,
+        "y": 367.0
+      },
+      "original_coordinates": {
+        "x": 2820.28,
+        "y": 2215.63
+      },
+      "timestamp": "2025-10-31T09:01:33.557095"
+    },
+    {
+      "click_number": 10,
+      "canvas_coordinates": {
+        "x": 442.0,
+        "y": 413.0
+      },
+      "original_coordinates": {
+        "x": 2669.31,
+        "y": 2493.34
+      },
+      "timestamp": "2025-10-31T09:01:33.977030"
+    },
+    {
+      "click_number": 11,
+      "canvas_coordinates": {
+        "x": 713.0,
+        "y": 225.0
+      },
+      "original_coordinates": {
+        "x": 4305.92,
+        "y": 1358.36
+      },
+      "timestamp": "2025-10-31T09:01:35.544971"
+    },
+    {
+      "click_number": 12,
+      "canvas_coordinates": {
+        "x": 798.0,
+        "y": 385.0
+      },
+      "original_coordinates": {
+        "x": 4819.24,
+        "y": 2324.3
+      },
+      "timestamp": "2025-10-31T09:01:36.215424"
+    },
+    {
+      "click_number": 13,
+      "canvas_coordinates": {
+        "x": 776.0,
+        "y": 281.0
+      },
+      "original_coordinates": {
+        "x": 4686.38,
+        "y": 1696.44
+      },
+      "timestamp": "2025-10-31T09:01:36.691512"
+    },
+    {
+      "click_number": 14,
+      "canvas_coordinates": {
+        "x": 460.0,
+        "y": 501.0
+      },
+      "original_coordinates": {
+        "x": 2778.01,
+        "y": 3024.61
+      },
+      "timestamp": "2025-10-31T09:01:37.768892"
+    },
+    {
+      "click_number": 15,
+      "canvas_coordinates": {
+        "x": 618.0,
+        "y": 215.0
+      },
+      "original_coordinates": {
+        "x": 3732.2,
+        "y": 1297.99
+      },
+      "timestamp": "2025-10-31T09:01:38.864365"
+    },
+    {
+      "click_number": 16,
+      "canvas_coordinates": {
+        "x": 775.0,
+        "y": 136.0
+      },
+      "original_coordinates": {
+        "x": 4680.34,
+        "y": 821.05
+      },
+      "timestamp": "2025-10-31T09:01:39.412033"
+    },
+    {
+      "click_number": 17,
+      "canvas_coordinates": {
+        "x": 726.0,
+        "y": 302.0
+      },
+      "original_coordinates": {
+        "x": 4384.43,
+        "y": 1823.22
+      },
+      "timestamp": "2025-10-31T09:01:40.084867"
+    },
+    {
+      "click_number": 18,
+      "canvas_coordinates": {
+        "x": 835.0,
+        "y": 343.0
+      },
+      "original_coordinates": {
+        "x": 5042.69,
+        "y": 2070.74
+      },
+      "timestamp": "2025-10-31T09:01:40.621226"
+    },
+    {
+      "click_number": 19,
+      "canvas_coordinates": {
+        "x": 842.0,
+        "y": 460.0
+      },
+      "original_coordinates": {
+        "x": 5084.97,
+        "y": 2777.09
+      },
+      "timestamp": "2025-10-31T09:01:41.263424"
+    },
+    {
+      "click_number": 20,
+      "canvas_coordinates": {
+        "x": 832.0,
+        "y": 518.0
+      },
+      "original_coordinates": {
+        "x": 5024.58,
+        "y": 3127.24
+      },
+      "timestamp": "2025-10-31T09:01:41.677025"
+    }
+  ]
+}

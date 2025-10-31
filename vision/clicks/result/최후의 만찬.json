@@ -1,0 +1,308 @@
+{
+  "artwork_name": "최후의 만찬",
+  "original_image_size": {
+    "width": 960,
+    "height": 480
+  },
+  "total_clicks": 20,
+  "found_objects": 16,
+  "not_found": 4,
+  "results": [
+    {
+      "click_number": 1,
+      "coordinates": {
+        "x": 497.0,
+        "y": 276.0
+      },
+      "timestamp": "2025-10-31T08:55:36.347474",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "중앙 사람",
+        "description": "중앙의 예수는 고요한 자세로 앉아 있으며, 양팔을 벌린 채 제자들의 동요와 대비되는 평온함을 보여줍니다. 이는 희생과 성만찬의 상징입니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 2,
+      "coordinates": {
+        "x": 596.0,
+        "y": 287.0
+      },
+      "timestamp": "2025-10-31T08:55:36.996749",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "오른쪽 두 번째 사람",
+        "description": "오른쪽 두 번째 제임스(대)는 두 팔을 크게 벌려 당황과 항변을 표현하고 있습니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 3,
+      "coordinates": {
+        "x": 675.0,
+        "y": 262.0
+      },
+      "timestamp": "2025-10-31T08:55:38.257272",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 10,
+        "name": "오른쪽 세 번째 사람",
+        "description": "오른쪽 세 번째 빌립은 가슴에 손을 얹고 있으며, 충격과 함께 자신을 변호하려는 태도를 보입니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 4,
+      "coordinates": {
+        "x": 361.0,
+        "y": 275.0
+      },
+      "timestamp": "2025-10-31T08:55:39.142107",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "왼쪽 여섯 번째 사람",
+        "description": "왼쪽 여섯 번째 요한은 상대적으로 차분하게 묘사되어 있으며, 젊고 섬세한 모습으로 예수의 곁에 앉아 있습니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 5,
+      "coordinates": {
+        "x": 300.0,
+        "y": 285.0
+      },
+      "timestamp": "2025-10-31T08:55:39.656956",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 5,
+        "name": "왼쪽 네 번째 사람",
+        "description": "왼쪽 네 번째 유다는 다른 인물들보다 어두운 음영 속에 배치되어 있으며, 손에는 작은 돈주머니를 쥐고 있습니다. 이는 예수를 배신할 자임을 암시합니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 6,
+      "coordinates": {
+        "x": 216.0,
+        "y": 278.0
+      },
+      "timestamp": "2025-10-31T08:55:40.263577",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "왼쪽에서 세 번째 사람",
+        "description": "왼쪽에서 세 번째 안드레아는 두 손을 내밀며 강하게 반응하고 있습니다. 그의 제스처는 놀람과 반박의 감정을 표현합니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 7,
+      "coordinates": {
+        "x": 108.0,
+        "y": 274.0
+      },
+      "timestamp": "2025-10-31T08:55:41.057416",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 8,
+      "coordinates": {
+        "x": 479.0,
+        "y": 204.0
+      },
+      "timestamp": "2025-10-31T08:55:45.262399",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 9,
+      "coordinates": {
+        "x": 898.0,
+        "y": 279.0
+      },
+      "timestamp": "2025-10-31T08:55:50.497135",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 13,
+        "name": "맨 오른쪽 사람",
+        "description": "맨 오른쪽 시몬은 가장 나이가 들어 보이는 인물로, 두 손을 들어 올리며 다른 제자들과 함께 소란에 반응합니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 10,
+      "coordinates": {
+        "x": 758.0,
+        "y": 280.0
+      },
+      "timestamp": "2025-10-31T08:55:51.296034",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 11,
+        "name": "오른쪽 네 번째 사람",
+        "description": "오른쪽 네 번째 마태오는 몸을 돌려 옆 인물들과 대화하며 혼란을 표현하고 있습니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 11,
+      "coordinates": {
+        "x": 639.0,
+        "y": 225.0
+      },
+      "timestamp": "2025-10-31T08:55:52.757680",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 12,
+      "coordinates": {
+        "x": 486.0,
+        "y": 298.0
+      },
+      "timestamp": "2025-10-31T08:55:53.549314",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 4,
+        "name": "중앙 사람",
+        "description": "중앙의 예수는 고요한 자세로 앉아 있으며, 양팔을 벌린 채 제자들의 동요와 대비되는 평온함을 보여줍니다. 이는 희생과 성만찬의 상징입니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 13,
+      "coordinates": {
+        "x": 162.0,
+        "y": 283.0
+      },
+      "timestamp": "2025-10-31T08:55:54.917732",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 2,
+        "name": "왼쪽에서 두 번째 사람",
+        "description": "왼쪽에서 두 번째 제임스(소)는 두 손을 모아 움켜쥔 채 긴장된 표정을 짓고 있으며, 배신 소식에 충격을 받은 모습입니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 14,
+      "coordinates": {
+        "x": 594.0,
+        "y": 245.0
+      },
+      "timestamp": "2025-10-31T08:55:56.098067",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 9,
+        "name": "오른쪽 두 번째 사람",
+        "description": "오른쪽 두 번째 제임스(대)는 두 팔을 크게 벌려 당황과 항변을 표현하고 있습니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 15,
+      "coordinates": {
+        "x": 835.0,
+        "y": 249.0
+      },
+      "timestamp": "2025-10-31T08:55:57.801144",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 12,
+        "name": "오른쪽 다섯 번째 사람",
+        "description": "오른쪽 다섯 번째 유다 타대오는 격렬한 손짓으로 주변과 논쟁하며 상황을 이해하려 애쓰는 모습입니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 16,
+      "coordinates": {
+        "x": 688.0,
+        "y": 300.0
+      },
+      "timestamp": "2025-10-31T08:56:00.670152",
+      "object_found": false,
+      "object_info": null
+    },
+    {
+      "click_number": 17,
+      "coordinates": {
+        "x": 382.0,
+        "y": 302.0
+      },
+      "timestamp": "2025-10-31T08:56:01.872751",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 7,
+        "name": "왼쪽 여섯 번째 사람",
+        "description": "왼쪽 여섯 번째 요한은 상대적으로 차분하게 묘사되어 있으며, 젊고 섬세한 모습으로 예수의 곁에 앉아 있습니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 18,
+      "coordinates": {
+        "x": 98.0,
+        "y": 306.0
+      },
+      "timestamp": "2025-10-31T08:56:02.654921",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "맨 왼쪽 사람",
+        "description": "맨 왼쪽의 바르톨로메오는 상체를 앞으로 숙이고 있으며, 놀라움과 당혹감을 드러내고 있습니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 19,
+      "coordinates": {
+        "x": 133.0,
+        "y": 236.0
+      },
+      "timestamp": "2025-10-31T08:56:03.314383",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 1,
+        "name": "맨 왼쪽 사람",
+        "description": "맨 왼쪽의 바르톨로메오는 상체를 앞으로 숙이고 있으며, 놀라움과 당혹감을 드러내고 있습니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    },
+    {
+      "click_number": 20,
+      "coordinates": {
+        "x": 216.0,
+        "y": 240.0
+      },
+      "timestamp": "2025-10-31T08:56:03.902918",
+      "object_found": true,
+      "object_info": {
+        "mask_id": 3,
+        "name": "왼쪽에서 세 번째 사람",
+        "description": "왼쪽에서 세 번째 안드레아는 두 손을 내밀며 강하게 반응하고 있습니다. 그의 제스처는 놀람과 반박의 감정을 표현합니다.",
+        "art_name": "최후의 만찬",
+        "art_name_en": "The Last Supper"
+      }
+    }
+  ]
+}

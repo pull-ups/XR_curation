@@ -1,0 +1,259 @@
+{
+  "artwork_name": "시녀들",
+  "total_clicks": 20,
+  "image_path": "./artwork_images/시녀들.jpg",
+  "original_image_size": {
+    "width": 600,
+    "height": 691
+  },
+  "display_image_size": {
+    "width": 600,
+    "height": 691
+  },
+  "scale_factors": {
+    "scale_x": 1.0,
+    "scale_y": 1.0
+  },
+  "clicks": [
+    {
+      "click_number": 1,
+      "canvas_coordinates": {
+        "x": 291.0,
+        "y": 480.0
+      },
+      "original_coordinates": {
+        "x": 291.0,
+        "y": 480.0
+      },
+      "timestamp": "2025-10-31T09:00:01.090472"
+    },
+    {
+      "click_number": 2,
+      "canvas_coordinates": {
+        "x": 280.0,
+        "y": 587.0
+      },
+      "original_coordinates": {
+        "x": 280.0,
+        "y": 587.0
+      },
+      "timestamp": "2025-10-31T09:00:01.618142"
+    },
+    {
+      "click_number": 3,
+      "canvas_coordinates": {
+        "x": 204.0,
+        "y": 466.0
+      },
+      "original_coordinates": {
+        "x": 204.0,
+        "y": 466.0
+      },
+      "timestamp": "2025-10-31T09:00:02.214504"
+    },
+    {
+      "click_number": 4,
+      "canvas_coordinates": {
+        "x": 181.0,
+        "y": 557.0
+      },
+      "original_coordinates": {
+        "x": 181.0,
+        "y": 557.0
+      },
+      "timestamp": "2025-10-31T09:00:02.685412"
+    },
+    {
+      "click_number": 5,
+      "canvas_coordinates": {
+        "x": 145.0,
+        "y": 375.0
+      },
+      "original_coordinates": {
+        "x": 145.0,
+        "y": 375.0
+      },
+      "timestamp": "2025-10-31T09:00:03.360078"
+    },
+    {
+      "click_number": 6,
+      "canvas_coordinates": {
+        "x": 140.0,
+        "y": 449.0
+      },
+      "original_coordinates": {
+        "x": 140.0,
+        "y": 449.0
+      },
+      "timestamp": "2025-10-31T09:00:03.830640"
+    },
+    {
+      "click_number": 7,
+      "canvas_coordinates": {
+        "x": 247.0,
+        "y": 384.0
+      },
+      "original_coordinates": {
+        "x": 247.0,
+        "y": 384.0
+      },
+      "timestamp": "2025-10-31T09:00:04.653545"
+    },
+    {
+      "click_number": 8,
+      "canvas_coordinates": {
+        "x": 383.0,
+        "y": 404.0
+      },
+      "original_coordinates": {
+        "x": 383.0,
+        "y": 404.0
+      },
+      "timestamp": "2025-10-31T09:00:05.508219"
+    },
+    {
+      "click_number": 9,
+      "canvas_coordinates": {
+        "x": 395.0,
+        "y": 473.0
+      },
+      "original_coordinates": {
+        "x": 395.0,
+        "y": 473.0
+      },
+      "timestamp": "2025-10-31T09:00:05.922677"
+    },
+    {
+      "click_number": 10,
+      "canvas_coordinates": {
+        "x": 280.0,
+        "y": 523.0
+      },
+      "original_coordinates": {
+        "x": 280.0,
+        "y": 523.0
+      },
+      "timestamp": "2025-10-31T09:00:06.533084"
+    },
+    {
+      "click_number": 11,
+      "canvas_coordinates": {
+        "x": 325.0,
+        "y": 590.0
+      },
+      "original_coordinates": {
+        "x": 325.0,
+        "y": 590.0
+      },
+      "timestamp": "2025-10-31T09:00:06.984440"
+    },
+    {
+      "click_number": 12,
+      "canvas_coordinates": {
+        "x": 440.0,
+        "y": 626.0
+      },
+      "original_coordinates": {
+        "x": 440.0,
+        "y": 626.0
+      },
+      "timestamp": "2025-10-31T09:00:07.552198"
+    },
+    {
+      "click_number": 13,
+      "canvas_coordinates": {
+        "x": 491.0,
+        "y": 645.0
+      },
+      "original_coordinates": {
+        "x": 491.0,
+        "y": 645.0
+      },
+      "timestamp": "2025-10-31T09:00:08.012881"
+    },
+    {
+      "click_number": 14,
+      "canvas_coordinates": {
+        "x": 504.0,
+        "y": 453.0
+      },
+      "original_coordinates": {
+        "x": 504.0,
+        "y": 453.0
+      },
+      "timestamp": "2025-10-31T09:00:09.004943"
+    },
+    {
+      "click_number": 15,
+      "canvas_coordinates": {
+        "x": 500.0,
+        "y": 527.0
+      },
+      "original_coordinates": {
+        "x": 500.0,
+        "y": 527.0
+      },
+      "timestamp": "2025-10-31T09:00:09.472469"
+    },
+    {
+      "click_number": 16,
+      "canvas_coordinates": {
+        "x": 579.0,
+        "y": 484.0
+      },
+      "original_coordinates": {
+        "x": 579.0,
+        "y": 484.0
+      },
+      "timestamp": "2025-10-31T09:00:09.975441"
+    },
+    {
+      "click_number": 17,
+      "canvas_coordinates": {
+        "x": 434.0,
+        "y": 603.0
+      },
+      "original_coordinates": {
+        "x": 434.0,
+        "y": 603.0
+      },
+      "timestamp": "2025-10-31T09:00:10.763282"
+    },
+    {
+      "click_number": 18,
+      "canvas_coordinates": {
+        "x": 40.0,
+        "y": 314.0
+      },
+      "original_coordinates": {
+        "x": 40.0,
+        "y": 314.0
+      },
+      "timestamp": "2025-10-31T09:00:12.368074"
+    },
+    {
+      "click_number": 19,
+      "canvas_coordinates": {
+        "x": 33.0,
+        "y": 575.0
+      },
+      "original_coordinates": {
+        "x": 33.0,
+        "y": 575.0
+      },
+      "timestamp": "2025-10-31T09:00:13.104652"
+    },
+    {
+      "click_number": 20,
+      "canvas_coordinates": {
+        "x": 338.0,
+        "y": 292.0
+      },
+      "original_coordinates": {
+        "x": 338.0,
+        "y": 292.0
+      },
+      "timestamp": "2025-10-31T09:00:13.887009"
+    }
+  ]
+}
